@@ -1,1 +1,10 @@
 <h1>G-Unit Test</h1>
+<div ng-repeat="user in usersIndex.all">
+  <h1>Username: {{ user.username }}</h1>
+  <h1>Email: {{ user.email }}</h1>
+  <h1>Skills Object: {{ user.skills }}</h1>
+  <h1>Primary Language: {{ user.skills[0].language.lang }}</h1>
+  <h1>Level: {{ user.skills[0].level }}</h1>
+  <h1>Language ID: {{ user.skills[0].id }}</h1>
+
+</div>

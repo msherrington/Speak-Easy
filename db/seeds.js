@@ -13,9 +13,9 @@ User.collection.drop();
 
 Skill
   .create([{
-    language: 'English'
+    lang: 'English'
   }, {
-    language: 'French'
+    lang: 'French'
   }])
   .then((skills) => {
     console.log(`${skills.length} skills created!`);
