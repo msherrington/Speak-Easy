@@ -3,8 +3,19 @@ const usersController = require('../controllers/users');
 const skillsController = require('../controllers/skills');
 
 router.route('/users')
-.get(usersController.index);
-// .post(usersController.create);
+.get(usersController.index)
+.post(usersController.create);
+
+router.route('/users/:id')
+.get(usersController.show)
+.put(usersController.update)
+.delete(usersController.delete);
+
+
+
+
+
+// skills
 
 router.route('/skills')
 .get(skillsController.index);
