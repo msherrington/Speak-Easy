@@ -2,7 +2,7 @@ angular
   .module('skillsApp')
   .controller('UsersIndexCtrl', UsersIndexCtrl)
   .controller('UsersNewCtrl', UsersNewCtrl)
-  .controller('UsersShowCtrl', UsersShowCtrl)
+  .controller('UsersProfileCtrl', UsersProfileCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl);
 
 
@@ -31,8 +31,8 @@ function UsersNewCtrl(User, $state) {
  // vm.userForm.$setUntouched();=
 }
 
-UsersShowCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersShowCtrl(User, $stateParams, $state) {
+UsersProfileCtrl.$inject = ['User', '$stateParams', '$state'];
+function UsersProfileCtrl(User, $stateParams, $state) {
   const vm = this;
 
   vm.user = User.get($stateParams);
@@ -56,7 +56,7 @@ function UsersEditCtrl(User, $stateParams, $state) {
     if (vm.userForm.$valid) {
       vm.user
       .$update()
-      .then(() => $state.go('usersShow', $stateParams));
+      .then(() => $state.go('usersProfile', $stateParams));
     }
   }
   vm.update = usersUpdate;

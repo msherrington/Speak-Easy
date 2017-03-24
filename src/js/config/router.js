@@ -11,17 +11,17 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/users/index.html',
       controller: 'UsersIndexCtrl as usersIndex'
-    });
+    })
     // .state('usersNew', {
     //   url: '/users/new',
     //   templateUrl: 'js/views/users/new.html',
     //   controller: 'UsersNewCtrl as usersNew'
     // })
-    // .state('usersShow', {
-    //   url: '/users/:id',
-    //   templateUrl: 'js/views/users/show.html',
-    //   controller: 'UsersShowCtrl as usersShow'
-    // })
+    .state('usersProfile', {
+      url: '/users/:id',
+      templateUrl: 'js/views/users/profile.html',
+      controller: 'UsersProfileCtrl as usersProfile'
+    });
     // .state('usersEdit', {
     //   url: '/users/:id/edit',
     //   templateUrl: 'js/views/users/edit.html',

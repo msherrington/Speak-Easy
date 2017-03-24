@@ -23,7 +23,7 @@ Skill
       .create([{
         username: 'Adrian',
         email: 'adrian@ga.com',
-        passsword: 'adrian',
+        password: 'adrian',
         skills: [{
           language: skills[0],
           level: 'Beginner'
@@ -31,7 +31,7 @@ Skill
       }, {
         username: 'Alice',
         email: 'alice@ga.com',
-        passsword: 'alice',
+        password: 'alice',
         skills: [{
           language: skills[1],
           level: 'Beginner'

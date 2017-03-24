@@ -1,0 +1,11 @@
+<h1>Profile</h1>
+<p>Username: {{ usersProfile.user.username }}</p>
+<p>Email: {{ usersProfile.user.email }}</p>
+
+<!-- <p>{{ usersProfile.user.skills[0] }}</p> -->
+
+<p>Primary Language: {{ usersProfile.user.skills[0].language.lang }}</p>
+<p>Level: {{ usersProfile.user.skills[0].level }}</p>
+
+<p>Review: {{ usersProfile.user.reviews }}</p>
+<p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>

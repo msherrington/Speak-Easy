@@ -14,7 +14,7 @@ reviewSchema.methods.ownedBy = function ownedBy(user) {
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: {type: String, required: true, unique: true },
-  passsword: {type: String, required: true },
+  password: {type: String, required: true },
   skills: [{
     language: { type: mongoose.Schema.ObjectId, ref: 'Skill' },
     level: { type: String, enum: ['Beginner', 'Intermediate', 'Advanced'] }
