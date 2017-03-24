@@ -22,6 +22,5 @@ router.route('/skills')
 
 // router.all('*', (req, res, err) => res.status(500).json(err));
 router.all('*', (req, res) => res.notFound());
-//need to updste this with res.notfound
 
 module.exports = router;

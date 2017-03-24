@@ -1,2 +1,2 @@
 angular
-  .module('nameYourAppHere', []);
+  .module('skillsApp', ['ui.router', 'ngResource', 'ngMessages', 'satellizer']);
