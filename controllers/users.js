@@ -3,6 +3,7 @@ const User = require('../models/user');
 function indexRoute(req, res, next) {
   User
     .find()
+    .populate('skills.language')
     .then((users) => res.json(users))
     .catch(next);
 }
@@ -17,6 +18,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
+    .populate('skills.language')
     .then((user) => {
       if(!user) return res.notFound();
       res.json(user);
