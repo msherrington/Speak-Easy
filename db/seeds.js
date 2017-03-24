@@ -27,6 +27,9 @@ Skill
         skills: [{
           language: skills[0],
           level: 'Beginner'
+        },{
+          language: skills[1],
+          level: 'Beginner'
         }]
       }, {
         username: 'Alice',

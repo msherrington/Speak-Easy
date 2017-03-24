@@ -21,12 +21,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/users/:id',
       templateUrl: 'js/views/users/profile.html',
       controller: 'UsersProfileCtrl as usersProfile'
+    })
+    .state('usersEdit', {
+      url: '/users/:id/edit',
+      templateUrl: 'js/views/users/edit.html',
+      controller: 'UsersEditCtrl as usersEdit'
     });
-    // .state('usersEdit', {
-    //   url: '/users/:id/edit',
-    //   templateUrl: 'js/views/users/edit.html',
-    //   controller: 'UsersEditCtrl as usersEdit'
-    // })
 
     //update our routes for register and login
     // .state('register', {

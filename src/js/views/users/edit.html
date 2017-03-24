@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<div ng-controller="UsersEditCtrl as usersEdit">
+<form name="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
+
+ <div class="a">Username:
+   <input class="a" type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username..." required>
+ </div>
+ <!-- Error message! -->
+ <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.name.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.name.$touched)">
+   <div ng-message="required"><em class="error">name is required!</em></div>
+ </div> -->
+
+ <div class="a">Email:
+   <input class="a" type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" required>
+ </div>
+ <!-- Error message! -->
+ <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.mostLikelyTo.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.mostLikelyTo.$touched)">
+   <div ng-message="required"><em class="error">mostLikelyTo is required!</em></div>
+ </div> -->
+
+ <div class="a">Image Link:
+   <input class="a" type="text" name="image" id="image" ng-model="usersEdit.user.image" placeholder="image URL" required>
+ </div>
+ <!-- Error message! -->
+ <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.image.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.image.$touched)">
+   <div ng-message="required"><em class="error">image URL is required!</em></div>
+ </div> -->
+
+ <div class="a">Github:
+   <input class="a" type="text" name="gitHub" id="gitHub" ng-model="usersEdit.user.gitHub" placeholder="gitHub link" required>
+ </div>
+ <!-- Error message! -->
+ <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.gitHub.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.gitHub.$touched)">
+   <div ng-message="required"><em class="error">gitHub link is required!</em></div>
+ </div> -->
+ <!-- <div class="a">
+   <input class="language" type="text" name="language" id="language" ng-model="usersEdit.user." placeholder="language" required>
+ </div> -->
+
+ <div class="s" ng-repeat="details in usersEdit.user.skills track by $index">
+   Language: <input class="a" type="text" name="languages" id="languages" ng-model="details.language.lang" required>
+   Level: <input class="a" type="text" name="level" id="level" ng-model="details.level" required>
+</div>
+
+
+
+ <div class="a">
+   <button class="a">Update</button>
+ </div>
+</form>
+</div>
