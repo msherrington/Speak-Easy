@@ -10,4 +10,12 @@
   <p ng-repeat="details in message.user.skills track by $index">{{ details.language.lang }} - {{ details.level}}</p>
 <!-- </div> -->
 <!-- <p>{{ message.}}</p> -->
+<form name="contactForm" ng-submit="message.sendMail()">
+  Name: <input type="text" ng-model="message.contactName">
+  Sending to (hidden):<input type="text" name="to" ng-model="message.user.email"> 
+  Email: <input type="email" ng-model="message.contactEmail">
+  Message: <textarea ng-model="message.contactMsg" columns="1" required></textarea>
+  <button type="submit">Send</button>
+</form>
+<!-- ng-class="contactForm.$dirty && contactForm.$valid" -->
 </div>

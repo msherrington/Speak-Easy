@@ -13,16 +13,26 @@ function UsersIndexCtrl(User) {
   vm.all = User.query();
 }
 
-MessageCtrl.$inject = ['User', '$stateParams'];
-function MessageCtrl(User, $stateParams) {
+MessageCtrl.$inject = ['User', '$stateParams', '$http'];
+function MessageCtrl(User, $stateParams, $http) {
 
   const vm = this;
 
-  // vm.all = User.query();
   vm.user = User.get($stateParams);
- //  vm.message = {};
- // // vm.userForm.$setPristine();
- // // vm.userForm.$setUntouched();=
+
+  function sendMail(){
+
+    const data = ({
+      contactName: vm.contactName,
+      contactEmail: vm.contactEmail,
+      contactMsg: vm.contactMsg,
+      contactTo: vm.user.email
+    });
+
+    $http.post('/api/message', data); //not sure about full stop
+
+  }
+  vm.sendMail = sendMail;
 }
 
 UsersProfileCtrl.$inject = ['User', '$stateParams', '$state'];

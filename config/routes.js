@@ -11,6 +11,9 @@ router.route('/users/:id')
 .put(usersController.update)
 .delete(usersController.delete);
 
+router.route('/message')
+.post(usersController.sendMail);
+
 
 
 

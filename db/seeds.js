@@ -21,9 +21,9 @@ Skill
     console.log(`${skills.length} skills created!`);
     return User
       .create([{
-        username: 'Adrian',
-        email: 'adrian@ga.com',
-        password: 'adrian',
+        username: 'Guv',
+        email: 'gurvinder.singh.sandhu@gmail.com',
+        password: 'guv',
         skills: [{
           language: skills[0],
           level: 'Beginner'

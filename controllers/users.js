@@ -1,4 +1,13 @@
 const User = require('../models/user');
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'lingoswapshop@gmail.com',
+    pass: process.env.PROJECT3_GMAIL_PASSWORD
+  }
+});
 
 function indexRoute(req, res, next) {
   User
@@ -53,10 +62,26 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function sendMailRoute(req, res, next) {
+  const data = req.body;
+  transporter.sendMail({
+    from: 'Sex Swap',
+    to: data.contactTo,
+    subject: data.contactName + ' messaged you from SkillSexChange.',
+    replyTo: data.contactEmail,
+    text: data.contactMsg + '\n\nHit reply to respond directly to ' + data.contactName + ' (' + data.contactEmail + ').'
+  },(err, info) => {
+    if(err) return next(err);
+    console.log(info);
+    res.json(data);
+  });
+}
+
 module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  sendMail: sendMailRoute
 };
