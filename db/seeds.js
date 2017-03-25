@@ -24,6 +24,7 @@ Skill
         username: 'Guv',
         email: 'gurvinder.singh.sandhu@gmail.com',
         password: 'guv',
+        passwordConfirmation: 'guv',
         skills: [{
           language: skills[0],
           level: 'Beginner'
@@ -35,6 +36,7 @@ Skill
         username: 'Alice',
         email: 'alice@ga.com',
         password: 'alice',
+        passwordConfirmation: 'alice',
         skills: [{
           language: skills[1],
           level: 'Beginner'

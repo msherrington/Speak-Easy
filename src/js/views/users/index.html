@@ -1,10 +1,15 @@
 <h1>G-Unit Test</h1>
-<div ng-repeat="user in usersIndex.all">
-  <h1>Username: {{ user.username }}</h1>
-  <h1>User ID: {{ user.id }}</h1>
-  <h1>Email: {{ user.email }}</h1>
-  <h1>Skills Object: {{ user.skills }}</h1>
-  <h1>Primary Language: {{ user.skills[0].language.lang }}</h1>
-  <h1>Level: {{ user.skills[0].level }}</h1>
-  <h1>Language ID: {{ user.skills[0].id }}</h1>
+<div class="leftSideIndex">
+  <div ui-sref="usersProfile({ id: user.id })" class="indexCard" ng-repeat="user in usersIndex.all">
+    <h1>Username: {{ user.username }}</h1>
+    <p>User ID: {{ user.id }}</p>
+    <p>Email: {{ user.email }}</p>
+    <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
+    <p>Primary Language: {{ user.skills[0].language.lang }}</p>
+    <p>Level: {{ user.skills[0].level }}</p>
+    <p>Language ID: {{ user.skills[0].id }}</p>
+  </div>
 </div>
+<!-- <div class="RightSideIndex">
+<p>MAP GOES HERE</p>
+</div> -->
