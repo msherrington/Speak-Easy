@@ -9,16 +9,16 @@
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Home</a>
-      <a class="navbar-brand" href="">Users</a>
-      <a ui-sref="message">Message</a>
-      <!-- <a class="navbar-brand" href="#">WebSiteName</a>
-      <a class="navbar-brand" href="#">WebSiteName</a> -->
-
+      <li ><a class="navbar-brand" href="/">Home</a></li>
+      <li ng-if="main.isAuthenticated()"><a class="navbar-brand" href="">Users</a></li>
+      <li ng-if="main.isAuthenticated()"><a ui-sref="message">Message</a></li>
+      <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
+      <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
+      <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
     </div>
     <!-- <form class="navbar-form navbar-left">
       <div class="form-group">
