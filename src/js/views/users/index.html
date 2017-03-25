@@ -1,6 +1,6 @@
 <h1>G-Unit Test</h1>
 <div class="leftSideIndex">
-  <div ui-sref="usersProfile({ id: user.id })" class="indexCard" ng-repeat="user in usersIndex.all">
+  <div class="indexCard" ng-repeat="user in usersIndex.all">
     <h1>Username: {{ user.username }}</h1>
     <p>User ID: {{ user.id }}</p>
     <p>Email: {{ user.email }}</p>
@@ -8,6 +8,8 @@
     <p>Primary Language: {{ user.skills[0].language.lang }}</p>
     <p>Level: {{ user.skills[0].level }}</p>
     <p>Language ID: {{ user.skills[0].id }}</p>
+    <p>See more <a ui-sref="usersProfile({ id: user.id })">Here</a></p>
+    <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
   </div>
 </div>
 <!-- <div class="RightSideIndex">

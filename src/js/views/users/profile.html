@@ -7,5 +7,7 @@
 <p>Primary Language: {{ usersProfile.user.skills[0].language.lang }}</p>
 <p>Level: {{ usersProfile.user.skills[0].level }}</p>
 
+<p>Message {{ usersProfile.user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
+
 <p>Review: {{ usersProfile.user.reviews }}</p>
 <p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>
