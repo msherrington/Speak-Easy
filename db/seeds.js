@@ -23,9 +23,14 @@ Skill
       .create([{
         username: 'Guv',
         email: 'gurvinder.singh.sandhu@gmail.com',
+<<<<<<< HEAD
         profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
         password: 'Guv',
         passwordConfirmation: 'Guv',
+=======
+        password: 'guv',
+        passwordConfirmation: 'guv',
+>>>>>>> development
         skills: [{
           language: skills[0],
           level: 'Beginner'
@@ -34,6 +39,7 @@ Skill
           level: 'Beginner'
         }]
       }, {
+<<<<<<< HEAD
         username: 'Valerio',
         email: 'valerio@ga.com',
         profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
@@ -59,6 +65,12 @@ Skill
         profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
         password: 'Conor',
         passwordConfirmation: 'Conor',
+=======
+        username: 'Alice',
+        email: 'alice@ga.com',
+        password: 'alice',
+        passwordConfirmation: 'alice',
+>>>>>>> development
         skills: [{
           language: skills[1],
           level: 'Beginner'
