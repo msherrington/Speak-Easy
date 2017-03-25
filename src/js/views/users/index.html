@@ -2,12 +2,13 @@
 <div class="leftSideIndex">
   <div class="indexCard" ng-repeat="user in usersIndex.all">
     <h1>Username: {{ user.username }}</h1>
-    <p>User ID: {{ user.id }}</p>
-    <p>Email: {{ user.email }}</p>
+    <img class="indexProfilePic" src="{{ user.profilePic }}" alt="">
+    <!-- <p>User ID: {{ user.id }}</p> -->
+    <!-- <p>Email: {{ user.email }}</p> -->
     <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
     <p>Primary Language: {{ user.skills[0].language.lang }}</p>
     <p>Level: {{ user.skills[0].level }}</p>
-    <p>Language ID: {{ user.skills[0].id }}</p>
+    <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
     <p>See more <a ui-sref="usersProfile({ id: user.id })">Here</a></p>
     <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
   </div>

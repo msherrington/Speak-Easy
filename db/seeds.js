@@ -23,8 +23,9 @@ Skill
       .create([{
         username: 'Guv',
         email: 'gurvinder.singh.sandhu@gmail.com',
-        password: 'guv',
-        passwordConfirmation: 'guv',
+        profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
+        password: 'Guv',
+        passwordConfirmation: 'Guv',
         skills: [{
           language: skills[0],
           level: 'Beginner'
@@ -33,10 +34,31 @@ Skill
           level: 'Beginner'
         }]
       }, {
-        username: 'Alice',
-        email: 'alice@ga.com',
-        password: 'alice',
-        passwordConfirmation: 'alice',
+        username: 'Valerio',
+        email: 'valerio@ga.com',
+        profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
+        password: 'Valerio',
+        passwordConfirmation: 'Valerio',
+        skills: [{
+          language: skills[1],
+          level: 'Beginner'
+        }]
+      }, {
+        username: 'Mark',
+        email: 'mark@ga.com',
+        profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
+        password: 'Mark',
+        passwordConfirmation: 'Mark',
+        skills: [{
+          language: skills[1],
+          level: 'Beginner'
+        }]
+      }, {
+        username: 'Conor',
+        email: 'conor@ga.com',
+        profilePic: 'http://i.huffpost.com/gen/1688700/images/o-HAPPY-DOG-DAY-OF-HAPPINESS-facebook.jpg',
+        password: 'Conor',
+        passwordConfirmation: 'Conor',
         skills: [{
           language: skills[1],
           level: 'Beginner'
