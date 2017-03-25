@@ -11,8 +11,10 @@
     <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
     <p>See more <a ui-sref="usersProfile({ id: user.id })">Here</a></p>
     <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
+    <!-- lock down message button if it's your own profile -->
   </div>
 </div>
+<google-map center="{ lat: 51.55, lng: -0.07 }"></google-map>
 <!-- <div class="RightSideIndex">
 <p>MAP GOES HERE</p>
 </div> -->
