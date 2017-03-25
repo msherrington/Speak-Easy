@@ -1,0 +1,13 @@
+<h1>Message page</h1>
+
+<div ng-controller="MessageCtrl as message">
+<h2>Preview</h2>
+
+<p>{{ message.user.username }}</p>
+<!-- <p>{{ message.user.email}}</p> -->
+<p>{{ message.user.image }}</p>
+<!-- <div ng-repeat="details in message.user.skills track by $index"> -->
+  <p ng-repeat="details in message.user.skills track by $index">{{ details.language.lang }} - {{ details.level}}</p>
+<!-- </div> -->
+<!-- <p>{{ message.}}</p> -->
+</div>

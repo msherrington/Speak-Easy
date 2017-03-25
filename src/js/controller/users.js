@@ -1,7 +1,7 @@
 angular
   .module('skillsApp')
   .controller('UsersIndexCtrl', UsersIndexCtrl)
-  .controller('UsersNewCtrl', UsersNewCtrl)
+  .controller('MessageCtrl', MessageCtrl)
   .controller('UsersProfileCtrl', UsersProfileCtrl)
   .controller('UsersEditCtrl', UsersEditCtrl);
 
@@ -13,22 +13,16 @@ function UsersIndexCtrl(User) {
   vm.all = User.query();
 }
 
-UsersNewCtrl.$inject = ['User', '$state'];
-function UsersNewCtrl(User, $state) {
-  const vm = this;
-  vm.user = {};
+MessageCtrl.$inject = ['User', '$stateParams'];
+function MessageCtrl(User, $stateParams) {
 
-  function usersCreate() {
-    if (vm.userForm.$valid) {
-      User
-      .save(vm.user)
-      .$promise
-      .then(() => $state.go('usersIndex'));
-    }
-  }
-  vm.create = usersCreate;
- // vm.userForm.$setPristine();
- // vm.userForm.$setUntouched();=
+  const vm = this;
+
+  // vm.all = User.query();
+  vm.user = User.get($stateParams);
+ //  vm.message = {};
+ // // vm.userForm.$setPristine();
+ // // vm.userForm.$setUntouched();=
 }
 
 UsersProfileCtrl.$inject = ['User', '$stateParams', '$state'];

@@ -12,11 +12,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/users/index.html',
       controller: 'UsersIndexCtrl as usersIndex'
     })
-    // .state('usersNew', {
-    //   url: '/users/new',
-    //   templateUrl: 'js/views/users/new.html',
-    //   controller: 'UsersNewCtrl as usersNew'
-    // })
     .state('usersProfile', {
       url: '/users/:id',
       templateUrl: 'js/views/users/profile.html',
@@ -26,6 +21,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/users/:id/edit',
       templateUrl: 'js/views/users/edit.html',
       controller: 'UsersEditCtrl as usersEdit'
+    })
+    .state('message', {
+      url: '/users/:id/message',
+      templateUrl: 'js/views/users/message.html',
+      controller: 'MessageCtrl as message'
     });
 
     //update our routes for register and login
