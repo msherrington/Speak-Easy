@@ -26,19 +26,19 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/users/:id/message',
       templateUrl: 'js/views/users/message.html',
       controller: 'MessageCtrl as message'
-    });
+    })
 
-    //update our routes for register and login
-    // .state('register', {
-    //   url: '/register',
-    //   templateUrl: 'js/views/auth/register.html',
-    //   controller: 'RegisterCtrl as register'
-    // })
-    // .state('login', {
-    //   url: '/login',
-    //   templateUrl: 'js/views/auth/login.html',
-    //   controller: 'LoginCtrl as login'
-    // });
+    // update our routes for register and login
+    .state('register', {
+      url: '/register',
+      templateUrl: 'js/views/auth/register.html',
+      controller: 'RegisterCtrl as register'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'js/views/auth/login.html',
+      controller: 'LoginCtrl as login'
+    });
 
   $urlRouterProvider.otherwise('/');
 

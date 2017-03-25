@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.plugin(require('./lib/globalToJSON'));
 mongoose.Promise = require('bluebird');
+const customResponses = require('./lib/customResponses');
+const errorHandler = require('./lib/errorHandler');
 const {port, env, dbURI} = require('./config/environment');
 const routes = require('./config/routes');
 
@@ -17,8 +19,10 @@ if(env !== 'test') app.use(morgan('dev'));
 
 
 app.use(express.static(dest));
+app.use(customResponses);
 app.use(bodyParser.json());
 
+app.use(errorHandler);
 
 app.use('/api', routes);
 

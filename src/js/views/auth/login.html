@@ -1,0 +1,15 @@
+<h1>Login page</h1>
+
+<form name="login.loginForm" ng-submit="login.submit()">
+  <div class="a">
+    <input class="a" type="text" name="email" id="email" ng-model="login.credentials.email" ng-pattern="/@/" placeholder="email" required>
+  </div>
+
+    <div class="a">
+      <input class="a" type="password" name="password" id="password" ng-model="login.credentials.password" placeholder="password" required>
+    </div>
+
+    <div class="a">
+      <button class="a">Login</button>
+    </div>
+</form>
