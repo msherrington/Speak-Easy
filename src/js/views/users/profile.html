@@ -1,4 +1,5 @@
 <h1>Profile</h1>
+<img class="img-small" src="{{ usersProfile.user.profilePic }}">
 <p>Username: {{ usersProfile.user.username }}</p>
 <p>Email: {{ usersProfile.user.email }}</p>
 
@@ -7,7 +8,7 @@
 <p>Primary Language: {{ usersProfile.user.skills[0].language.lang }}</p>
 <p>Level: {{ usersProfile.user.skills[0].level }}</p>
 
-<p>Message {{ usersProfile.user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
+<p>Message {{ usersProfile.user.username }} <a ui-sref="message({ id: usersProfile.user.id })">Here</a></p>
 
 <p>Review: {{ usersProfile.user.reviews }}</p>
 <p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>
