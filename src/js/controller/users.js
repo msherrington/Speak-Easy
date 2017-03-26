@@ -14,7 +14,7 @@ function UsersIndexCtrl(User, $http) {
   function getUser(){
     $http.get('http://localhost:7000/api/users')
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       vm.all = response.data;
       // console.log(vm.all[0].lat);
       // console.log(vm.all[0].lng);
