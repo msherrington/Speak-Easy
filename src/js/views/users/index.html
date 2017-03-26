@@ -15,10 +15,10 @@
         <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
       </div>
     </div>
-  </div>
 
-  <div class="col-xs-6 RightSideIndex">
-    <p>MAP GOES HERE</p>
-  </div>
+    <div class="row col-xs-6 RightSideIndex">
+      <google-map center="{ lat: 0, lng: 0 }"></google-map>
+    </div>
 
+  </div>
 </div>

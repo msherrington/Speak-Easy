@@ -2,16 +2,19 @@
 
 .leftSideIndex{
   // background-color: red;
-  width: 52%;
+  width: 66%;
   display: inline-block;
 }
 
 .indexCard{
   border: 1px solid black;
-  width: 300px;
+  width: 250px;
   margin: 10px;
   text-align: center;
   display: inline-block;
+  img{
+    border: 1px solid black;
+  }
 }
 
 .indexProfilePic{
@@ -20,7 +23,7 @@
 }
 
 .RightSideIndex{
-  background-color: green;
+  // background-color: green;
   text-align: center;
   display: inline-block;
   position: absolute;
@@ -31,7 +34,8 @@
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
+    width: 30%;
+    margin: 1%;
 }
 
 .card:hover {
@@ -47,4 +51,20 @@
 .img-small {
   height: 25%;
   width: 25%
+}
+
+.google-map{
+  float: right;
+  height: 100vh;
+  width: 100%;
+  display: inline-block;
+  border: 2px solid red;
+}
+
+li{
+  display: inline;
+}
+
+.navbar-form{
+  float: right;
 }

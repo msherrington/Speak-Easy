@@ -8,24 +8,27 @@
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnsLUQxOxASt3bpCW5BDbuYp3oEEU7ysg">
+  </script>
 </head>
 <body ng-controller="MainCtrl as main">
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <li ><a class="navbar-brand" href="/">Home</a></li>
-      <li ng-if="main.isAuthenticated()"><a class="navbar-brand" href="">Users</a></li>
-      <!-- <li ng-if="main.isAuthenticated()"><a ui-sref="message">Message</a></li> -->
+      <ul class="nav navbar-nav">
+      <li><a class="navbar-brand" href="/">Home</a></li>
+      <li ng-if="main.isAuthenticated()"><a ui-sref="usersProfile">My Profile</a></li>
       <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
       <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
       <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
+    </ul>
     </div>
-    <!-- <form class="navbar-form navbar-left">
+    <form class="navbar-form navbar-right">
       <div class="form-group">
         <input type="text" class="search" ng-model="coffeeIndex.q" placeholder="Search...">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
-    </form> -->
+    </form>
   </div>
 </nav>
   <main ui-view>
