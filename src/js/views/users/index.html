@@ -1,18 +1,24 @@
 <h1>G-Unit Test</h1>
-<div class="leftSideIndex">
-  <div class="indexCard" ng-repeat="user in usersIndex.all">
-    <h1>Username: {{ user.username }}</h1>
-    <img class="indexProfilePic" src="{{ user.profilePic }}" alt="">
-    <!-- <p>User ID: {{ user.id }}</p> -->
-    <!-- <p>Email: {{ user.email }}</p> -->
-    <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
-    <p>Primary Language: {{ user.skills[0].language.lang }}</p>
-    <p>Level: {{ user.skills[0].level }}</p>
-    <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
-    <p>See more <a ui-sref="usersProfile({ id: user.id })">Here</a></p>
-    <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
+<div class="container">
+  <div class="row leftSideIndex">
+    <div class="" ng-repeat="user in usersIndex.all">
+      <div class="col-xs-6 card">
+        <h4>{{ user.username }}</h4>
+        <img class="img-small" src="{{ user.profilePic }}" alt="">
+        <!-- <p>User ID: {{ user.id }}</p> -->
+        <!-- <p>Email: {{ user.email }}</p> -->
+        <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
+        <p>Primary Language: {{ user.skills[0].language.lang }}</p>
+        <p>Level: {{ user.skills[0].level }}</p>
+        <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
+        <p>See more <a ui-sref="usersProfile({ id: user.id })">Here</a></p>
+        <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
+      </div>
+    </div>
   </div>
+
+  <div class="col-xs-6 RightSideIndex">
+    <p>MAP GOES HERE</p>
+  </div>
+
 </div>
-<!-- <div class="RightSideIndex">
-<p>MAP GOES HERE</p>
-</div> -->

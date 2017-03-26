@@ -3,6 +3,7 @@
 .leftSideIndex{
   // background-color: red;
   width: 52%;
+  display: inline-block;
 }
 
 .indexCard{
@@ -20,7 +21,30 @@
 
 .RightSideIndex{
   background-color: green;
-  width: 30%;
   text-align: center;
   display: inline-block;
+  position: absolute;
+  height: 100%;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.inside-container {
+    padding: 2px 16px;
+    // background-color: #D8D8D8;
+    // background-color: indigo;
+}
+
+.img-small {
+  height: 25%;
+  width: 25%
 }
