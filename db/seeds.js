@@ -26,8 +26,8 @@ Skill
         profilePic: '../images/guv.jpg',
         password: 'Guv',
         passwordConfirmation: 'Guv',
-        lat: '51.5074',
-        lng: '0.1278',
+        lat: 51.5074,
+        lng: 0.1278,
         skills: [{
           language: skills[0],
           level: 'Beginner'
@@ -41,8 +41,8 @@ Skill
         profilePic: '../images/ValerioRisuleo.jpg',
         password: 'Valerio',
         passwordConfirmation: 'Valerio',
-        lat: '52.5074',
-        lng: '0.1279',
+        lat: 52.5074,
+        lng: 0.1279,
         skills: [{
           language: skills[1],
           level: 'Beginner'
@@ -53,8 +53,8 @@ Skill
         profilePic: '../images/MarkSherrington.jpg',
         password: 'Mark',
         passwordConfirmation: 'Mark',
-        lat: '53.5074',
-        lng: '0.1277',
+        lat: 53.5074,
+        lng: 0.1277,
         skills: [{
           language: skills[1],
           level: 'Beginner'
@@ -65,8 +65,8 @@ Skill
         profilePic: '../images/ConorHeena.jpg',
         password: 'Conor',
         passwordConfirmation: 'Conor',
-        lat: '50.5074',
-        lng: '0.1277',
+        lat: 50.5074,
+        lng: 0.1277,
         skills: [{
           language: skills[1],
           level: 'Beginner'
@@ -77,8 +77,8 @@ Skill
         profilePic: '../images/AliceMarshall.jpg',
         password: 'alice',
         passwordConfirmation: 'alice',
-        lat: '49.5074',
-        lng: '0.1278',
+        lat: 49.5074,
+        lng: 0.1278,
         skills: [{
           language: skills[1],
           level: 'Beginner'

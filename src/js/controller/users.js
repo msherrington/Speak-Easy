@@ -23,10 +23,10 @@ function UsersIndexCtrl(User, $http) {
       const users = vm.all;
       // console.log(users);
 
-      for (var i=0; i<users.length; i++) {
-        console.log(users[i].lat);
-        console.log(users[i].lng);
-      }
+      // for (var i=0; i<users.length; i++) {
+      //   console.log(users[i].lat);
+      //   console.log(users[i].lng);
+      // }
 
     });
   }

@@ -1,10 +1,17 @@
-/* global google: true */
+/* global google: true, */
 
 angular.module('skillsApp')
   .directive('googleMap', googleMap);
 
+
+
 googleMap.$inject = ['$window'];
 function googleMap($window){
+
+  let userLat = 0;
+  let userLng = 0;
+  let latLng = { lat: userLat, lng: userLng };
+
   const directive = {
     restrict: 'E',
     replace: true,
@@ -89,17 +96,24 @@ function googleMap($window){
 
       addMarkers();
 
-      function addMarkers() {
-        users.forEach((user) => {
-          addMarker(user);
-        });
+
+      function addMarkers(users) {
+        for (var i=0; i<users.length; i++) {
+          console.log(users[i].lat);
+          console.log(users[i].lng);
+          userLat = parseFloat(users[i].lat);
+          userLng = parseFloat(users[i].lng);
+          addMarker(userLat, userLng);
+        }
       }
 
-      function addMarker(user) {
+      function addMarker(userLat, userLng) {
         // const latLng = latLng;
         var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
-        const latLng = { lat: user.lat, lng: user.lng};
+        latLng = { lat: userLat, lng: userLng };
         console.log(latLng);
+        console.log(latLng.userlat);
+        console.log(latLng.userlng);
         const marker = new google.maps.Marker({
           position: latLng,
           map,
