@@ -11,3 +11,15 @@
 
 <p>Review: {{ usersProfile.user.reviews }}</p>
 <p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>
+
+<div class="reviews">
+  <h2>Reviews</h2>
+  <ul class="reviews__created">
+    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<button class="button" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">Delete</button></li>
+  </ul>
+  <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
+    <label>Add review</label>
+    <textarea ng-model="usersProfile.newReview.content"></textarea>
+    <button class="button button--full">Review</button>
+  </form>
+</div>

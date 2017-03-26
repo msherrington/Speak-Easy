@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const reviewSchema = new mongoose.Schema({
-  content: { type: String, required: true },
-  addedBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  content: { type: String },
+  addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true
 });

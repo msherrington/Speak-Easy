@@ -16,18 +16,7 @@ function UsersIndexCtrl(User, $http) {
     .then((response) => {
       console.log(response);
       vm.all = response.data;
-      // console.log(vm.all[0].lat);
-      // console.log(vm.all[0].lng);
       vm.u = vm.all;
-
-      const users = vm.all;
-      // console.log(users);
-
-      // for (var i=0; i<users.length; i++) {
-      //   console.log(users[i].lat);
-      //   console.log(users[i].lng);
-      // }
-
     });
   }
 
@@ -58,11 +47,14 @@ function MessageCtrl(User, $stateParams, $http) {
   vm.sendMail = sendMail;
 }
 
-UsersProfileCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersProfileCtrl(User, $stateParams, $state) {
+UsersProfileCtrl.$inject = ['User', 'UserReview', '$stateParams', '$state'];
+function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   const vm = this;
+  vm.newReview = {};
 
   vm.user = User.get($stateParams);
+
+
 
   function usersDelete() {
     vm.user
@@ -71,7 +63,57 @@ function UsersProfileCtrl(User, $stateParams, $state) {
   }
 
   vm.delete = usersDelete;
+
+  function addReview(){
+    UserReview
+      .save({ userId: vm.user.id }, vm.newReview)
+      .$promise
+      .then((review) => {
+        vm .user.reviews.push(review);
+        vm.newReview = {};
+      });
+  }
+
+  vm.addReview = addReview;
+
+  function deleteReview(review){
+    UserReview
+      .delete({ userId: vm.user.id, id: review.id })
+      .$promise
+      .then(() => {
+        const index = vm.user.reviews.indexOf(review);
+        vm.user.reviews.splice(index, 1);
+      });
+  }
+
+  vm.deleteReview = deleteReview;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
 function UsersEditCtrl(User, $stateParams, $state) {
