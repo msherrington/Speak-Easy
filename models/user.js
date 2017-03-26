@@ -17,6 +17,8 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, unique: true },
   profilePic: {type: String},
   password: {type: String, required: true },
+  lat: {type: Number },
+  lng: {type: Number },
   skills: [{
     language: { type: mongoose.Schema.ObjectId, ref: 'Skill' },
     level: { type: String, enum: ['Beginner', 'Intermediate', 'Advanced'] }

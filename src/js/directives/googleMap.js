@@ -1,3 +1,5 @@
+/* global google: true */
+
 angular.module('skillsApp')
   .directive('googleMap', googleMap);
 
@@ -27,6 +29,10 @@ function googleMap($window){
       });
       console.log(element);
 
+      const users = '???';
+      console.log(users);
+
+
       const slider = document.getElementById('slider');
       const sliderDiv = document.getElementById('sliderAmount');
       // let infowindow = null;
@@ -40,7 +46,8 @@ function googleMap($window){
         radius: 1000
       });
 
-      console.log(circle.radius);
+      console.log(circle.radius + 'meters');
+      console.log(circle.radius * 0.000621371 + 'miles');
 
     //map circle radius function
       slider.onchange = function() {
@@ -48,8 +55,9 @@ function googleMap($window){
         sliderDiv.innerHTML = this.value;
         circle.radius = sliderDiv.innerHTML;
         //Store val of slider
-        circle.setRadius(parseFloat(circle.radius));
-        console.log(circle.radius);
+        circle.setRadius(parseFloat(circle.radius * 0.000621371));
+        console.log(circle.radius + 'miles');
+        // console.log(circle.radius * 0.000621371 + 'miles');
       };
 
 
@@ -79,7 +87,29 @@ function googleMap($window){
         currentLocationWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
       }
 
+      addMarkers();
 
+      function addMarkers() {
+        users.forEach((user) => {
+          addMarker(user);
+        });
+      }
+
+      function addMarker(user) {
+        // const latLng = latLng;
+        var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
+        const latLng = { lat: user.lat, lng: user.lng};
+        console.log(latLng);
+        const marker = new google.maps.Marker({
+          position: latLng,
+          map,
+          icon: image
+        });
+
+        // marker.addListener('click', () => {
+        //   markerClick(marker, user);
+        // });
+      }
     }
   };
 

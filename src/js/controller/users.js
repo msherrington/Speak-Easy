@@ -6,9 +6,32 @@ angular
   .controller('UsersEditCtrl', UsersEditCtrl);
 
 
-UsersIndexCtrl.$inject = ['User'];
-function UsersIndexCtrl(User) {
+UsersIndexCtrl.$inject = ['User', '$http'];
+function UsersIndexCtrl(User, $http) {
   const vm = this;
+
+  // get user data from our API to use in Google Markers
+  function getUser(){
+    $http.get('http://localhost:7000/api/users')
+    .then((response) => {
+      console.log(response);
+      vm.all = response.data;
+      // console.log(vm.all[0].lat);
+      // console.log(vm.all[0].lng);
+      vm.u = vm.all;
+
+      const users = vm.all;
+      // console.log(users);
+
+      for (var i=0; i<users.length; i++) {
+        console.log(users[i].lat);
+        console.log(users[i].lng);
+      }
+
+    });
+  }
+
+  getUser();
 
   vm.all = User.query();
 }
