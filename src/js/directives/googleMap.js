@@ -27,6 +27,31 @@ function googleMap($window){
       });
       console.log(element);
 
+      const slider = document.getElementById('slider');
+      const sliderDiv = document.getElementById('sliderAmount');
+      // let infowindow = null;
+      const circle = new google.maps.Circle({
+        fillColor: '#3399FF',
+        fillOpacity: 0.2,
+        strokeColor: '#0099FF',
+        strokeOpacity: 0.4,
+        map: map,
+        center: $scope.center,
+        radius: 1000
+      });
+
+      console.log(circle.radius);
+
+    //map circle radius function
+      slider.onchange = function() {
+        console.log('Changed!');
+        sliderDiv.innerHTML = this.value;
+        circle.radius = sliderDiv.innerHTML;
+        //Store val of slider
+        circle.setRadius(parseFloat(circle.radius));
+        console.log(circle.radius);
+      };
+
 
       //geolocation..
       if (navigator.geolocation) {
@@ -40,6 +65,7 @@ function googleMap($window){
           // currentLocationWindow.setContent('Current Location');
           marker.setPosition(pos);
           map.setCenter(pos);
+          circle.setCenter(pos);
         }, function () {
           handleLocationError(true,  googleMap.getCenter());
         });
