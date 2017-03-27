@@ -6,7 +6,7 @@
 <!-- <p>{{ usersProfile.user.skills[0] }}</p> -->
 
 <p>Primary Language: {{ usersProfile.user.skills[0].language.lang }}</p>
-  <!-- {{ usersProfile.user.skills }} -->
+  {{ usersProfile.user.skills }}
 <h2>Languages:</h2>
 <div ng-repeat="details in usersProfile.user.skills track by $index">
   <p>{{ details.language.lang}} ({{ details.level }})</p>

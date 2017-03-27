@@ -21,8 +21,8 @@ const userSchema = new mongoose.Schema({
   lat: {type: Number },
   lng: {type: Number },
   skills: [{
-    language: { type: mongoose.Schema.ObjectId, ref: 'Skill' },
-    level: { type: String, enum: ['Elementary Working Proficiency', 'Limited Working Proficiency', 'Professional Working Proficiency', 'Full Professional Proficiency', 'Native or Bilingual Proficiency'], trim: true }
+    language: { type: mongoose.Schema.ObjectId, ref: 'Skill', trim: true },
+    level: { type: String, enum: ['Elementary Working Proficiency', 'Limited Working Proficiency', 'Professional Working Proficiency', 'Full Professional Proficiency', 'Native or Bilingual Proficiency']}
   }],
   reviews: [ reviewSchema ]
 });
@@ -34,10 +34,8 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(this.isNew){
-    if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
-      this.invalidate('passwordConfirmation', 'does not match');
-    }
+  if(this.isModified('password') && this._passwordConfirmation !== this.password) {
+    this.invalidate('passwordConfirmation', 'does not match');
   }
   next();
 });

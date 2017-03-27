@@ -5,12 +5,12 @@ const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/users')
-.all(secureRoute)
+// .all(secureRoute)
 .get(usersController.index)
 .post(usersController.create);
 
 router.route('/users/:id')
-.all(secureRoute)
+// .all(secureRoute)
 .get(usersController.show)
 .put(usersController.update)
 .delete(usersController.delete);
@@ -27,7 +27,7 @@ router.route('/users/:id/reviews/:reviewId')
 
 // skills
 router.route('/skills')
-.all(secureRoute)
+// .all(secureRoute)
 .get(skillsController.index);
 
 //New routes

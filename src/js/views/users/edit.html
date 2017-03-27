@@ -54,10 +54,27 @@
      <input type="text" name="level3" id="level3" ng-model="usersEdit.user.skills[2].level" placeholder="Skill level">
    </div> -->
 
-   <!-- <div ng-model="usersEdit.user.skills" ng-repeat="details in usersEdit.user.skills track by $index">
-     Language: <input type="text" name="languages" id="languages" ng-model="details.language.lang" required>
-     Level: <input type="text" name="level" id="level" ng-model="details.level" required>
-   </div> -->
+    <h3>Primary Language</h3>
+      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[0].language"></select>
+
+      <select ng-model="usersEdit.user.skills[0].level">
+        <option>Elementary Working Proficiency</option>
+        <option>Limited Working Proficiency</option>
+        <option>Professional Working Proficiency</option>
+        <option>Full Professional Proficiency</option>
+        <option>Native or Bilingual Proficiency</option>
+      </select>
+
+    <h3>Secondary language</h3>
+      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[1].language"></select>
+
+      <select ng-model="usersEdit.user.skills[1].level">
+        <option>Elementary Working Proficiency</option>
+        <option>Limited Working Proficiency</option>
+        <option>Professional Working Proficiency</option>
+        <option>Full Professional Proficiency</option>
+        <option>Native or Bilingual Proficiency</option>
+      </select>
 
    <div>
      <button>Update</button>

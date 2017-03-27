@@ -11,7 +11,7 @@ function googleMap($window, $http){
   function getUser(){
     $http.get('http://localhost:7000/api/users')
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       vm.all = response.data;
       // console.log(vm.all[0].lat);
       // console.log(vm.all[0].lng);
@@ -122,10 +122,10 @@ function googleMap($window, $http){
 
 
       function addMarkers() {
-        console.log('yo1');
+        // console.log('yo1');
 
         function getUserLatLng() {
-          console.log('yo2');
+          // console.log('yo2');
           $http.get('http://localhost:7000/api/users')
           .then((response) => {
             vm.all = response.data;
@@ -144,9 +144,9 @@ function googleMap($window, $http){
             // const users = 10;
             // console.log(10);
             for (var i=0; i<users.length; i++) {
-              console.log(`User - ${i}`);
-              console.log(users[i].lat);
-              console.log(users[i].lng);
+              // console.log(`User - ${i}`);
+              // console.log(users[i].lat);
+              // console.log(users[i].lng);
               userLat = parseFloat(users[i].lat);
               userLng = parseFloat(users[i].lng);
               addMarker(userLat, userLng);
