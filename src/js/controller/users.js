@@ -27,7 +27,7 @@ function UsersIndexCtrl(User, filterFilter, $http, $scope) {
   function getUser(){
     $http.get('http://localhost:7000/api/users')
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       vm.all = response.data;
       vm.u = vm.all;
     });

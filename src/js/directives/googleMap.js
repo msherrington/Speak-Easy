@@ -3,8 +3,6 @@
 angular.module('skillsApp')
   .directive('googleMap', googleMap);
 
-
-
 googleMap.$inject = ['$window', '$http'];
 function googleMap($window, $http){
   const vm = this;
@@ -28,6 +26,9 @@ function googleMap($window, $http){
       // }
     });
   }
+// googleMap.$inject = ['$window', '$http'];
+// function googleMap($window, $http){
+//   const vm = this;
 
   let userLat = 0;
   let userLng = 0;
@@ -55,10 +56,10 @@ function googleMap($window, $http){
         position: $scope.center,
         map
       });
-      console.log(element);
+      // console.log(element);
 
-      const users = '???';
-      console.log(users);
+      // const users = '???';
+      // console.log(users);
 
 
       const slider = document.getElementById('slider');
@@ -74,17 +75,19 @@ function googleMap($window, $http){
         radius: 1000
       });
 
-      console.log(circle.radius + 'meters');
+      // console.log(circle.radius + 'meters');
+      // console.log(circle.radius + 'meters');
       // console.log(circle.radius * 0.000621371 + 'miles');
 
     //map circle radius function
       slider.onchange = function() {
-        console.log('Changed!');
+        // console.log('Changed!');
         sliderDiv.innerHTML = this.value;
         circle.radius = sliderDiv.innerHTML;
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
         console.log(circle.radius + 'meters');
+        // console.log(circle.radius + 'miles');
         // console.log(circle.radius * 0.000621371 + 'miles');
       };
 
@@ -118,23 +121,55 @@ function googleMap($window, $http){
       addMarkers();
 
 
-      function addMarkers(users) {
-        for (var i=0; i<users.length; i++) {
-          console.log(users[i].lat);
-          console.log(users[i].lng);
-          userLat = parseFloat(users[i].lat);
-          userLng = parseFloat(users[i].lng);
-          addMarker(userLat, userLng);
+      function addMarkers() {
+        console.log('yo1');
+
+        function getUserLatLng() {
+          console.log('yo2');
+          $http.get('http://localhost:7000/api/users')
+          .then((response) => {
+            vm.all = response.data;
+            // console.log(users[0].lat);
+
+            const users = vm.all;
+            // console.log(users);
+            // console.log(users[1].lat);
+
+            // for (var i=0; i<users.length; i++) {
+            //   console.log(users[i].lat);
+            //   console.log(users[i].lng);
+            // }
+
+            // console.log(users.lng);
+            // const users = 10;
+            // console.log(10);
+            for (var i=0; i<users.length; i++) {
+              console.log(`User - ${i}`);
+              console.log(users[i].lat);
+              console.log(users[i].lng);
+              userLat = parseFloat(users[i].lat);
+              userLng = parseFloat(users[i].lng);
+              addMarker(userLat, userLng);
+            }
+
+
+          });
         }
+
+
+
+
+
+        getUserLatLng();
       }
 
       function addMarker(userLat, userLng) {
         // const latLng = latLng;
         var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
         latLng = { lat: userLat, lng: userLng };
-        console.log(latLng);
-        console.log(latLng.userlat);
-        console.log(latLng.userlng);
+        // console.log(latLng);
+        // console.log(latLng.userlat);
+        // console.log(latLng.userlng);
         const marker = new google.maps.Marker({
           position: latLng,
           map,
@@ -145,6 +180,13 @@ function googleMap($window, $http){
         //   markerClick(marker, user);
         // });
       }
+
+
+
+      // getUserLatLng();
+
+
+
     }
   };
 
