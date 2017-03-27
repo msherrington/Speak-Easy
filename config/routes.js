@@ -18,16 +18,14 @@ router.route('/users/:id')
 router.route('/message')
 .post(usersController.sendMail);
 
-
 //Reviews routes
 router.route('/users/:id/reviews')
-  .post(secureRoute, usersController.addReview);
+  .post(usersController.addReview);
 
 router.route('/users/:id/reviews/:reviewId')
-  .delete(secureRoute, usersController.deleteReview);
+  .delete(usersController.deleteReview);
 
 // skills
-
 router.route('/skills')
 .all(secureRoute)
 .get(skillsController.index);

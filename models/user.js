@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: {type: String, required: true, unique: true },
   profilePic: {type: String},
-  password: {type: String, required: true },
+  password: {type: String },
   lat: {type: Number },
   lng: {type: Number },
   skills: [{
@@ -33,8 +33,11 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
-    this.invalidate('passwordConfirmation', 'does not match');
+  if(this.isNew){
+    if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
+
+      this.invalidate('passwordConfirmation', 'does not match');
+    }
   }
   next();
 });

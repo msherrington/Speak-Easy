@@ -1,7 +1,8 @@
 <h1>G-Unit Test</h1>
 <div class="container">
+  <!-- <div class="abc"> -->
   <div class="row leftSideIndex">
-    <div class="" ng-repeat="user in usersIndex.all">
+    <div class="" ng-repeat="user in usersIndex.all | filter: main.q">
       <div class="col-xs-6 card">
         <h4>{{ user.username }}</h4>
         <img class="img-small" src="{{ user.profilePic }}" alt="">
