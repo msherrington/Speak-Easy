@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const reviewSchema = new mongoose.Schema({
   content: { type: String },
-  addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true
 });
