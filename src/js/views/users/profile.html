@@ -6,12 +6,20 @@
 <!-- <p>{{ usersProfile.user.skills[0] }}</p> -->
 
 <p>Primary Language: {{ usersProfile.user.skills[0].language.lang }}</p>
+  <!-- {{ usersProfile.user.skills }} -->
+<ul>
+  <li ng-repeat="user in usersProfile.user">Languages: {{  }}</li>
+</ul>
+
 <p>Level: {{ usersProfile.user.skills[0].level }}</p>
 
-<p>Message {{ usersProfile.user.username }} <a ui-sref="message({ id: usersProfile.user.id })">Here</a></p>
+<!-- <p>Message {{ usersProfile.user.username }} <a ui-sref="message({ id: usersProfile.user.id })">Here</a></p>
 
 <p>Review: {{ usersProfile.user.reviews }}</p>
-<p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>
+<p>Review by: {{ usersProfile.user.reviews.addedBy }}</p> -->
+
+
+<p>{{ usersProfile.food_pairing[0]}}</p>
 
 <div class="reviews">
   <h2>Reviews</h2>

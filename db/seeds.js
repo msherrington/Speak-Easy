@@ -13,9 +13,77 @@ User.collection.drop();
 
 Skill
   .create([{
+// 0
     lang: 'English'
   }, {
+// 1
     lang: 'French'
+  }, {
+// 2
+    lang: 'Chinese'
+  }, {
+// 3
+    lang: 'Spanish'
+  }, {
+// 4
+    lang: 'Hindi'
+  }, {
+// 5
+    lang: 'Arabic'
+  }, {
+// 6
+    lang: 'Portuguese'
+  }, {
+// 7
+    lang: 'Bengali'
+  }, {
+// 8
+    lang: 'Russian'
+  }, {
+// 9
+    lang: 'Japanese'
+  }, {
+// 10
+    lang: 'Punjabi'
+  }, {
+// 11
+    lang: 'German'
+  }, {
+// 12
+    lang: 'Swedish'
+  }, {
+// 13
+    lang: 'Italian'
+  }, {
+// 14
+    lang: 'Polish'
+  }, {
+// 15
+    lang: 'Java'
+  }, {
+// 16
+    lang: 'JavaScript'
+  }, {
+// 17
+    lang: 'PHP'
+  }, {
+// 18
+    lang: 'Ruby'
+  }, {
+// 19
+    lang: 'HTML'
+  }, {
+// 20
+    lang: 'Python'
+  }, {
+// 21
+    lang: 'CSS'
+  }, {
+// 22
+    lang: 'SQL'
+  }, {
+// 23
+    lang: 'C++'
   }])
   .then((skills) => {
     console.log(`${skills.length} skills created!`);
@@ -31,10 +99,10 @@ Skill
         lng: 0.1278,
         skills: [{
           language: skills[0],
-          level: 'Beginner'
+          level: 'Native or Bilingual Proficiency'
         },{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Professional Working Proficiency'
         }]
       }, {
         username: 'Valerio',
@@ -47,7 +115,37 @@ Skill
         lng: 0.1279,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[13],
+          level: 'Native or Bilingual Proficiency '
+        }, {
+          language: skills[0],
+          level: 'Professional Working Proficiency '
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'Mark',
@@ -60,7 +158,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'Conor',
@@ -73,7 +183,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'adrian',
@@ -86,7 +208,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'arrianne',
@@ -99,7 +233,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'ben',
@@ -112,7 +258,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'buki',
@@ -125,7 +283,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'fabricio',
@@ -138,7 +308,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'giacomo',
@@ -151,7 +333,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'gianmmaria',
@@ -164,7 +358,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'hannah',
@@ -177,7 +383,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'huw',
@@ -190,7 +408,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'jake',
@@ -203,7 +433,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'kristian',
@@ -216,7 +458,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'mark',
@@ -229,7 +483,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'muge',
@@ -242,7 +508,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'olivia',
@@ -255,7 +533,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'omar',
@@ -268,7 +558,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'raiden',
@@ -281,7 +583,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'sarah',
@@ -294,7 +608,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'tom',
@@ -307,7 +633,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'roman',
@@ -320,7 +658,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'sam',
@@ -333,7 +683,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'sam',
@@ -346,7 +708,19 @@ Skill
         lng: 0.1277,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }, {
         username: 'Alice',
@@ -359,7 +733,19 @@ Skill
         lng: 0.1278,
         skills: [{
           language: skills[1],
-          level: 'Beginner'
+          level: 'Elementary Working Proficiency'
+        }, {
+          language: skills[16],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[21],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[19],
+          level: 'Limited Working Proficiency '
+        }, {
+          language: skills[18],
+          level: 'Limited Working Proficiency '
         }]
       }]);
   })
