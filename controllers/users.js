@@ -28,6 +28,8 @@ function showRoute(req, res, next) {
   User
     .findById(req.params.id)
     .populate('skills.language')
+    .populate('createdBy reviews.createdBy')
+    .exec()
     .then((user) => {
       if(!user) return res.notFound();
       res.json(user);
@@ -77,11 +79,48 @@ function sendMailRoute(req, res, next) {
   });
 }
 
+function addReviewRoute(req, res, next){
+  req.body.createdBy = req.user;
+
+  User
+    .findById(req.params.id)
+    .exec()
+    .then((user) => {
+      if(!user) return res.notFound();
+
+      const review = user.reviews.create(req.body);
+      user.reviews.push(review);
+
+      return user.save()
+        .then(() => res.json(review));
+    })
+    .catch(next);
+}
+
+function deleteReviewRoute(req, res, next){
+  User
+    .findById(req.params.id)
+    .exec()
+    .then((user) => {
+      if(!user) return res.notFound();
+
+      const review = user.reviews.id(req.params.reviewId);
+      review.remove();
+
+      return user.save();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
+
 module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
-  sendMail: sendMailRoute
+  sendMail: sendMailRoute,
+  addReview: addReviewRoute,
+  deleteReview: deleteReviewRoute
 };

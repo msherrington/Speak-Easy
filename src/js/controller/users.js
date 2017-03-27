@@ -6,9 +6,22 @@ angular
   .controller('UsersEditCtrl', UsersEditCtrl);
 
 
-UsersIndexCtrl.$inject = ['User', '$http'];
-function UsersIndexCtrl(User, $http) {
+UsersIndexCtrl.$inject = ['User', 'filterFilter', '$http', '$scope'];
+function UsersIndexCtrl(User, filterFilter, $http, $scope) {
   const vm = this;
+
+  function filterUsers() {
+    const params = { name: vm.q };
+      // if(vm.useStrength) params.strength = vm.strength;
+      // if(vm.useRoast) params.roast = vm.roast;
+
+    vm.filtered = filterFilter(vm.all, params);
+      // vm.filtered = orderByFilter(vm.filtered, vm.sort);
+  }
+  $scope.$watchGroup([
+    () => vm.q
+  ], filterUsers);
+
 
   // get user data from our API to use in Google Markers
   function getUser(){
@@ -16,18 +29,7 @@ function UsersIndexCtrl(User, $http) {
     .then((response) => {
       // console.log(response);
       vm.all = response.data;
-      // console.log(vm.all[0].lat);
-      // console.log(vm.all[0].lng);
       vm.u = vm.all;
-
-      const users = vm.all;
-      // console.log(users);
-
-      // for (var i=0; i<users.length; i++) {
-      //   console.log(users[i].lat);
-      //   console.log(users[i].lng);
-      // }
-
     });
   }
 
@@ -58,11 +60,14 @@ function MessageCtrl(User, $stateParams, $http) {
   vm.sendMail = sendMail;
 }
 
-UsersProfileCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersProfileCtrl(User, $stateParams, $state) {
+UsersProfileCtrl.$inject = ['User', 'UserReview', '$stateParams', '$state'];
+function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   const vm = this;
+  vm.newReview = {};
 
   vm.user = User.get($stateParams);
+
+
 
   function usersDelete() {
     vm.user
@@ -71,7 +76,57 @@ function UsersProfileCtrl(User, $stateParams, $state) {
   }
 
   vm.delete = usersDelete;
+
+  function addReview(){
+    UserReview
+      .save({ userId: vm.user.id }, vm.newReview)
+      .$promise
+      .then((review) => {
+        vm .user.reviews.push(review);
+        vm.newReview = {};
+      });
+  }
+
+  vm.addReview = addReview;
+
+  function deleteReview(review){
+    UserReview
+      .delete({ userId: vm.user.id, id: review.id })
+      .$promise
+      .then(() => {
+        const index = vm.user.reviews.indexOf(review);
+        vm.user.reviews.splice(index, 1);
+      });
+  }
+
+  vm.deleteReview = deleteReview;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
 function UsersEditCtrl(User, $stateParams, $state) {

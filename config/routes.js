@@ -10,7 +10,7 @@ router.route('/users')
 .post(usersController.create);
 
 router.route('/users/:id')
-.all(secureRoute)
+// .all(secureRoute)
 .get(usersController.show)
 .put(usersController.update)
 .delete(usersController.delete);
@@ -18,9 +18,14 @@ router.route('/users/:id')
 router.route('/message')
 .post(usersController.sendMail);
 
+//Reviews routes
+router.route('/users/:id/reviews')
+  .post(usersController.addReview);
+
+router.route('/users/:id/reviews/:reviewId')
+  .delete(usersController.deleteReview);
 
 // skills
-
 router.route('/skills')
 .all(secureRoute)
 .get(skillsController.index);
