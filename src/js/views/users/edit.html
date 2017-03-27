@@ -36,23 +36,23 @@
      <div ng-message="required"><em class="error">Location is required</em></div>
    </div> -->
 
-   <div>Primary skill (required):
+   <!-- <div>Primary skill (required):
      <input type="text" name="language1" id="language1" ng-model="usersEdit.user.skills[0].language.lang" placeholder="Skill name..." required>
      <input type="text" name="level1" id="level1" ng-model="usersEdit.user.skills[0].level" placeholder="Skill level..." required>
-   </div>
+   </div> -->
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.skills[0].language.lang.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.skills[0].language.lang.$touched)">
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.skills[0].language.lang.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.skills[0].language.lang.$touched)">
      <div ng-message="required"><em class="error">Primary skill and level are required</em></div>
-   </div>
+   </div> -->
 
-   <div>Any other skills:
+   <!-- <div>Any other skills:
      <input type="text" name="language2" id="language2" ng-model="usersEdit.user.skills[1].language.lang" placeholder="Skill 2">
      <input type="text" name="level2" id="level2" ng-model="usersEdit.user.skills[1].level" placeholder="Skill level">
    </div>
    <div>
      <input type="text" name="language3" id="language3" ng-model="usersEdit.user.skills[2].language.lang" placeholder="Skill 3">
      <input type="text" name="level3" id="level3" ng-model="usersEdit.user.skills[2].level" placeholder="Skill level">
-   </div>
+   </div> -->
 
    <!-- <div ng-model="usersEdit.user.skills" ng-repeat="details in usersEdit.user.skills track by $index">
      Language: <input type="text" name="languages" id="languages" ng-model="details.language.lang" required>

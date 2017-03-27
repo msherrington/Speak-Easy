@@ -24,6 +24,18 @@ function createRoute(req, res, next) {
     .catch(next);
 }
 
+// function profileRoute(req, res, next) {
+//   User
+//     .findById(req.user.id)
+//     .populate('reviews, createdBy')
+//     .exec()
+//     .then((user) => {
+//       if(!user) return res.notFound();
+//       res.json(user);
+//     })
+//     .catch(next);
+// }
+
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
@@ -117,6 +129,7 @@ function deleteReviewRoute(req, res, next){
 module.exports = {
   index: indexRoute,
   create: createRoute,
+  // profile: profileRoute,
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
