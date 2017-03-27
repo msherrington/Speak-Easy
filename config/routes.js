@@ -5,12 +5,12 @@ const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/users')
-// .all(secureRoute)
+.all(secureRoute)
 .get(usersController.index)
 .post(usersController.create);
 
 router.route('/users/:id')
-// .all(secureRoute)
+.all(secureRoute)
 .get(usersController.show)
 .put(usersController.update)
 .delete(usersController.delete);
@@ -20,10 +20,10 @@ router.route('/message')
 
 //Reviews routes
 router.route('/users/:id/reviews')
-  .post(usersController.addReview);
+  .post(secureRoute, usersController.addReview);
 
 router.route('/users/:id/reviews/:reviewId')
-  .delete(usersController.deleteReview);
+  .delete(secureRoute, usersController.deleteReview);
 
 // skills
 router.route('/skills')

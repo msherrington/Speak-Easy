@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const reviewSchema = new mongoose.Schema({
   content: { type: String },
-  addedBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true
 });
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   lng: {type: Number },
   skills: [{
     language: { type: mongoose.Schema.ObjectId, ref: 'Skill' },
-    level: { type: String, enum: ['Beginner', 'Intermediate', 'Advanced'] }
+    level: { type: String, enum: ['Elementary Working Proficiency', 'Limited Working Proficiency', 'Professional Working Proficiency', 'Full Professional Proficiency', 'Native or Bilingual Proficiency'], trim: true }
   }],
   reviews: [ reviewSchema ]
 });
