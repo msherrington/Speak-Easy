@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 
-  <form name="register.registerForm" ng-submit="register.submit()">
+  <form name="register.registerForm" ng-submit="register.submit()" novalidate>
     <div>
-      <input type="text" name="username" id="username" ng-model="register.user.username" required placeholder="Username">
+      <input type="text" name="username" id="username" ng-model="register.user.username" placeholder="Username" required minlength="2">
+    </div>
+    <!-- Error message! -->
+    <div class="errorDiv" ng-messages="register.registerForm.username.$error" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched)">
+      <div ng-message="required"><em class="error">Enter a username</em></div>
+      <div ng-message="minlength"><em class="error">Username not long enough!</em></div>
     </div>
 
-
     <div>
-      <input type="email" required name="email" id="email" ng-model="register.user.email" placeholder="email">
+      <input type="email" name="email" id="email" ng-model="register.user.email" placeholder="Email" ng-pattern="/@/" required>
+    </div>
+    <!-- Error message! -->
+    <div class="errorDiv" ng-messages="register.registerForm.email.$error" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched)">
+      <div ng-message="required"><em class="error">Enter an email address</em></div>
+      <div ng-message="pattern"><em class="error">Email not valid!</em></div>
     </div>
 
     <div>
-      <input type="password" required name="password" id="password" ng-model="register.user.password" placeholder="password">
+      <input type="password" required name="password" id="password" ng-model="register.user.password" placeholder="Password">
+    </div>
+    <!-- Error message! -->
+    <div class="errorDiv" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
+      <div ng-message="required"><em class="error">Enter a password</em></div>
     </div>
 
-
     <div>
-      <input type="password" required name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Password confirmation">
+      <input type="password" required name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" placeholder="Confirm Password">
+    </div>
+    <!-- Error message! -->
+    <div class="errorDiv" ng-messages="register.registerForm.passwordConfirmation.$error" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched)">
+      <div ng-message="required"><em class="error">Confirm your password</em></div>
     </div>
 
     <div>

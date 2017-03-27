@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<div ng-controller="UsersEditCtrl as usersEdit">
+<div ng-controller="usersEditCtrl as usersEdit">
   <form name="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
 
    <div>Username:
      <input type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username..." required minlength="2">
    </div>
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.userForm.username.$touched)">
+   <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched)">
      <div ng-message="required"><em class="error">Username is required!</em></div>
-     <div ng-message="minlength"><em class="error">Longer username is required!</em></div>
+     <div ng-message="minlength"><em class="error">Username not long enough</em></div>
    </div>
 
    <div>Email:
      <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" ng-pattern="/@/" required>
    </div>
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.userForm.email.$touched)">
+   <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.email.$touched)">
      <div ng-message="required"><em class="error">Email is required!</em></div>
-     <div ng-pattern="required"><em class="error">Valid email address is required!</em></div>
+     <div ng-message="pattern"><em class="error">Email not valid</em></div>
    </div>
 
    <div>Profile Image:
      <input type="text" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link.." required>
    </div>
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.userForm.profilePic.$touched)">
-     <div ng-message="required"><em class="error">Image link is required!</em></div>
+   <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.profilePic.$touched)">
+     <div ng-message="required"><em class="error">Image link is required</em></div>
    </div>
 
    <!-- <div>Location:
      <input type="text" name="location" id="location" ng-model="usersEdit.user.location" placeholder="Location..." required>
    </div> -->
    <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.userForm.location.$touched)">
-     <div ng-message="required"><em class="error">Location is required!</em></div>
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
+     <div ng-message="required"><em class="error">Location is required</em></div>
    </div> -->
 
-   <!-- <div>Primary skill (required):
+   <div>Primary skill (required):
      <input type="text" name="language1" id="language1" ng-model="usersEdit.user.skills[0].language.lang" placeholder="Skill name..." required>
      <input type="text" name="level1" id="level1" ng-model="usersEdit.user.skills[0].level" placeholder="Skill level..." required>
-   </div> -->
+   </div>
    <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.skills[0].language.lang.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.userForm.skills[0].language.lang.$touched)">
-     <div ng-message="required"><em class="error">Primary skill and level are required!</em></div>
-   </div> -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.skills[0].language.lang.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.skills[0].language.lang.$touched)">
+     <div ng-message="required"><em class="error">Primary skill and level are required</em></div>
+   </div>
 
-   <!-- <div>Any other skills:
-     <input type="text" name="language2" id="language2" ng-model="usersEdit.user.skills[1].language.lang" placeholder="Skill 2" required>
-     <input type="text" name="level2" id="level2" ng-model="usersEdit.user.skills[1].level" placeholder="Skill level" required>
+   <div>Any other skills:
+     <input type="text" name="language2" id="language2" ng-model="usersEdit.user.skills[1].language.lang" placeholder="Skill 2">
+     <input type="text" name="level2" id="level2" ng-model="usersEdit.user.skills[1].level" placeholder="Skill level">
    </div>
    <div>
-     <input type="text" name="language3" id="language3" ng-model="usersEdit.user.skills[2].language.lang" placeholder="Skill 3" required>
-     <input type="text" name="level3" id="level3" ng-model="usersEdit.user.skills[2].level" placeholder="Skill level" required>
-   </div> -->
+     <input type="text" name="language3" id="language3" ng-model="usersEdit.user.skills[2].language.lang" placeholder="Skill 3">
+     <input type="text" name="level3" id="level3" ng-model="usersEdit.user.skills[2].level" placeholder="Skill level">
+   </div>
 
    <!-- <div ng-model="usersEdit.user.skills" ng-repeat="details in usersEdit.user.skills track by $index">
      Language: <input type="text" name="languages" id="languages" ng-model="details.language.lang" required>

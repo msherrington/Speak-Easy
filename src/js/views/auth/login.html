@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <h1>Login page</h1>
 
-<form name="login.loginForm" ng-submit="login.submit()">
+<form name="login.loginForm" ng-submit="login.submit()" novalidate>
   <div>
-    <input type="text" name="email" id="email" ng-model="login.credentials.email" ng-pattern="/@/" placeholder="email" required>
+    <input type="text" name="email" id="email" ng-model="login.credentials.email" ng-pattern="/@/" placeholder="Email" required>
+  </div>
+  <!-- Error message! -->
+  <div class="errorDiv" ng-messages="login.loginForm.email.$error" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched)">
+    <div ng-message="required"><em class="error">Enter your email address</em></div>
+    <div ng-message="pattern"><em class="error">Email address not valid!</em></div>
   </div>
 
-    <div>
-      <input type="password" name="password" id="password" ng-model="login.credentials.password" placeholder="password" required>
-    </div>
+  <div>
+    <input type="password" name="password" id="password" ng-model="login.credentials.password" placeholder="Password" required>
+  </div>
+  <!-- Error message! -->
+  <div class="errorDiv" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
+    <div ng-message="required"><em class="error">Enter your password!</em></div>
+  </div>
 
-    <div>
-      <button>Login</button>
-    </div>
+  <div>
+    <button>Login</button>
+  </div>
 </form>
