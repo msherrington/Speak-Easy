@@ -102,32 +102,6 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   vm.deleteReview = deleteReview;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
 function UsersEditCtrl(User, $stateParams, $state) {
   const vm = this;

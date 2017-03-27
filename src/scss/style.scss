@@ -1,41 +1,41 @@
 //Index page styling
 
-.leftSideIndex{
-  // background-color: red;
-  width: 66%;
-  display: inline-block;
-}
+// .leftSideIndex{
+//   // background-color: red;
+//   width: 66%;
+//   display: inline-block;
+// }
 
-.indexCard{
-  border: 1px solid black;
-  width: 250px;
-  margin: 10px;
-  text-align: center;
-  display: inline-block;
-  img{
-    border: 1px solid black;
-  }
-}
+// .indexCard{
+//   border: 1px solid black;
+//   width: 250px;
+//   margin: 10px;
+//   text-align: center;
+//   display: inline-block;
+//   img{
+//     border: 1px solid black;
+//   }
+// }
 
 .indexProfilePic{
   height: 200px;
   width: 200px;
 }
 
-.RightSideIndex{
+.rightSideIndex{
   // background-color: green;
   text-align: center;
-  display: inline-block;
-  position: absolute;
-  height: 100%;
+  // display: inline-block;
+  // position: absolute;
+  // height: 100%;
 }
 
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 30%;
-    margin: 1%;
+    // width: 30%;
+    // margin: 1%;
     text-align: center;
 }
 
@@ -54,13 +54,13 @@
   width: 25%
 }
 
-.google-map{
-  float: right;
-  height: 100vh;
-  width: 100%;
-  display: inline-block;
-  border: 2px solid red;
-}
+// .google-map{
+//   float: right;
+//   height: 100vh;
+//   width: 100%;
+//   display: inline-block;
+//   border: 2px solid red;
+// }
 
 #slider{
   margin: 5px;
@@ -75,7 +75,7 @@ li{
 }
 
 .google-map{
-  float: right;
+  // float: right;
   height: 90vh;
   width: 100%;
   display: inline-block;

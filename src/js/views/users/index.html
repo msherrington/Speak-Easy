@@ -2,21 +2,25 @@
 <div class="container">
   <!-- <div class="abc"> -->
   <div class="row leftSideIndex">
-    <div class="" ng-repeat="user in usersIndex.all | filter: main.q">
-      <div class="col-xs-6 card">
-        <h3>{{ user.username }}</h3>
-        <img class="img-small" src="{{ user.profilePic }}">
-        <!-- <p>User ID: {{ user.id }}</p> -->
-        <!-- <p>Email: {{ user.email }}</p> -->
-        <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
-        <p>{{ user.skills[0].language.lang }} ({{ user.skills[0].level }})</p>
-        <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
-        <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
-        <p><a ui-sref="message({ id: user.id })">Send Message</a></p>
+    <div class="col-xs-8">
+      <div class="row">
+        <div class="col-xs-4" ng-repeat="user in usersIndex.all | filter: main.q">
+          <div class="card">
+            <h3>{{ user.username }}</h3>
+            <img class="img-small" src="{{ user.profilePic }}">
+            <!-- <p>User ID: {{ user.id }}</p> -->
+            <!-- <p>Email: {{ user.email }}</p> -->
+            <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
+            <p>{{ user.skills[0].language.lang }} ({{ user.skills[0].level }})</p>
+            <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
+            <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
+            <p><a ui-sref="message({ id: user.id })">Send Message</a></p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row col-xs-6 RightSideIndex">
+    <div class="col-xs-4 rightSideIndex">
       <input id="slider" type="range" min="1" max="10000" step="1" value="1000">
       <div id="sliderAmount"></div>
       <google-map></google-map>
