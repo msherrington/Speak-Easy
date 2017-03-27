@@ -1,4 +1,7 @@
 <h1>Profile</h1>
+
+<p ng-if="main.isAuthenticated()"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit</a></p>
+
 <img class="img-small" src="{{ usersProfile.user.profilePic }}">
 <p>Username: {{ usersProfile.user.username }}</p>
 <p>Email: {{ usersProfile.user.email }}</p>

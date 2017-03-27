@@ -65,10 +65,48 @@
         <option>Native or Bilingual Proficiency</option>
       </select>
 
-    <h3>Secondary language</h3>
+    <h3>Other languages</h3>
+    <!-- 2nd language -->
+    <h4>2nd language</h4>
       <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[1].language"></select>
 
       <select ng-model="usersEdit.user.skills[1].level">
+        <option>Elementary Working Proficiency</option>
+        <option>Limited Working Proficiency</option>
+        <option>Professional Working Proficiency</option>
+        <option>Full Professional Proficiency</option>
+        <option>Native or Bilingual Proficiency</option>
+      </select>
+
+      <!-- 3rd language -->
+      <h4>3rd language</h4>
+      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[2].language"></select>
+
+      <select ng-model="usersEdit.user.skills[2].level">
+        <option>Elementary Working Proficiency</option>
+        <option>Limited Working Proficiency</option>
+        <option>Professional Working Proficiency</option>
+        <option>Full Professional Proficiency</option>
+        <option>Native or Bilingual Proficiency</option>
+      </select>
+
+      <!-- 4th language -->
+      <h4>4th language</h4>
+      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[3].language"></select>
+
+      <select ng-model="usersEdit.user.skills[3].level">
+        <option>Elementary Working Proficiency</option>
+        <option>Limited Working Proficiency</option>
+        <option>Professional Working Proficiency</option>
+        <option>Full Professional Proficiency</option>
+        <option>Native or Bilingual Proficiency</option>
+      </select>
+
+      <!-- 5th language -->
+      <h4>5th language</h4>
+      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[4].language"></select>
+
+      <select ng-model="usersEdit.user.skills[4].level">
         <option>Elementary Working Proficiency</option>
         <option>Limited Working Proficiency</option>
         <option>Professional Working Proficiency</option>
