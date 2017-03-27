@@ -48,9 +48,7 @@ function googleMap($window, $http){
         center: $scope.center
       });
 
-      const currentLocationWindow = new google.maps.InfoWindow({
-        map: map
-      });
+      
 
       const marker = new $window.google.maps.Marker({
         position: $scope.center,

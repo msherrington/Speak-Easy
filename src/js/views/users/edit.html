@@ -36,46 +36,49 @@
      <div ng-message="required"><em class="error">Location is required</em></div>
    </div> -->
 
-   <!-- <div>Primary skill (required):
-     <input type="text" name="language1" id="language1" ng-model="usersEdit.user.skills[0].language.lang" placeholder="Skill name..." required>
-     <input type="text" name="level1" id="level1" ng-model="usersEdit.user.skills[0].level" placeholder="Skill level..." required>
-   </div> -->
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.skills[0].language.lang.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.skills[0].language.lang.$touched)">
-     <div ng-message="required"><em class="error">Primary skill and level are required</em></div>
-   </div> -->
 
-   <!-- <div>Any other skills:
-     <input type="text" name="language2" id="language2" ng-model="usersEdit.user.skills[1].language.lang" placeholder="Skill 2">
-     <input type="text" name="level2" id="level2" ng-model="usersEdit.user.skills[1].level" placeholder="Skill level">
+   <div>Who are you?
+     <textarea type="text" name="about" id="about" ng-model="usersEdit.user.about" placeholder="Tell us something about yourself..." required maxlength="255"></textarea>
    </div>
-   <div>
-     <input type="text" name="language3" id="language3" ng-model="usersEdit.user.skills[2].language.lang" placeholder="Skill 3">
-     <input type="text" name="level3" id="level3" ng-model="usersEdit.user.skills[2].level" placeholder="Skill level">
-   </div> -->
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.about.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.about.$touched)">
+     <div ng-message="required"><em class="error">Tell us soemthing!</em></div>
+     <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
+   </div>
 
+   <div>What languages are you learning?
+     <textarea type="text" name="learning" id="learning" ng-model="usersEdit.user.learning" placeholder="List your language interests..." required maxlength="255"></textarea>
+   </div>
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.learning.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.learning.$touched)">
+     <div ng-message="required"><em class="error">What do you want to learn?</em></div>
+     <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
+   </div>
+
+
+
+   <h3>Which languages can you offer?</h3>
     <h3>Primary Language</h3>
       <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[0].language"></select>
 
       <select ng-model="usersEdit.user.skills[0].level">
-        <option>Elementary Working Proficiency</option>
-        <option>Limited Working Proficiency</option>
-        <option>Professional Working Proficiency</option>
-        <option>Full Professional Proficiency</option>
-        <option>Native or Bilingual Proficiency</option>
+        <option>Basic</option>
+        <option>Adequate</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>Native</option>
       </select>
 
-    <h3>Other languages</h3>
     <!-- 2nd language -->
     <h4>2nd language</h4>
       <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[1].language"></select>
 
       <select ng-model="usersEdit.user.skills[1].level">
-        <option>Elementary Working Proficiency</option>
-        <option>Limited Working Proficiency</option>
-        <option>Professional Working Proficiency</option>
-        <option>Full Professional Proficiency</option>
-        <option>Native or Bilingual Proficiency</option>
+        <option>Basic</option>
+        <option>Adequate</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>Native</option>
       </select>
 
       <!-- 3rd language -->
@@ -83,11 +86,11 @@
       <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[2].language"></select>
 
       <select ng-model="usersEdit.user.skills[2].level">
-        <option>Elementary Working Proficiency</option>
-        <option>Limited Working Proficiency</option>
-        <option>Professional Working Proficiency</option>
-        <option>Full Professional Proficiency</option>
-        <option>Native or Bilingual Proficiency</option>
+        <option>Basic</option>
+        <option>Adequate</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>Native</option>
       </select>
 
       <!-- 4th language -->
@@ -95,11 +98,11 @@
       <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[3].language"></select>
 
       <select ng-model="usersEdit.user.skills[3].level">
-        <option>Elementary Working Proficiency</option>
-        <option>Limited Working Proficiency</option>
-        <option>Professional Working Proficiency</option>
-        <option>Full Professional Proficiency</option>
-        <option>Native or Bilingual Proficiency</option>
+        <option>Basic</option>
+        <option>Adequate</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>Native</option>
       </select>
 
       <!-- 5th language -->
@@ -107,11 +110,11 @@
       <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[4].language"></select>
 
       <select ng-model="usersEdit.user.skills[4].level">
-        <option>Elementary Working Proficiency</option>
-        <option>Limited Working Proficiency</option>
-        <option>Professional Working Proficiency</option>
-        <option>Full Professional Proficiency</option>
-        <option>Native or Bilingual Proficiency</option>
+        <option>Basic</option>
+        <option>Adequate</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+        <option>Native</option>
       </select>
 
    <div>

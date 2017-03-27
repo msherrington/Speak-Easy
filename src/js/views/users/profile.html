@@ -4,22 +4,22 @@
 
 <img class="img-small" src="{{ usersProfile.user.profilePic }}">
 <p>Username: {{ usersProfile.user.username }}</p>
-<p>Email: {{ usersProfile.user.email }}</p>
+<p>Currently learning: {{ usersProfile.user.learning }}</p>
+<p>About: {{ usersProfile.user.about }}</p>
+<p><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
+<!-- <p>Email: {{ usersProfile.user.email }}</p> -->
 
-<!-- <p>{{ usersProfile.user.skills[0] }}</p> -->
-
-<p>Primary Language: {{ usersProfile.user.skills[0].language.lang }}</p>
-  {{ usersProfile.user.skills }}
-<h2>Languages:</h2>
+<!-- <p>Primary Language: {{ usersProfile.user.skills[0].language.lang }} ({{ usersProfile.user.skills[0].level }})</p> -->
+  <!-- {{ usersProfile.user.skills }} -->
+<h2>Languages offered:</h2>
 <div ng-repeat="details in usersProfile.user.skills track by $index">
   <p>{{ details.language.lang}} ({{ details.level }})</p>
 </div>
 
 
-<!-- <p>Message {{ usersProfile.user.username }} <a ui-sref="message({ id: usersProfile.user.id })">Here</a></p>
 
 <p>Review: {{ usersProfile.user.reviews }}</p>
-<p>Review by: {{ usersProfile.user.reviews.addedBy }}</p> -->
+<p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>
 
 
 
