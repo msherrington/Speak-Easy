@@ -1,26 +1,25 @@
-<h1>G-Unit Test</h1>
+<!DOCTYPE html>
 <div class="container">
+  <!-- <div class="abc"> -->
   <div class="row leftSideIndex">
-    <div class="" ng-repeat="user in usersIndex.all">
+    <div class="" ng-repeat="user in usersIndex.all | filter: main.q">
       <div class="col-xs-6 card">
-        <h4>{{ user.username }}</h4>
-        <img class="img-small" src="{{ user.profilePic }}" alt="">
+        <h3>{{ user.username }}</h3>
+        <img class="img-small" src="{{ user.profilePic }}">
         <!-- <p>User ID: {{ user.id }}</p> -->
         <!-- <p>Email: {{ user.email }}</p> -->
         <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
-        <p>Primary Language: {{ user.skills[0].language.lang }}</p>
-        <p>Level: {{ user.skills[0].level }}</p>
+        <p>{{ user.skills[0].language.lang }} ({{ user.skills[0].level }})</p>
         <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
-        <p>See more <a ui-sref="usersProfile({ id: user.id })">Here</a></p>
-        <p>Message {{ user.username }} <a ui-sref="message({ id: user.id })">Here</a></p>
+        <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
+        <p><a ui-sref="message({ id: user.id })">Send Message</a></p>
       </div>
     </div>
 
     <div class="row col-xs-6 RightSideIndex">
       <input id="slider" type="range" min="1" max="10000" step="1" value="1000">
       <div id="sliderAmount"></div>
-      <google-map center="{ lat: 0, lng: 0 }"></google-map>
+      <google-map></google-map>
     </div>
-
   </div>
 </div>

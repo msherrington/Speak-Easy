@@ -36,6 +36,7 @@
     transition: 0.3s;
     width: 30%;
     margin: 1%;
+    text-align: center;
 }
 
 .card:hover {
@@ -87,4 +88,9 @@ li{
 
 .navbar-form{
   float: right;
+}
+
+// form validation messages
+.error {
+  color: red;
 }

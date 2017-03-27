@@ -19,7 +19,7 @@ function login(req, res, next){
       //sign method essentially means generate a token
       const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
       //Personalised greeting message
-      res.json({ token, message: `welcome back ${user.username}` });
+      res.json({ token, message: `Welcome back ${user.username}` });
     })
     .catch(next);
 }

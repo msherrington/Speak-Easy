@@ -1,49 +1,66 @@
 <!DOCTYPE html>
-<div ng-controller="UsersEditCtrl as usersEdit">
-<form name="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
+<div ng-controller="usersEditCtrl as usersEdit">
+  <form name="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
 
- <div class="a">Username:
-   <input class="a" type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username..." required>
- </div>
- <!-- Error message! -->
- <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.name.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.name.$touched)">
-   <div ng-message="required"><em class="error">name is required!</em></div>
- </div> -->
+   <div>Username:
+     <input type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username..." required minlength="2">
+   </div>
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched)">
+     <div ng-message="required"><em class="error">Username is required!</em></div>
+     <div ng-message="minlength"><em class="error">Username not long enough</em></div>
+   </div>
 
- <div class="a">Email:
-   <input class="a" type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" required>
- </div>
- <!-- Error message! -->
- <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.mostLikelyTo.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.mostLikelyTo.$touched)">
-   <div ng-message="required"><em class="error">mostLikelyTo is required!</em></div>
- </div> -->
+   <div>Email:
+     <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" ng-pattern="/@/" required>
+   </div>
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.email.$touched)">
+     <div ng-message="required"><em class="error">Email is required!</em></div>
+     <div ng-message="pattern"><em class="error">Email not valid</em></div>
+   </div>
 
- <div class="a">Image Link:
-   <input class="a" type="text" name="image" id="image" ng-model="usersEdit.user.image" placeholder="image URL" required>
- </div>
- <!-- Error message! -->
- <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.image.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.image.$touched)">
-   <div ng-message="required"><em class="error">image URL is required!</em></div>
- </div> -->
+   <div>Profile Image:
+     <input type="text" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link.." required>
+   </div>
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.profilePic.$touched)">
+     <div ng-message="required"><em class="error">Image link is required</em></div>
+   </div>
 
- <div class="a">Github:
-   <input class="a" type="text" name="gitHub" id="gitHub" ng-model="usersEdit.user.gitHub" placeholder="gitHub link" required>
- </div>
- <!-- Error message! -->
- <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.gitHub.$error" ng-show="(usersEdit.userForm.$submitted || UsersEdit.UserForm.gitHub.$touched)">
-   <div ng-message="required"><em class="error">gitHub link is required!</em></div>
- </div> -->
- <!-- <div class="a">
-   <input class="language" type="text" name="language" id="language" ng-model="usersEdit.user." placeholder="language" required>
- </div> -->
+   <!-- <div>Location:
+     <input type="text" name="location" id="location" ng-model="usersEdit.user.location" placeholder="Location..." required>
+   </div> -->
+   <!-- Error message! -->
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
+     <div ng-message="required"><em class="error">Location is required</em></div>
+   </div> -->
 
- <div class="s" ng-repeat="details in usersEdit.user.skills track by $index">
-   Language: <input class="a" type="text" name="languages" id="languages" ng-model="details.language.lang" required>
-   Level: <input class="a" type="text" name="level" id="level" ng-model="details.level" required>
-</div>
+   <div>Primary skill (required):
+     <input type="text" name="language1" id="language1" ng-model="usersEdit.user.skills[0].language.lang" placeholder="Skill name..." required>
+     <input type="text" name="level1" id="level1" ng-model="usersEdit.user.skills[0].level" placeholder="Skill level..." required>
+   </div>
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.skills[0].language.lang.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.skills[0].language.lang.$touched)">
+     <div ng-message="required"><em class="error">Primary skill and level are required</em></div>
+   </div>
 
- <div class="a">
-   <button class="a">Update</button>
- </div>
-</form>
+   <div>Any other skills:
+     <input type="text" name="language2" id="language2" ng-model="usersEdit.user.skills[1].language.lang" placeholder="Skill 2">
+     <input type="text" name="level2" id="level2" ng-model="usersEdit.user.skills[1].level" placeholder="Skill level">
+   </div>
+   <div>
+     <input type="text" name="language3" id="language3" ng-model="usersEdit.user.skills[2].language.lang" placeholder="Skill 3">
+     <input type="text" name="level3" id="level3" ng-model="usersEdit.user.skills[2].level" placeholder="Skill level">
+   </div>
+
+   <!-- <div ng-model="usersEdit.user.skills" ng-repeat="details in usersEdit.user.skills track by $index">
+     Language: <input type="text" name="languages" id="languages" ng-model="details.language.lang" required>
+     Level: <input type="text" name="level" id="level" ng-model="details.level" required>
+   </div> -->
+
+   <div>
+     <button>Update</button>
+   </div>
+ </form>
 </div>

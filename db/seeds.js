@@ -51,7 +51,7 @@ Skill
         }]
       }, {
         username: 'Mark',
-        email: 'mark@ga.com',
+        email: 'markS@ga.com',
         profilePic: '../images/MarkSherrington.jpg',
         password: 'Mark',
         passwordConfirmation: 'Mark',
@@ -116,7 +116,7 @@ Skill
         }]
       }, {
         username: 'buki',
-        email: 'conor@ga.com',
+        email: 'buki@ga.com',
         profilePic: '../images/BukiThompson.jpg',
         password: 'buki',
         passwordConfirmation: 'buki',
@@ -301,7 +301,7 @@ Skill
         email: 'tom@ga.com',
         profilePic: '../images/tom.jpg',
         password: 'tom',
-        passwordConfirmation: 'TomAllen',
+        passwordConfirmation: 'tom',
         location: '',
         lat: 50.5074,
         lng: 0.1277,
@@ -324,7 +324,7 @@ Skill
         }]
       }, {
         username: 'sam',
-        email: 'sam@ga.com',
+        email: 'samD@ga.com',
         profilePic: '../images/SamDomesjo.jpg',
         password: 'sam',
         passwordConfirmation: 'sam',

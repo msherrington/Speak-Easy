@@ -3,10 +3,32 @@
 angular.module('skillsApp')
   .directive('googleMap', googleMap);
 
-
 googleMap.$inject = ['$window', '$http'];
 function googleMap($window, $http){
   const vm = this;
+  getUser();
+
+  function getUser(){
+    $http.get('http://localhost:7000/api/users')
+    .then((response) => {
+      console.log(response);
+      vm.all = response.data;
+      // console.log(vm.all[0].lat);
+      // console.log(vm.all[0].lng);
+      vm.u = vm.all;
+
+      const users = vm.all;
+      // console.log(users);
+      //
+      // for (var i=0; i<users.length; i++) {
+      //   console.log(users[i].lat);
+      //   console.log(users[i].lng);
+      // }
+    });
+  }
+// googleMap.$inject = ['$window', '$http'];
+// function googleMap($window, $http){
+//   const vm = this;
 
   let userLat = 0;
   let userLng = 0;
@@ -54,6 +76,7 @@ function googleMap($window, $http){
       });
 
       // console.log(circle.radius + 'meters');
+      // console.log(circle.radius + 'meters');
       // console.log(circle.radius * 0.000621371 + 'miles');
 
     //map circle radius function
@@ -63,6 +86,7 @@ function googleMap($window, $http){
         circle.radius = sliderDiv.innerHTML;
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
+        console.log(circle.radius + 'meters');
         // console.log(circle.radius + 'miles');
         // console.log(circle.radius * 0.000621371 + 'miles');
       };
