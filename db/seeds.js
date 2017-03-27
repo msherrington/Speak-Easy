@@ -78,7 +78,7 @@ Skill
       }, {
         username: 'adrian',
         email: 'adrian@ga.com',
-        profilePic: '../images/.jpg',
+        profilePic: '../images/adrian.jpg',
         password: 'adrian',
         passwordConfirmation: 'adrian',
         location: '',
@@ -156,7 +156,7 @@ Skill
       }, {
         username: 'gianmmaria',
         email: 'gianmmaria@ga.com',
-        profilePic: '../images/GianmmariaCarrodano.jpg',
+        profilePic: '../images/GianmariaCarrodano.jpg',
         password: 'gianmmaria',
         passwordConfirmation: 'gianmmaria',
         location: '',
@@ -208,7 +208,7 @@ Skill
       }, {
         username: 'kristian',
         email: 'kristian@ga.com',
-        profilePic: '../images/KristianGroz.jpg',
+        profilePic: '../images/KrisztianGroz.jpg',
         password: 'kristian',
         passwordConfirmation: 'kristian',
         location: '',
@@ -299,7 +299,7 @@ Skill
       }, {
         username: 'tom',
         email: 'tom@ga.com',
-        profilePic: '../images/tom.jpg',
+        profilePic: '../images/TomAllen.jpg',
         password: 'tom',
         passwordConfirmation: 'tom',
         location: '',
