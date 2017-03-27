@@ -17,6 +17,8 @@ const userSchema = new mongoose.Schema({
   email: {type: String, required: true, unique: true },
   profilePic: {type: String},
   password: {type: String, required: true },
+  passwordConfirmation: {type: String, required: true },
+  location: {type: String},
   lat: {type: Number },
   lng: {type: Number },
   skills: [{
