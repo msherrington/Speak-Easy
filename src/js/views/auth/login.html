@@ -1,25 +1,50 @@
 <!DOCTYPE html>
-<h1>Login page</h1>
+<div class="container">
+   <div id="signup">
+      <div class="signup-screen">
+         <div class="space-bot text-center">
+            <h1>Sign up</h1>
+           <div class="divider"></div>
+         </div>
 
-<form name="login.loginForm" ng-submit="login.submit()" novalidate>
-  <div>
-    <input type="text" name="email" id="email" ng-model="login.credentials.email" ng-pattern="/@/" placeholder="Email" required>
+
+
+<form name="login.loginForm" class="login.loginForm" ng-submit="login.submit()" novalidate>
+
+
+  <div class="input-field col s6">
+    <md-input-container>
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email"  ng-model="login.credentials.email" required>
+    </md-input-container>
+
+    <!-- Error message! -->
+    <p class="alert alert-danger" ng-show="(login.loginForm.email.$submitted || login.loginForm.email.$touched) &&  login.loginForm.email.$invalid">Your email is invalid.</p>
   </div>
-  <!-- Error message! -->
-  <div class="errorDiv" ng-messages="login.loginForm.email.$error" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched)">
-    <div ng-message="required"><em class="error">Enter your email address</em></div>
-    <div ng-message="pattern"><em class="error">Email address not valid!</em></div>
+  <!-- ////////////////////////////// -->
+
+
+  <div class="input-field col s6">
+    <md-input-container>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" ng-model="login.credentials.password" ng-minlength='6' class="validate" required>
+  </md-input-container>
   </div>
 
-  <div>
-    <input type="password" name="password" id="password" ng-model="login.credentials.password" placeholder="Password" required>
-  </div>
   <!-- Error message! -->
-  <div class="errorDiv" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
+  <p class="alert alert-danger" ng-show="register.registerForm.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+
+  <!-- Error message! -->
+
+  <!-- <div class="errorDiv" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
     <div ng-message="required"><em class="error">Enter your password!</em></div>
-  </div>
+  </div> -->
 
   <div>
-    <button>Login</button>
+    <button type="submit" class="md-button-inner">Login</button>
   </div>
+
 </form>
+    </div>
+  </div>
+</div>
