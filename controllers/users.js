@@ -18,6 +18,9 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
+
+  if(req.file) req.body.image = req.file.filename;
+
   User
     .create(req.body)
     .then((user) => res.status(201).json(user))
@@ -50,6 +53,9 @@ function showRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
+
+  if(req.file) req.body.image = req.file.filename;
+
   User
     .findById(req.params.id)
     .then((user) => {
