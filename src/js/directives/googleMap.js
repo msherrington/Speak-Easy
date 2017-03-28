@@ -60,8 +60,6 @@ function googleMap($window, $http){
         circle.radius = sliderDiv.innerHTML;
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
-        console.log(markers);
-        console.log(circle.radius + 'meters');
 
         for(var i = 0; i < markers.length; i++){
           // console.log('werking');
@@ -104,7 +102,6 @@ function googleMap($window, $http){
         marker.setPosition(pos);
         marker.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
       }
-
       //Places User markers on the map
       function getUserLatLng(pos) {
 
@@ -128,7 +125,6 @@ function googleMap($window, $http){
         var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
         // latLng = { lat: userLat, lng: userLng };
         latLng = { lat: user.lat, lng: user.lng };
-
         const marker = new google.maps.Marker({
           position: latLng,
           map,
@@ -163,20 +159,29 @@ function googleMap($window, $http){
       function markerClick(marker, user, latLng) {
         // Close any open infowindows
         if(infowindow) infowindow.close();
+          animation: google.maps.Animation.DROP
+        // Event listener for user markers
+        marker.addListener('click', () => {
+          markerClick(marker, user);
+        });
+      }
 
-        // Locate data from individual drink posts
-        // const userName = user.username;
-        // const drinkImage = location.image;
-        // const drinkDescription = location.description;
-        // const drinkLocation = location.location;
-        // const drinkId = location._id;
+      function markerClick(marker, user) {
+
+        console.log(user.username);
+        // Close any open infowindows
+        if(infowindow) infowindow.close();
+
+        // Locate data from individual user posts
+        const userName = user.username;
+        const userImage = user.profilePic;
 
           // Update the infowindow with relevant drink data
         infowindow = new google.maps.InfoWindow({
           content: `
           <div class="infowindow">
-            <h1>{{userName}}</h1>
-            <h1>Guv</h1>
+            <img src="${userImage}">
+            <h3>${userName}</h3>
           </div>`,
           // content: '<div id="infowindow_content" ng-include src="\'infowindow.html\'"></div>',
           maxWidth: 200
@@ -184,7 +189,6 @@ function googleMap($window, $http){
         // Open the new InfoWindow
         infowindow.open(map, marker);
       }
-
     }
   };
   return directive;
