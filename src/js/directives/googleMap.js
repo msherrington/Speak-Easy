@@ -6,33 +6,10 @@ angular.module('skillsApp')
 googleMap.$inject = ['$window', '$http'];
 function googleMap($window, $http){
   const vm = this;
-  getUser();
 
-  function getUser(){
-    $http.get('http://localhost:7000/api/users')
-    .then((response) => {
-      console.log(response);
-      vm.all = response.data;
-      // console.log(vm.all[0].lat);
-      // console.log(vm.all[0].lng);
-      vm.u = vm.all;
-
-      const users = vm.all;
-      // console.log(users);
-      //
-      // for (var i=0; i<users.length; i++) {
-      //   console.log(users[i].lat);
-      //   console.log(users[i].lng);
-      // }
-    });
-  }
-// googleMap.$inject = ['$window', '$http'];
-// function googleMap($window, $http){
-//   const vm = this;
-
-  let userLat = 0;
-  let userLng = 0;
-  let latLng = { lat: userLat, lng: userLng };
+  // let userLat = 0;
+  // let userLng = 0;
+  // let userName = null;
 
   const directive = {
     restrict: 'E',
@@ -43,28 +20,26 @@ function googleMap($window, $http){
     },
     link($scope, element){
       const map = new $window.google.maps.Map(element[0], {
-        zoom: 14,
+        zoom: 10,
         scrollwheel: false,
         center: $scope.center
       });
 
-      const currentLocationWindow = new google.maps.InfoWindow({
-        map: map
+      // Event listener to close infowindows by clicking anywhere on map
+      map.addListener('click', () => {
+        if(infowindow) infowindow.close();
       });
 
       const marker = new $window.google.maps.Marker({
         position: $scope.center,
         map
       });
-      // console.log(element);
 
-      // const users = '???';
-      // console.log(users);
-
+      getUserLatLng();
 
       const slider = document.getElementById('slider');
       const sliderDiv = document.getElementById('sliderAmount');
-      // let infowindow = null;
+      let infowindow = null;
       const circle = new google.maps.Circle({
         fillColor: '#3399FF',
         fillOpacity: 0.2,
@@ -75,10 +50,6 @@ function googleMap($window, $http){
         radius: 1000
       });
 
-      // console.log(circle.radius + 'meters');
-      // console.log(circle.radius + 'meters');
-      // console.log(circle.radius * 0.000621371 + 'miles');
-
     //map circle radius function
       slider.onchange = function() {
         // console.log('Changed!');
@@ -86,9 +57,7 @@ function googleMap($window, $http){
         circle.radius = sliderDiv.innerHTML;
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
-        console.log(circle.radius + 'meters');
-        // console.log(circle.radius + 'miles');
-        // console.log(circle.radius * 0.000621371 + 'miles');
+        // console.log(circle.radius + 'meters');
       };
 
 
@@ -99,9 +68,6 @@ function googleMap($window, $http){
             lat: parseFloat(position.coords.latitude),
             lng: parseFloat(position.coords.longitude)
           };
-
-          // currentLocationWindow.setPosition(pos);
-          // currentLocationWindow.setContent('Current Location');
           marker.setPosition(pos);
           map.setCenter(pos);
           circle.setCenter(pos);
@@ -112,80 +78,67 @@ function googleMap($window, $http){
       // Browser doesn't support Geolocation
         handleLocationError(false, googleMap.getCenter());
       }
-
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        currentLocationWindow.setPosition(pos);
-        currentLocationWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
+        marker.setPosition(pos);
+        marker.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
       }
 
-      addMarkers();
+      function getUserLatLng() {
+        $http.get('http://localhost:7000/api/users')
+        .then((response) => {
+          vm.all = response.data;
+          const users = vm.all;
 
-
-      function addMarkers() {
-        console.log('yo1');
-
-        function getUserLatLng() {
-          console.log('yo2');
-          $http.get('http://localhost:7000/api/users')
-          .then((response) => {
-            vm.all = response.data;
-            // console.log(users[0].lat);
-
-            const users = vm.all;
-            // console.log(users);
-            // console.log(users[1].lat);
-
-            // for (var i=0; i<users.length; i++) {
-            //   console.log(users[i].lat);
-            //   console.log(users[i].lng);
-            // }
-
-            // console.log(users.lng);
-            // const users = 10;
-            // console.log(10);
-            for (var i=0; i<users.length; i++) {
-              console.log(`User - ${i}`);
-              console.log(users[i].lat);
-              console.log(users[i].lng);
-              userLat = parseFloat(users[i].lat);
-              userLng = parseFloat(users[i].lng);
-              addMarker(userLat, userLng);
-            }
-
-
-          });
-        }
-
-
-        getUserLatLng();
+          console.log(users);
+          for (var i=0; i<users.length; i++) {
+            const user = users[i];
+            addMarker(user);
+          }
+        });
       }
 
-      function addMarker(userLat, userLng) {
-        // const latLng = latLng;
+      function addMarker(user) {
+        const latLng = { lat: user.lat, lng: user.lng };
+        console.log(latLng);
         var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
-        latLng = { lat: userLat, lng: userLng };
-        // console.log(latLng);
-        // console.log(latLng.userlat);
-        // console.log(latLng.userlng);
         const marker = new google.maps.Marker({
           position: latLng,
           map,
-          icon: image
+          icon: image,
+          animation: google.maps.Animation.DROP
         });
 
-        // marker.addListener('click', () => {
-        //   markerClick(marker, user);
-        // });
+        // Event listener for user markers
+        marker.addListener('click', () => {
+          markerClick(marker, user);
+        });
       }
 
+      function markerClick(marker, user) {
+        // Close any open infowindows
+        if(infowindow) infowindow.close();
 
+        // Locate data from individual drink posts
+        // const userName = user.username;
+        // const drinkImage = location.image;
+        // const drinkDescription = location.description;
+        // const drinkLocation = location.location;
+        // const drinkId = location._id;
 
-      // getUserLatLng();
-
-
-
+          // Update the infowindow with relevant drink data
+        infowindow = new google.maps.InfoWindow({
+          content: `
+          <div class="infowindow">
+            <h1>{{userName}}</h1>
+            <h1>Guv</h1>
+          </div>`,
+          // content: '<div id="infowindow_content" ng-include src="\'infowindow.html\'"></div>',
+          maxWidth: 200
+        });
+        // Open the new InfoWindow
+        infowindow.open(map, marker);
+      }
     }
   };
-
   return directive;
 }

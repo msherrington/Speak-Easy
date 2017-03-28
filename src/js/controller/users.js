@@ -10,6 +10,26 @@ UsersIndexCtrl.$inject = ['User', 'filterFilter', '$http', '$scope'];
 function UsersIndexCtrl(User, filterFilter, $http, $scope) {
   const vm = this;
 
+  getskills();
+  function getskills(){
+    // console.log('getskills!');
+    $http.get('http://localhost:7000/api/skills')
+  .then((response) => {
+    // console.log(response);
+    vm.all = response.data;
+    // console.log(vm.all[0].lang);
+    // console.log(vm.all[0].lng);
+
+    const skills = vm.all;
+    // console.log(users);
+    //
+    // for (var i=0; i<skills.length; i++) {
+    //   console.log(skills[i].lang);
+    //   // console.log(skills[i]);
+    // }
+  });
+  }
+
   function filterUsers() {
     const params = { name: vm.q };
       // if(vm.useStrength) params.strength = vm.strength;
@@ -102,11 +122,25 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   vm.deleteReview = deleteReview;
 }
 
-UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersEditCtrl(User, $stateParams, $state) {
+UsersEditCtrl.$inject = ['User', '$stateParams', '$state', '$http'];
+function UsersEditCtrl(User, $stateParams, $state, $http) {
   const vm = this;
 
-  vm.user = User.get($stateParams);
+  User.get($stateParams)
+    .$promise
+    .then((data) => {
+      data.skills = data.skills.map((skill) => {
+        skill.language = skill.language ? skill.language.id : null;
+        return skill;
+      });
+      vm.user = data;
+    });
+
+  $http.get('http://localhost:7000/api/skills')
+    .then((response) => {
+      vm.all = response.data;
+    });
+
 
   function usersUpdate() {
     if (vm.userForm.$valid) {
