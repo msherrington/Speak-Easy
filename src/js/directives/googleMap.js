@@ -91,7 +91,7 @@ function googleMap($window, $http){
           vm.all = response.data;
           const users = vm.all;
 
-          console.log(users);
+          // console.log(users);
           for (var i=0; i<users.length; i++) {
             const user = users[i];
             addMarker(user);
@@ -101,8 +101,8 @@ function googleMap($window, $http){
 
 
       function addMarker(user) {
-        const latLng = { lat: user.lat, lng: user.lng };
-        console.log(latLng);
+        const latLng = { lat: parseFloat(user.lat), lng: parseFloat(user.lng) };
+        // console.log(user);
         var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
         const marker = new google.maps.Marker({
           position: latLng,
@@ -118,22 +118,21 @@ function googleMap($window, $http){
       }
 
       function markerClick(marker, user) {
+
+        console.log(user.username);
         // Close any open infowindows
         if(infowindow) infowindow.close();
 
-        // Locate data from individual drink posts
-        // const userName = user.username;
-        // const drinkImage = location.image;
-        // const drinkDescription = location.description;
-        // const drinkLocation = location.location;
-        // const drinkId = location._id;
+        // Locate data from individual user posts
+        const userName = user.username;
+        const userImage = user.profilePic;
 
           // Update the infowindow with relevant drink data
         infowindow = new google.maps.InfoWindow({
           content: `
           <div class="infowindow">
-            <h1>{{userName}}</h1>
-            <h1>Guv</h1>
+            <img src="${userImage}">
+            <h3>${userName}</h3>
           </div>`,
           // content: '<div id="infowindow_content" ng-include src="\'infowindow.html\'"></div>',
           maxWidth: 200
