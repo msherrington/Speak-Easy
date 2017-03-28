@@ -111,8 +111,8 @@ Skill
         password: 'Valerio',
         passwordConfirmation: 'Valerio',
         location: '',
-        lat: 52.5074,
-        lng: 0.1279,
+        lat: 51.52382,
+        lng: -0.014773,
         skills: [{
           language: skills[1],
           level: 'Basic'
@@ -154,8 +154,8 @@ Skill
         password: 'Mark',
         passwordConfirmation: 'Mark',
         location: '',
-        lat: 53.5074,
-        lng: 0.1277,
+        lat: 51.5195,
+        lng: 0.0612,
         skills: [{
           language: skills[1],
           level: 'Basic'
@@ -179,8 +179,8 @@ Skill
         password: 'conor',
         passwordConfirmation: 'conor',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5159,
+        lng: 0.0705,
         skills: [{
           language: skills[1],
           level: 'Basic'
