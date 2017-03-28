@@ -83,8 +83,6 @@ function googleMap($window, $http){
         marker.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
       }
 
-
-
       function getUserLatLng() {
         $http.get('http://localhost:7000/api/users')
         .then((response) => {
@@ -98,7 +96,6 @@ function googleMap($window, $http){
           }
         });
       }
-
 
       function addMarker(user) {
         const latLng = { lat: parseFloat(user.lat), lng: parseFloat(user.lng) };
