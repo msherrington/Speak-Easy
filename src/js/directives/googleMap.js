@@ -54,7 +54,7 @@ function googleMap($window, $http){
       });
 
     //map circle radius function
-      slider.onchange = function() {
+      slider.onchange = function(){
         // console.log('Changed!');
         sliderDiv.innerHTML = this.value;
         circle.radius = sliderDiv.innerHTML;
@@ -159,7 +159,7 @@ function googleMap($window, $http){
       function markerClick(marker, user, latLng) {
         // Close any open infowindows
         if(infowindow) infowindow.close();
-          animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP
         // Event listener for user markers
         marker.addListener('click', () => {
           markerClick(marker, user);
