@@ -22,9 +22,14 @@ function googleMap($window, $http){
       let markers = [];
 
       const map = new $window.google.maps.Map(element[0], {
-        zoom: 14,
+        zoom: 10,
         scrollwheel: false,
         center: $scope.center
+      });
+
+      // Event listener to close infowindows by clicking anywhere on map
+      map.addListener('click', () => {
+        if(infowindow) infowindow.close();
       });
 
       const marker = new $window.google.maps.Marker({
@@ -32,8 +37,12 @@ function googleMap($window, $http){
         map
       });
 
+      getUserLatLng();
+
       const slider = document.getElementById('slider');
       const sliderDiv = document.getElementById('sliderAmount');
+      let infowindow = null;
+
       const circle = new google.maps.Circle({
         fillColor: '#3399FF',
         fillOpacity: 0.2,
@@ -71,8 +80,6 @@ function googleMap($window, $http){
         // check if marker.distance is less than the radius
         // if yes, set map to map
         // if no, set map to null
-
-
       };
 
       //geolocation..
@@ -82,7 +89,6 @@ function googleMap($window, $http){
             lat: parseFloat(position.coords.latitude),
             lng: parseFloat(position.coords.longitude)
           };
-
           marker.setPosition(pos);
           map.setCenter(pos);
           circle.setCenter(pos);
@@ -105,22 +111,23 @@ function googleMap($window, $http){
         $http.get('http://localhost:7000/api/users')
           .then((response) => {
             vm.all = response.data;
-
             const users = vm.all;
 
+            console.log(users);
             for (var i=0; i<users.length; i++) {
+              const user = users[i];
               userLat = parseFloat(users[i].lat);
               userLng = parseFloat(users[i].lng);
-              addMarker(latLng, pos);
-              // findDistance(p1, p1);
+              addMarker(latLng, pos, user);
             }
           });
       }
 
-      function addMarker(latLng, pos) {
+      function addMarker(latLng, pos, user) {
         // const latLng = latLng;
         var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
-        latLng = { lat: userLat, lng: userLng };
+        // latLng = { lat: userLat, lng: userLng };
+        latLng = { lat: user.lat, lng: user.lng };
 
         const marker = new google.maps.Marker({
           position: latLng,
@@ -129,9 +136,13 @@ function googleMap($window, $http){
           distance: findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng))
         });
 
-        markers.push(marker);
+        // Event listener for user markers
+        marker.addListener('click', () => {
+          console.log('marker clicked');
+          markerClick(marker, user, latLng);
+        });
 
-        // findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng));
+        markers.push(marker);
       }
 
       //WORKING TO FIND DISTANCE FROM A POINT//
@@ -146,10 +157,35 @@ function googleMap($window, $http){
         console.log(google.maps.geometry.spherical.computeDistanceBetween(p1, p2));
         //calculates distance between two points in km's
         return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2);
-
       }
+
+
+      function markerClick(marker, user, latLng) {
+        // Close any open infowindows
+        if(infowindow) infowindow.close();
+
+        // Locate data from individual drink posts
+        // const userName = user.username;
+        // const drinkImage = location.image;
+        // const drinkDescription = location.description;
+        // const drinkLocation = location.location;
+        // const drinkId = location._id;
+
+          // Update the infowindow with relevant drink data
+        infowindow = new google.maps.InfoWindow({
+          content: `
+          <div class="infowindow">
+            <h1>{{userName}}</h1>
+            <h1>Guv</h1>
+          </div>`,
+          // content: '<div id="infowindow_content" ng-include src="\'infowindow.html\'"></div>',
+          maxWidth: 200
+        });
+        // Open the new InfoWindow
+        infowindow.open(map, marker);
+      }
+
     }
   };
-
   return directive;
 }
