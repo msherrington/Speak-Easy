@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const s3 = require('../lib/s3');
 
 const reviewSchema = new mongoose.Schema({
   content: { type: String },
@@ -27,6 +28,34 @@ const userSchema = new mongoose.Schema({
     level: { type: String, enum: ['Basic', 'Adequate', 'Intermediate', 'Advanced', 'Native']}
   }],
   reviews: [ reviewSchema ]
+});
+
+//Allows us tho get access to uploaded images for editing
+userSchema
+  .path('profilePic')
+  .set(function getPreviousImage(profilePic){
+    this._profilePic = this.profilePic;
+    return profilePic;
+  });
+
+userSchema.pre('save', function checkPreviousImage(next){
+  if(this.isModified('profilePic') && this._image){
+    return s3.deleteObject({ Key: this._image }, next);
+  }
+  next();
+});
+//finished here..
+
+userSchema
+ .virtual('imageSRC')
+ .get(function getImageSRC() {
+   if(!this.image) return null;
+   return `https:s3-eu-west-1.amazonaws.com/conor-bucket/${this.image}`;
+ });
+
+userSchema.pre('remove', function deleteImage(next){
+  if(this.image) return s3.deleteObject({ Key: this.image }, next);
+  next();
 });
 
 userSchema

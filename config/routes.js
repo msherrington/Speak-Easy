@@ -3,16 +3,17 @@ const usersController = require('../controllers/users');
 const skillsController = require('../controllers/skills');
 const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
+const imageUpload = require('../lib/imageUpload');
 
 router.route('/users')
 // .all(secureRoute)
 .get(usersController.index)
-.post(usersController.create);
+.post(imageUpload, usersController.create);
 
 router.route('/users/:id')
 // .all(secureRoute)
 .get(usersController.show)
-.put(usersController.update)
+.put(imageUpload, usersController.update)
 .delete(usersController.delete);
 
 router.route('/message')
