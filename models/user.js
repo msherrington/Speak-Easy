@@ -14,15 +14,17 @@ reviewSchema.methods.ownedBy = function ownedBy(user) {
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
-  email: {type: String, required: true, unique: true },
-  profilePic: {type: String},
-  location: {type: String},
-  password: {type: String },
-  lat: {type: Number },
-  lng: {type: Number },
+  email: { type: String, required: true, unique: true },
+  profilePic: { type: String },
+  password: { type: String },
+  location: { type: String },
+  lat: { type: Number },
+  lng: { type: Number },
+  learning: { type: String },
+  about: { type: String },
   skills: [{
     language: { type: mongoose.Schema.ObjectId, ref: 'Skill', trim: true },
-    level: { type: String, enum: ['Elementary Working Proficiency', 'Limited Working Proficiency', 'Professional Working Proficiency', 'Full Professional Proficiency', 'Native or Bilingual Proficiency']}
+    level: { type: String, enum: ['Basic', 'Adequate', 'Intermediate', 'Advanced', 'Native']}
   }],
   reviews: [ reviewSchema ]
 });
