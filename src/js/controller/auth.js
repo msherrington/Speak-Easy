@@ -10,7 +10,7 @@ function RegisterCtrl($auth, $state, $http){
 
   getskills();
   function getskills(){
-    console.log('getskills!');
+    // console.log('getskills!');
     $http.get('http://localhost:7000/api/skills')
   .then((response) => {
     console.log(response);

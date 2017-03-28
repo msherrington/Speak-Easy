@@ -79,7 +79,7 @@ function deleteRoute(req, res, next) {
 function sendMailRoute(req, res, next) {
   const data = req.body;
   transporter.sendMail({
-    from: 'Sex Swap',
+    from: 'Lingo Swap',
     to: data.contactTo,
     subject: data.contactName + ' messaged you from SkillSexChange.',
     replyTo: data.contactEmail,
