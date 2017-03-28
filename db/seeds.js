@@ -130,10 +130,10 @@ Skill
           level: 'Advanced'
         }, {
           language: skills[13],
-          level: 'Native '
+          level: 'Native'
         }, {
           language: skills[0],
-          level: 'Intermediate '
+          level: 'Intermediate'
         }, {
           language: skills[16],
           level: 'Adequate'
