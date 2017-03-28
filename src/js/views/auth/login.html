@@ -3,7 +3,7 @@
    <div id="signup">
       <div class="signup-screen">
          <div class="space-bot text-center">
-            <h1>Sign up</h1>
+            <h1>Login</h1>
            <div class="divider"></div>
          </div>
 
@@ -27,12 +27,12 @@
   <div class="input-field col s6">
     <md-input-container>
     <label for="password">Password</label>
-    <input id="password" type="password" name="password" ng-model="login.credentials.password" ng-minlength='6' class="validate" required>
+    <input id="password" type="password" name="password" ng-model="login.credentials.password" ng-minlength='4' class="validate" required>
   </md-input-container>
   </div>
 
   <!-- Error message! -->
-  <p class="alert alert-danger" ng-show="register.registerForm.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+  <p class="alert alert-danger" ng-show="login.loginForm.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
 
   <!-- Error message! -->
 
@@ -40,9 +40,16 @@
     <div ng-message="required"><em class="error">Enter your password!</em></div>
   </div> -->
 
-  <div>
+  <div class="space-top text-center">
+    <md-button type="submit" ng-disabled="login.loginForm.$invalid" class="waves-effect waves-light btn done">
+      <i class="material-icons left"></i> Done
+    </md-button>
+
+
+
+  <!-- <div>
     <button type="submit" class="md-button-inner">Login</button>
-  </div>
+  </div> -->
 
 </form>
     </div>

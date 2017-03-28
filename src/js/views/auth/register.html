@@ -7,9 +7,9 @@
            <div class="divider"></div>
          </div>
 
-
-
   <form name="register.registerForm" class="register.registerForm" ng-submit="register.submit()" novalidate>
+
+
     <div class="input-field col s6">
       <md-input-container>
       <label for="username">Username</label>
@@ -59,7 +59,7 @@
 <div class="input-field col s6">
   <md-input-container>
   <label for="password">Password</label>
-  <input id="password" type="password" name="password" ng-model="register.user.password" ng-minlength='6' class="validate" required>
+  <input id="password" type="password" name="password" ng-model="register.user.password" ng-minlength='4' class="validate" required>
 </md-input-container>
 </div>
 <!-- Error message! -->
@@ -78,19 +78,19 @@
 
 
 
-    <!-- <div class="space-top text-center">
-              <md-button ng-disabled="register.registerForm.$invalid" class="waves-effect waves-light btn done">
-              <i class="material-icons left"></i> Done
-            </md-button>
-              <md-button type="button" class="waves-effect waves-light btn cancel">
-              <i class="material-icons left"></i>Cancel
-            </md-button> -->
+    <div class="space-top text-center">
+      <md-button type="submit" ng-disabled="register.registerForm.$invalid" class="waves-effect waves-light btn done">
+        <i class="material-icons left"></i> Done
+      </md-button>
+      <md-button type="button" class="waves-effect waves-light btn cancel">
+        <i class="material-icons left"></i>Cancel
+      </md-button>
 
-            <div>
+            <!-- <div>
               <button type="submit" class="md-button-inner">Register</button>
-            </div>
+            </div> -->
 
-  </form>
+          </form>
     </div>
   </div>
 </div>
