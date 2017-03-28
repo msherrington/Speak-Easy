@@ -157,9 +157,6 @@ function googleMap($window, $http){
         }
 
 
-
-
-
         getUserLatLng();
       }
 
