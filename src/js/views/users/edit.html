@@ -31,16 +31,19 @@
    <div>Location:
 
      <!-- {{ usersEdit.user }} -->
-     {{ usersEdit.user.lat }}
-     {{ usersEdit.user.lng }}
+     <!-- {{ usersEdit.user.lat }}
+     {{ usersEdit.user.lng }} -->
      <input type="text" name="location" id="location" autocomplete ng-model="usersEdit.user.location" lat="usersEdit.user.lat" lng="usersEdit.user.lng" placeholder="Location..." required>
      <!-- <input type="hidden" name="form-lat" ng-model="usersEdit.user.lat">
      <input type="hidden" name="form-lng" ng-model="usersEdit.user.lng"> -->
    </div>
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
-     <div ng-message="required"><em class="error">Location is required</em></div>
+   <!-- <div>Location:
+     <input type="text" name="location" id="location" ng-model="usersEdit.user.location" placeholder="Location..." required>
    </div> -->
+   <!-- Error message! -->
+   <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
+     <div ng-message="required"><em class="error">Location is required</em></div>
+   </div>
 
 
    <div>Who are you?
@@ -48,7 +51,7 @@
    </div>
    <!-- Error message! -->
    <div class="errorDiv" ng-messages="usersEdit.userForm.about.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.about.$touched)">
-     <div ng-message="required"><em class="error">Tell us soemthing!</em></div>
+     <div ng-message="required"><em class="error">Tell us something!</em></div>
      <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
    </div>
 
