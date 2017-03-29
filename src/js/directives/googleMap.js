@@ -22,7 +22,7 @@ function googleMap($window, $http){
       let markers = [];
 
       const map = new $window.google.maps.Map(element[0], {
-        zoom: 10,
+        zoom: 12,
         scrollwheel: false,
         center: $scope.center
       });
@@ -34,6 +34,7 @@ function googleMap($window, $http){
 
       const marker = new $window.google.maps.Marker({
         position: $scope.center,
+        icon: '../images/blueMarker.png',
         map
       });
 
@@ -123,13 +124,13 @@ function googleMap($window, $http){
 
       function addMarker(latLng, pos, user) {
         // const latLng = latLng;
-        var image = 'http://www.apnaplates.com/app/webroot/GSS/test/ferrari-badge-small-4.png';
+        // var image =
         // latLng = { lat: userLat, lng: userLng };
         latLng = { lat: user.lat, lng: user.lng };
         const marker = new google.maps.Marker({
           position: latLng,
           map: null,
-          icon: image,
+          icon: '../images/userMarker.png',
           distance: findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng))
         });
 

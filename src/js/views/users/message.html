@@ -7,8 +7,9 @@
       </div>
 
 <div ng-controller="MessageCtrl as message">
-  <img  class="img-small" src="{{ message.user.profilePic }}">
 
+  <h2>Send an email to {{ message.user.username }}...</h2>
+  <img  class="img-small" src="{{ message.user.profilePic }}">
 
     <h3>{{ message.user.username }}'s skills...</h3>
     <h4 ng-repeat="details in message.user.skills track by $index">{{ details.level}} in {{ details.language.lang }}</h4>

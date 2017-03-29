@@ -153,6 +153,7 @@ function UsersEditCtrl(User, $stateParams, $state, $http) {
 
   function usersUpdate() {
     if (vm.userForm.$valid) {
+      vm.user.locked = false;
       vm.user
       .$update()
       .then(() => $state.go('usersProfile', $stateParams));

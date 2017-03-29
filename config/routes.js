@@ -12,12 +12,16 @@ router.route('/users')
 .post(imageUpload, usersController.create);
 
 router.route('/users/:id')
-// .all(secureRoute)
+.all(secureRoute)
 .get(usersController.show)
 .put(imageUpload, usersController.update)
 .delete(usersController.delete);
 
+router.route('/users/:id/edit')
+.all(secureRoute);
+
 router.route('/message')
+.all(secureRoute)
 .post(usersController.sendMail);
 
 //Reviews routes
@@ -29,8 +33,15 @@ router.route('/users/:id/reviews/:reviewId')
 
 // skills
 router.route('/skills')
-// .all(secureRoute)
-.get(skillsController.index);
+  // .all(secureRoute)
+  .get(skillsController.index)
+  .post(skillsController.create);
+  //
+router.route('/skills/:id')
+  // .all(secureRoute)
+  .get(skillsController.show)
+  // .put(skillsController.update)
+  .delete(skillsController.delete);
 
 //New routes
 router.route('/register')
