@@ -85,9 +85,9 @@ function deleteRoute(req, res, next) {
 function sendMailRoute(req, res, next) {
   const data = req.body;
   transporter.sendMail({
-    from: 'Lingo Swap',
+    from: 'SpeakEasy',
     to: data.contactTo,
-    subject: data.contactName + ' messaged you from SkillSexChange.',
+    subject: data.contactName + ' messaged you through SpeakEasy.',
     replyTo: data.contactEmail,
     text: data.contactMsg + '\n\nHit reply to respond directly to ' + data.contactName + ' (' + data.contactEmail + ').'
   },(err, info) => {

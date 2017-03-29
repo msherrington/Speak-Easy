@@ -7,11 +7,11 @@
         <div class="col-xs-4" ng-repeat="user in usersIndex.all | filter: main.q">
           <div class="card">
             <h3>{{ user.username }}</h3>
-            <img class="img-small" src="{{ user.profilePic }}">
+            <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}">
             <!-- <p>User ID: {{ user.id }}</p> -->
             <!-- <p>Email: {{ user.email }}</p> -->
             <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
-            <p>{{ user.skills[0].language.lang }} ({{ user.skills[0].level }})</p>
+            <p>{{ user.skills[0].language.lang || 'No skills yet' }} ({{ user.skills[0].level || 'Beginner' }})</p>
             <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
             <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
             <p><a ui-sref="message({ id: user.id })">Send Message</a></p>

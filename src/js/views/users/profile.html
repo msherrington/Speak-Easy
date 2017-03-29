@@ -1,36 +1,28 @@
-<h1>Profile</h1>
 
-<p ng-if="main.isAuthenticated()"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit</a></p>
+<p ng-if="main.isAuthenticated()"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
 
+<h2>{{ usersProfile.user.username }}'s Profile</h2>
 <img class="img-small" src="{{ usersProfile.user.profilePic }}">
-<p>Username: {{ usersProfile.user.username }}</p>
-<p>Currently learning: {{ usersProfile.user.learning }}</p>
-<p>About: {{ usersProfile.user.about }}</p>
+<br>
+<br>
 <p><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
-<!-- <p>Email: {{ usersProfile.user.email }}</p> -->
+<p><b>Currently learning: </b>{{ usersProfile.user.learning }}</p>
+<p><b>About: </b>{{ usersProfile.user.about }}</p>
 
-<!-- <p>Primary Language: {{ usersProfile.user.skills[0].language.lang }} ({{ usersProfile.user.skills[0].level }})</p> -->
-  <!-- {{ usersProfile.user.skills }} -->
 <h2>Languages offered:</h2>
 <div ng-repeat="details in usersProfile.user.skills track by $index">
-  <p>{{ details.language.lang}} ({{ details.level }})</p>
+  <h4>{{ details.language.lang }} ({{ details.level }})</h4>
 </div>
-
-
-
-<p>Review: {{ usersProfile.user.reviews }}</p>
-<p>Review by: {{ usersProfile.user.reviews.addedBy }}</p>
-
-
 
 <div class="reviews">
   <h2>Reviews</h2>
   <ul class="reviews__created">
-    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<button class="button" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">Delete</button></li>
+    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br><button class="button" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">Delete your comment</button></li>
   </ul>
   <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
-    <label>Add review</label>
+    <label>Review this user</label>
     <textarea ng-model="usersProfile.newReview.content"></textarea>
-    <button class="button button--full">Review</button>
+    <button class="button button--full">Post Review</button>
   </form>
+  <br>
 </div>
