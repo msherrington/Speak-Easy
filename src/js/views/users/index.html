@@ -7,7 +7,7 @@
         <div class="col-xs-4" ng-repeat="user in usersIndex.all | filter: main.q">
           <div class="card">
             <h3>{{ user.username }}</h3>
-            <img class="img-small" src="{{ user.profilePic }}">
+            <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}">
             <!-- <p>User ID: {{ user.id }}</p> -->
             <!-- <p>Email: {{ user.email }}</p> -->
             <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
