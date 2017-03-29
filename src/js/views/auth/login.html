@@ -15,7 +15,7 @@
   <div class="input-field col s6">
     <md-input-container>
     <label for="email">Email</label>
-    <!-- <input id="email" type="email" name="email"  ng-model="login.credentials.email" required> -->
+    <input id="email" type="email" name="email"  ng-model="login.credentials.email" required>
     </md-input-container>
 
     <!-- Error message! -->
@@ -59,7 +59,8 @@
   </div>
 
 </form>
-<button ng-click="login.authenticate('github')">Sign in with GitHub</button>
+<button ng-click="login.authenticate('github')">Sign in with Github</button>
+<button ng-click="login.authenticate('facebook')">Sign in with Facebook</button>
     </div>
   </div>
 </div>

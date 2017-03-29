@@ -47,6 +47,9 @@ router.route('/login')
 router.route('/oauth/github')
   .post(oauth.github);
 
+router.route('/oauth/facebook')
+  .post(oauth.facebook);
+
 // router.all('*', (req, res, err) => res.status(500).json(err));
 router.all('*', (req, res) => res.notFound());
 

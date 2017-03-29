@@ -28,7 +28,8 @@ const userSchema = new mongoose.Schema({
     level: { type: String, enum: ['Basic', 'Adequate', 'Intermediate', 'Advanced', 'Native']}
   }],
   reviews: [ reviewSchema ],
-  githubId: { type: Number }
+  githubId: { type: Number },
+  facebookId: { type: String}
 });
 
 //Allows us tho get access to uploaded images for editing
@@ -66,7 +67,7 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this.password && !this.githubId){
+  if(!this.password && !this.githubId && !this.facebookId){
     this.invalidate('password', 'required');
   }
   if(this.isModified('password') && this._passwordConfirmation !== this.password) {
