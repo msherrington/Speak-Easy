@@ -27,7 +27,8 @@ const userSchema = new mongoose.Schema({
     language: { type: mongoose.Schema.ObjectId, ref: 'Skill', trim: true },
     level: { type: String, enum: ['Basic', 'Adequate', 'Intermediate', 'Advanced', 'Native']}
   }],
-  reviews: [ reviewSchema ]
+  reviews: [ reviewSchema ],
+  githubId: {type: Number}
 });
 
 //Allows us tho get access to uploaded images for editing
@@ -65,6 +66,9 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
+  if(!this.password && !this.gitHubId){
+    this.invalidate('password', 'required');
+  }
   if(this.isModified('password') && this._passwordConfirmation !== this.password) {
     this.invalidate('passwordConfirmation', 'does not match');
   }
