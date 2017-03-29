@@ -19,11 +19,12 @@
 <div class="reviews">
   <h2>Reviews</h2>
   <ul class="reviews__created">
-    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br><button class="button" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">Delete your comment</button></li>
+    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }} - {{ review.rating }}<br><button class="button" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">Delete your comment</button></li>
   </ul>
   <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
     <label>Review this user</label>
     <textarea ng-model="usersProfile.newReview.content"></textarea>
+    <!-- <textarea ng-model="usersProfile.newReview.rating"></textarea> -->
     <button class="button button--full">Post Review</button>
   </form>
   <br>
