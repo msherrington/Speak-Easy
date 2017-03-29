@@ -18,32 +18,49 @@
     <h4 ng-repeat="details in message.user.skills track by $index">{{ details.level}} in {{ details.language.lang }}</h4>
 
     <!-- Add interests here-->
-    <h2>Dear {{ message.user.username }}...</h2>
 
-  <form id="contactForm" name="contactForm" ng-submit="message.sendMail()"  novalidate>
+  <form name="contactForm" class="contactForm" ng-submit="message.sendMail()"  novalidate>
+
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="email">Dear {{ message.user.username }}...</label>
+        <textarea id="contactMsg" type="text" name="contactMsg" ng-model="message.contactMsg"  maxlength="255" required></textarea>
+      </md-input-container>
+    </div>
 
 
-    <div>Your name:
-      <input type="text" ng-model="message.contactName" required>
+    <div class="input-field col s6">
+      <md-input-container>
+      <label for="contactName">Your Name</label>
+      <input id="contactName" type="text" ng-model="message.contactName" required>
+    </md-input-container>
     </div>
 
     <!-- Hidden field for email to send message to -->
     <div>
       <input type="hidden" name="sendingTo" ng-model="message.user.email">
     </div>
+<!-- ////////////////////////////////////////////// -->
 
-    <div>Your email:
-      <input type="email" ng-model="message.contactEmail" required>
+    <div class="input-field col s6">
+      <md-input-container>
+      <label for="contactEmail">Your Email</label>
+      <input id="contactEmail" type="email" ng-model="message.contactEmail" required>
+    </md-input-container>
     </div>
 
-    <div>Message:
+    <!-- <div>Message:
       <textarea ng-model="message.contactMsg" columns="1" required></textarea>
-    </div>
+    </div> -->
 
-    <button type="submit">Send Message</button>
-  </form>
+    <div class="space-top text-center">
+      <md-button type="submit" class="waves-effect waves-light btn done">
+      <i class="material-icons left"></i> Send
+      </md-button>
 
-</div>
+    </form>
+      </div>
+
     </div>
   </div>
 </div>
