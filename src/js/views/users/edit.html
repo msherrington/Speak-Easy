@@ -1,208 +1,203 @@
 <div class="container">
-   <div id="signup">
-      <div class="signup-screen">
-         <div class="space-bot text-center">
-            <h1>Edit</h1>
-           <div class="divider"></div>
-         </div>
+  <div id="signup">
+    <div class="signup-screen">
+      <div class="space-bot text-center">
+        <h1>Edit</h1>
+        <div class="divider"></div>
+      </div>
 
-  <form name="usersEdit.userForm"
-  class="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
-
-
-   <div class="input-field col s6">
-     <md-input-container>
-       <label for="username">Username</label>
-     <input id="username" type="text" name="username"  ng-model="usersEdit.user.username">
-   </div>
+    <form name="usersEdit.userForm"
+    class="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
 
 
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched)">
-     <div ng-message="required"><em class="error">Username is required!</em></div>
-     <div ng-message="minlength"><em class="error">Username not long enough</em></div>
-   </div> -->
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username"  ng-model="usersEdit.user.username">
+    </div>
 
-<div class="input-field col s6">
-  <md-input-container>
-  <label for="email">Email</label>
-  <input id="email" type="email" name="email"  ng-model="usersEdit.user.email">
-  </md-input-container>
+
+<!-- Error message! -->
+<!-- <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched)">
+<div ng-message="required"><em class="error">Username is required!</em></div>
+<div ng-message="minlength"><em class="error">Username not long enough</em></div>
+</div> -->
+
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email"  ng-model="usersEdit.user.email">
+      </md-input-container>
+    </div>
+
+<!-- Error message! -->
+<!-- <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.email.$touched)">
+<div ng-message="required"><em class="error">Email is required!</em></div>
+<div ng-message="pattern"><em class="error">Email not valid</em></div>
+</div> -->
+
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="profilePic">Profile Image</label>
+        <input id="profilePic" type="text" name="profilePic"  ng-model="usersEdit.user.profilePic" required>
+      </md-input-container>
+    </div>
+
+
+<!-- <div>Profile Image:
+<input base64 type="file" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link..">
 </div>
+{{ usersEdit.user.profilePic }} -->
+
+<!-- Error message! -->
+<!-- <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.profilePic.$touched)">
+<div ng-message="required"><em class="error">Image link is required</em></div>
+</div> -->
 
 
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="email">Location</label>
+        <input id="location" type="text" name="location" autocomplete ng-model="usersEdit.user.location" lat="usersEdit.user.lat" lng="usersEdit.user.lng" required>
+      </md-input-container>
+    </div>
 
+<!-- {{ usersEdit.user }} -->
+<!-- {{ usersEdit.user.lat }}
+{{ usersEdit.user.lng }} -->
 
+<!-- <input type="hidden" name="form-lat" ng-model="usersEdit.user.lat">
+<input type="hidden" name="form-lng" ng-model="usersEdit.user.lng"> -->
 
+<!-- <div>Location:
+<input type="text" name="location" id="location" ng-model="usersEdit.user.location" placeholder="Location..." required>
+</div> -->
 
+<!-- //////////////////////////////////////////////////// -->
 
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.email.$touched)">
-     <div ng-message="required"><em class="error">Email is required!</em></div>
-     <div ng-message="pattern"><em class="error">Email not valid</em></div>
-   </div> -->
-
-   <div class="input-field col s6">
-     <md-input-container>
-     <label for="profilePic">Profile Image</label>
-     <!-- <input id="profilePic" type="text" name="profilePic"  ng-model="usersEdit.user.profilePic" required> -->
-        <input base64 type="file" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link..">
-     </md-input-container>
-   </div>
-
-
-   <!-- <div>Profile Image:
-     <input base64 type="file" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link..">
-   </div>
-   {{ usersEdit.user.profilePic }} -->
-
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.profilePic.$touched)">
-     <div ng-message="required"><em class="error">Image link is required</em></div>
-   </div> -->
-
-
-   <div class="input-field col s6">
-     <md-input-container>
-     <label for="email">Location</label>
-     <input id="location" type="text" name="location" autocomplete ng-model="usersEdit.user.location" lat="usersEdit.user.lat" lng="usersEdit.user.lng" required>
-     </md-input-container>
-   </div>
-
-     <!-- {{ usersEdit.user }} -->
-     <!-- {{ usersEdit.user.lat }}
-     {{ usersEdit.user.lng }} -->
-
-     <!-- <input type="hidden" name="form-lat" ng-model="usersEdit.user.lat">
-     <input type="hidden" name="form-lng" ng-model="usersEdit.user.lng"> -->
-
-   <!-- <div>Location:
-     <input type="text" name="location" id="location" ng-model="usersEdit.user.location" placeholder="Location..." required>
-   </div> -->
-
-   <!-- //////////////////////////////////////////////////// -->
-
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
-     <div ng-message="required"><em class="error">Location is required</em></div>
-   </div> -->
+<!-- Error message! -->
+<!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
+<div ng-message="required"><em class="error">Location is required</em></div>
+</div> -->
 
 <!-- //////////////////////////////////////////////////////////// -->
 
-<div class="input-field col s6">
-  <md-input-container>
-  <label for="email">Who are you?</label>
-  <textarea id="about" type="text" name="about" ng-model="usersEdit.user.about" required maxlength="255"></textarea>
-  </md-input-container>
-</div>
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="email">Who are you?</label>
+        <textarea id="about" type="text" name="about" ng-model="usersEdit.user.about" required maxlength="255"></textarea>
+      </md-input-container>
+    </div>
 
 
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.about.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.about.$touched)">
-     <div ng-message="required"><em class="error">Tell us something!</em></div>
-     <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
-   </div> -->
+<!-- Error message! -->
+<!-- <div class="errorDiv" ng-messages="usersEdit.userForm.about.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.about.$touched)">
+<div ng-message="required"><em class="error">Tell us something!</em></div>
+<div ng-message="maxlength"><em class="error">Too many characters!</em></div>
+</div> -->
 
 
-   <div class="input-field col s6">
-     <md-input-container>
-     <label for="email">What languages are you learning?</label>
-     <textarea id="learning" type="text" name="learning" ng-model="usersEdit.user.learning" required maxlength="255"></textarea>
-     </md-input-container>
-   </div>
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="email">What languages are you learning?</label>
+        <textarea id="learning" type="text" name="learning" ng-model="usersEdit.user.learning" required maxlength="255"></textarea>
+      </md-input-container>
+    </div>
 
-   <!-- Error message! -->
-   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.learning.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.learning.$touched)">
-     <div ng-message="required"><em class="error">What do you want to learn?</em></div>
-     <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
-   </div> -->
-
-
-
-   <!-- <h3>Which languages can you offer?</h3>
-    <h3>Primary Language</h3>
-      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[0].language"></select>
-
-      <select ng-model="usersEdit.user.skills[0].level">
-        <option>Basic</option>
-        <option>Adequate</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>Native</option>
-      </select> -->
-
-    <!-- 2nd language -->
-    <!-- <h4>2nd language</h4>
-      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[1].language"></select>
-
-      <select ng-model="usersEdit.user.skills[1].level">
-        <option>Basic</option>
-        <option>Adequate</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>Native</option>
-      </select> -->
-
-      <!-- 3rd language -->
-      <!-- <h4>3rd language</h4>
-      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[2].language"></select>
-
-      <select ng-model="usersEdit.user.skills[2].level">
-        <option>Basic</option>
-        <option>Adequate</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>Native</option>
-      </select> -->
-
-      <!-- 4th language -->
-      <!-- <h4>4th language</h4>
-      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[3].language"></select>
-
-      <select ng-model="usersEdit.user.skills[3].level">
-        <option>Basic</option>
-        <option>Adequate</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>Native</option>
-      </select> -->
-
-      <!-- 5th language -->
-      <!-- <h4>5th language</h4>
-      <select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[4].language"></select>
-
-      <select ng-model="usersEdit.user.skills[4].level">
-        <option>Basic</option>
-        <option>Adequate</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-        <option>Native</option>
-      </select> -->
-      <div class="md-padding" ng-cloak>
-        <div>
-          <h1 class="md-title">Pick your language below</h1>
-          <div layout="row" ng-repeat="i in [0,1,2,3,4]">
-
-            <md-input-container>
-              <label>Language</label>
-              <md-select ng-model="usersEdit.user.skills[i].language">
-                <md-option ng-value="skill.id" ng-repeat="skill in usersEdit.skills">{{skill.lang}}</md-option>
-              </md-select>
-            </md-input-container>
-            <md-input-container>
-              <label>Level</label>
-              <md-select ng-model="usersEdit.user.skills[i].level">
-                <md-option ng-value="level" ng-repeat="level in usersEdit.levels">{{level}}</md-option>
-              </md-select>
-            </md-input-container>
-          </div>
-        </div>
-   <div>
-     <button>Update</button>
-   </div>
- </form>
+<!-- Error message! -->
+<!-- <div class="errorDiv" ng-messages="usersEdit.userForm.learning.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.learning.$touched)">
+<div ng-message="required"><em class="error">What do you want to learn?</em></div>
+<div ng-message="maxlength"><em class="error">Too many characters!</em></div>
+</div> -->
 
 
-</div>
-</div>
+
+<!-- <h3>Which languages can you offer?</h3>
+<h3>Primary Language</h3>
+<select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[0].language"></select>
+
+<select ng-model="usersEdit.user.skills[0].level">
+<option>Basic</option>
+<option>Adequate</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Native</option>
+</select> -->
+
+<!-- 2nd language -->
+<!-- <h4>2nd language</h4>
+<select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[1].language"></select>
+
+<select ng-model="usersEdit.user.skills[1].level">
+<option>Basic</option>
+<option>Adequate</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Native</option>
+</select> -->
+
+<!-- 3rd language -->
+<!-- <h4>3rd language</h4>
+<select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[2].language"></select>
+
+<select ng-model="usersEdit.user.skills[2].level">
+<option>Basic</option>
+<option>Adequate</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Native</option>
+</select> -->
+
+<!-- 4th language -->
+<!-- <h4>4th language</h4>
+<select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[3].language"></select>
+
+<select ng-model="usersEdit.user.skills[3].level">
+<option>Basic</option>
+<option>Adequate</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Native</option>
+</select> -->
+
+<!-- 5th language -->
+<!-- <h4>5th language</h4>
+<select ng-options="skill.id as skill.lang for skill in usersEdit.all" ng-model="usersEdit.user.skills[4].language"></select>
+
+<select ng-model="usersEdit.user.skills[4].level">
+<option>Basic</option>
+<option>Adequate</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+<option>Native</option>
+</select> -->
+<div class="md-padding" ng-cloak>
+  <div>
+    <h1 class="md-title">Pick your language below</h1>
+    <div layout="row" ng-repeat="i in [0,1,2,3,4]">
+
+      <md-input-container>
+        <label>Language</label>
+        <md-select ng-model="usersEdit.user.skills[i].language">
+        <md-option ng-value="skill.id" ng-repeat="skill in usersEdit.skills">{{skill.lang}}</md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Level</label>
+        <md-select ng-model="usersEdit.user.skills[i].level">
+        <md-option ng-value="level" ng-repeat="level in usersEdit.levels">{{level}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+  </div>
+
+
+      <div class="space-top text-center">
+        <md-button type="update" ng-disabled="login.loginForm.$invalid" class="waves-effect waves-light btn done">
+        <i class="material-icons left"></i> Done
+        </md-button>
+    </form>
+  </div>
+ </div>
 </div>
