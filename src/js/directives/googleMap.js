@@ -1,4 +1,5 @@
-/* global google: true, */
+/* global google:ignore mapStyles:ignore */
+
 
 angular.module('skillsApp')
   .directive('googleMap', googleMap);
@@ -24,7 +25,8 @@ function googleMap($window, $http){
       const map = new $window.google.maps.Map(element[0], {
         zoom: 12,
         scrollwheel: false,
-        center: $scope.center
+        center: $scope.center,
+        styles: mapStyles
       });
 
       // Event listener to close infowindows by clicking anywhere on map
