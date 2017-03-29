@@ -127,6 +127,14 @@ UsersEditCtrl.$inject = ['User', '$stateParams', '$state', '$http'];
 function UsersEditCtrl(User, $stateParams, $state, $http) {
   const vm = this;
 
+  vm.levels = [
+    'Basic',
+    'Adequate',
+    'Intermediate',
+    'Advanced',
+    'Native'
+  ];
+
   User.get($stateParams)
     .$promise
     .then((data) => {
@@ -137,9 +145,9 @@ function UsersEditCtrl(User, $stateParams, $state, $http) {
       vm.user = data;
     });
 
-  $http.get('http://localhost:7000/api/skills')
+  $http.get('/api/skills')
     .then((response) => {
-      vm.all = response.data;
+      vm.skills = response.data;
     });
 
 
