@@ -1,13 +1,19 @@
-
+<!DOCTYPE html>
+<div class="container">
+  <div id="signup">
+    <div class="signup-screen">
+      <div class="space-bot text-center">
+        <h1>User Profile</h1>
+        <div class="divider"></div>
+      </div>
 <p ng-if="main.isAuthenticated() && main.currentUserId === usersProfile.user.id"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
 
 <h2>{{ usersProfile.user.username }}'s Profile</h2>
-<p>{{ usersProfile.currentUser.locked}}</p>
 
 <img class="img-small" src="{{ usersProfile.user.profilePic }}">
 <br>
 <br>
-<p ng-if="main.isAuthenticated() && main.currentUser.locked === false"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
+<p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
 <p><b>Currently learning: </b>{{ usersProfile.user.learning }}</p>
 <p><b>About: </b>{{ usersProfile.user.about }}</p>
 
@@ -19,13 +25,32 @@
 <div class="reviews">
   <h2>Reviews</h2>
   <ul class="reviews__created">
-    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }} - {{ review.rating }}<br><button class="button" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">Delete your comment</button></li>
+    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
+
+<!-- delete comment button -->
+      <md-button class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
+      <i class="material-icons left"></i> Delete
+      </md-button>
+    </li>
+
   </ul>
+
   <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
+    <div class="input-field col s6">
+      <md-input-container>
     <label>Review this user</label>
-    <textarea ng-model="usersProfile.newReview.content"></textarea>
-    <!-- <textarea ng-model="usersProfile.newReview.rating"></textarea> -->
-    <button class="button button--full">Post Review</button>
+    <textarea id="review" type="text" name="about" ng-model="usersProfile.newReview.content" maxlength="255"></textarea>
+    </md-input-container>
+
+    <div class="space-top text-center">
+      <md-button type="submit" class="waves-effect waves-light btn done">
+      <i class="material-icons left"></i> Post
+      </md-button>
+    </div>  
+
   </form>
   <br>
+</div>
+    </div>
+  </div>
 </div>
