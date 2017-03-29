@@ -58,8 +58,8 @@ function UsersIndexCtrl(User, filterFilter, $http, $scope) {
   vm.all = User.query();
 }
 
-MessageCtrl.$inject = ['User', '$stateParams', '$http'];
-function MessageCtrl(User, $stateParams, $http) {
+MessageCtrl.$inject = ['User', '$stateParams', '$http', '$state'];
+function MessageCtrl(User, $stateParams, $http, $state) {
 
   const vm = this;
 
@@ -74,8 +74,8 @@ function MessageCtrl(User, $stateParams, $http) {
       contactTo: vm.user.email
     });
 
-    $http.post('/api/message', data); //not sure about full stop
-
+    $http.post('/api/message', data);
+    $state.go('usersProfile', $stateParams);
   }
   vm.sendMail = sendMail;
 }
@@ -86,8 +86,6 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   vm.newReview = {};
 
   vm.user = User.get($stateParams);
-
-
 
   function usersDelete() {
     vm.user
@@ -102,7 +100,7 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
       .save({ userId: vm.user.id }, vm.newReview)
       .$promise
       .then((review) => {
-        vm .user.reviews.push(review);
+        vm.user.reviews.push(review);
         vm.newReview = {};
       });
   }

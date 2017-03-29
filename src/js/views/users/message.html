@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="container">
   <div id="signup">
     <div class="signup-screen">
@@ -7,6 +8,8 @@
       </div>
 
 <div ng-controller="MessageCtrl as message">
+
+  <p><a ui-sref="usersProfile({ id: message.user.id })">View {{ message.user.username }}'s Profile</a></p>
 
   <h2>Send an email to {{ message.user.username }}...</h2>
   <img  class="img-small" src="{{ message.user.profilePic }}">
@@ -24,6 +27,7 @@
         <textarea id="contactMsg" type="text" name="contactMsg" ng-model="message.contactMsg"  maxlength="255" required></textarea>
       </md-input-container>
     </div>
+
 
     <div class="input-field col s6">
       <md-input-container>
@@ -56,6 +60,7 @@
 
     </form>
       </div>
+
     </div>
   </div>
 </div>

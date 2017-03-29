@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="container">
   <div id="signup">
     <div class="signup-screen">
@@ -5,15 +6,14 @@
         <h1>User Profile</h1>
         <div class="divider"></div>
       </div>
-<p ng-if="main.isAuthenticated()"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
+<p ng-if="main.isAuthenticated() && main.currentUserId === usersProfile.user.id"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
 
 <h2>{{ usersProfile.user.username }}'s Profile</h2>
-<p>{{ usersProfile.currentUser.locked}}</p>
 
 <img class="img-small" src="{{ usersProfile.user.profilePic }}">
 <br>
 <br>
-<p ng-if="main.isAuthenticated() && main.currentUser.locked === false"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
+<p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
 <p><b>Currently learning: </b>{{ usersProfile.user.learning }}</p>
 <p><b>About: </b>{{ usersProfile.user.about }}</p>
 
