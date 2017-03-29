@@ -122,8 +122,8 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   vm.deleteReview = deleteReview;
 }
 
-UsersEditCtrl.$inject = ['User', 'Skill', '$stateParams', '$state', '$http'];
-function UsersEditCtrl(User, Skill, $stateParams, $state, $http) {
+UsersEditCtrl.$inject = ['User', '$stateParams', '$state', '$http'];
+function UsersEditCtrl(User, $stateParams, $state, $http) {
   const vm = this;
 
   vm.levels = [
@@ -133,8 +133,6 @@ function UsersEditCtrl(User, Skill, $stateParams, $state, $http) {
     'Advanced',
     'Native'
   ];
-
-  vm.skills = Skill.query();
 
   User.get($stateParams)
     .$promise
@@ -146,9 +144,9 @@ function UsersEditCtrl(User, Skill, $stateParams, $state, $http) {
       vm.user = data;
     });
 
-  $http.get('http://localhost:7000/api/skills')
+  $http.get('/api/skills')
     .then((response) => {
-      vm.all = response.data;
+      vm.skills = response.data;
     });
 
 

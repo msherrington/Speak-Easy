@@ -186,13 +186,13 @@
             <md-input-container>
               <label>Language</label>
               <md-select ng-model="usersEdit.user.skills[i].language">
-                <md-option ng-value="{{ skill.id }}" ng-repeat="skill in usersEdit.skills">{{skill.name}}</md-option>
+                <md-option ng-value="skill.id" ng-repeat="skill in usersEdit.skills">{{skill.lang}}</md-option>
               </md-select>
             </md-input-container>
             <md-input-container>
               <label>Level</label>
               <md-select ng-model="usersEdit.user.skills[i].level">
-                <md-option ng-repeat="level in select.levels">{{level}}</md-option>
+                <md-option ng-value="level" ng-repeat="level in usersEdit.levels">{{level}}</md-option>
               </md-select>
             </md-input-container>
           </div>
