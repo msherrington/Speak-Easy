@@ -131,6 +131,31 @@ function deleteReviewRoute(req, res, next){
     .catch(next);
 }
 
+// UPVOTE ROUTE
+// function upvoteRoute(req, res, next) {
+//   User
+//     .findById(req.params.id)
+//     .exec()
+//     .then((user) => {
+//       // check if the upvotes array already has the current user's id in it
+//       if(user.upvotes.includes(req.user.id)){
+//         //If yes the remove//
+//         // console.log('Ello!');
+//         // restaurant.upvotes.shift();
+//         user.upvotes = user.upvotes.filter(function(e){
+//           return e !== req.user.id;
+//         });
+//         return user.save();
+//         // if not add user id to array
+//       } else {
+//         user.upvotes.push(req.user.id); // else push the users id into the array
+//         return user.save();
+//       }
+//     })
+//     .then(() => res.redirect(`/restaurants/${req.params.id}`))
+//     .catch(next);
+// }
+
 
 module.exports = {
   index: indexRoute,
@@ -142,4 +167,5 @@ module.exports = {
   sendMail: sendMailRoute,
   addReview: addReviewRoute,
   deleteReview: deleteReviewRoute
+  // upVote: upvoteRoute
 };
