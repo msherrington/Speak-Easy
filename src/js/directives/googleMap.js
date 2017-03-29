@@ -58,7 +58,7 @@ function googleMap($window, $http){
       slider.onchange = function(){
         // function plotInBounds(){
         // console.log('Changed!');
-        sliderDiv.innerHTML = this.value;
+        sliderDiv.innerHTML = (this.value)/1000;
         circle.radius = sliderDiv.innerHTML;
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
