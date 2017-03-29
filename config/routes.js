@@ -45,7 +45,7 @@ router.route('/login')
 
 //oauth routes
 router.route('/oauth/github')
-  .get(oauth.github);
+  .post(oauth.github);
 
 // router.all('*', (req, res, err) => res.status(500).json(err));
 router.all('*', (req, res) => res.notFound());

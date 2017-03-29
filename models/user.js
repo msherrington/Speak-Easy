@@ -15,7 +15,7 @@ reviewSchema.methods.ownedBy = function ownedBy(user) {
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, unique: true },
   profilePic: { type: String },
   password: { type: String },
   location: { type: String },
@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     level: { type: String, enum: ['Basic', 'Adequate', 'Intermediate', 'Advanced', 'Native']}
   }],
   reviews: [ reviewSchema ],
-  githubId: {type: Number}
+  githubId: { type: Number }
 });
 
 //Allows us tho get access to uploaded images for editing
@@ -66,7 +66,7 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this.password && !this.gitHubId){
+  if(!this.password && !this.githubId){
     this.invalidate('password', 'required');
   }
   if(this.isModified('password') && this._passwordConfirmation !== this.password) {

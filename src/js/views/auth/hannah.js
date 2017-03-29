@@ -1,9 +1,3 @@
-const rp = require('request-promise');
-const oauth = require('../config/oauth');
-const User = require('../models/user');
-const jwt = require('jsonwebtoken');
-const { secret } = require('../config/environment');
-
 function github(req, res, next) {
   return rp({
     method: 'POST',
@@ -16,7 +10,6 @@ function github(req, res, next) {
     json: true
   })
   .then((token) => {
-    console.log(token);
     return rp({
       method: 'GET',
       url: oauth.github.profileURL,
@@ -25,6 +18,7 @@ function github(req, res, next) {
         'User-Agent': 'Request-Promise'
       },
       json: true
+
     });
   })
   .then((profile) => {
@@ -37,9 +31,9 @@ function github(req, res, next) {
             email: profile.email
           });
         }
-
         user.githubId = profile.id;
-        // user.profilePic = profile.avatar_url; //check this
+        // user.image = profile.avatar_url;
+
         return user.save();
       });
   })
@@ -52,5 +46,3 @@ function github(req, res, next) {
   })
   .catch(next);
 }
-
-module.exports = { github };

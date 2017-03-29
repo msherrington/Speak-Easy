@@ -5,9 +5,9 @@ module.exports = {
     profileURL: 'https://api.github.com/user',
     clientId: process.env.GITHUB_GUNIT_ID,
     clientSecret: process.env.GITHUB_GUNIT_SECRET,
-    scope: 'user:email',
-    getLoginURL() {
-      return `${this.loginURL}?client_id=${this.clientId}&scope=${this.scope}`;
-    }
+    scope: 'user:email'
+    // getLoginURL() {
+    //   return `${this.loginURL}?client_id=${this.clientId}&scope=${this.scope}`;
+    // }
   }
 };
