@@ -4,8 +4,9 @@
   <div class="row leftSideIndex">
     <div class="col-xs-8">
       <div class="row">
-        <div class="col-xs-4" ng-repeat="user in usersIndex.all | filter: main.q">
+        <div class="col-xs-4" ng-repeat="user in usersIndex.all | orderBy:'-created_at' | filter: main.q">
           <div class="card">
+            <!-- <div>{{user.created_at}}</div> -->
             <h3>{{ user.username }}</h3>
             <img class="img-small" src="{{ user.profilePic }}">
             <!-- <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}"> -->

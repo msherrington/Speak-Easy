@@ -31,7 +31,8 @@ const userSchema = new mongoose.Schema({
   }],
   reviews: [ reviewSchema ],
   githubId: { type: Number },
-  facebookId: { type: String}
+  facebookId: { type: String},
+  created_at: { type: Date, default: Date.now }
 });
 
 //Allows us tho get access to uploaded images for editing
