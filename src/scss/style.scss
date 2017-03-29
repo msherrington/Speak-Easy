@@ -151,7 +151,6 @@ h1 {
 /* Sign Up */
 
 .container {
-    max-width: 400px;
     max-height: 100px;
     margin-top: 10px;
 }
@@ -241,12 +240,15 @@ md-input-container.md-default-theme .md-input, md-input-container .md-input{
   border-color: white;
 }
 
+div.layout{
+  text-align: center;
+}
+
 input[type='file']{
   height: 0.1px;
   // width: 0.1px;
 }
 
-// #location {
-//   background-color: red;
-//   z-index: -10;
-// }
+.login-buttons {
+  text-align: center;
+}

@@ -15,18 +15,7 @@ function RegisterCtrl($auth, $state, $http){
   .then((response) => {
     console.log(response);
     vm.all = response.data;
-    // console.log(vm.all[0].lat);
-    // console.log(vm.all[0].lng);
-    vm.u = vm.all;
-
     const skills = vm.all;
-    // console.log(skills[0].lang);
-    // console.log(users);
-    //
-    // for (var i=0; i<users.length; i++) {
-    //   console.log(users[i].lat);
-    //   console.log(users[i].lng);
-    // }
   });
   }
   function submit(){

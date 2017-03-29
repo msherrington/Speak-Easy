@@ -32,9 +32,10 @@
     </form>
   </div>
 </nav>
-{{ main.currentUser }}
-  <main ui-view>
-
+<div class="profile-warning">
+  <p ng-if="main.isAuthenticated() && main.currentUser.locked === true">Please complete your profile before you can message other users.</p>
+</div>
+  <main ui-view class="container">
   </main>
 </body>
 </html>
