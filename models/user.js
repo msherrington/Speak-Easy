@@ -23,8 +23,8 @@ const userSchema = new mongoose.Schema({
   location: { type: String },
   lat: { type: Number },
   lng: { type: Number },
-  learning: { type: String, default: 'No learning interests yet' },
-  about: { type: String, default: 'User info not added yet!' },
+  learning: { type: String },
+  about: { type: String },
   skills: [{
     language: { type: mongoose.Schema.ObjectId, ref: 'Skill' },
     level: { type: String, enum: ['Basic', 'Adequate', 'Intermediate', 'Advanced', 'Native'] }
