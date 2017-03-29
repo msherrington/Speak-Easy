@@ -39,7 +39,8 @@ function github(req, res, next) {
         }
 
         user.githubId = profile.id;
-        // user.profilePic = profile.avatar_url; //check this
+        user.email = profile.email;
+        user.profilePic = profile.avatar_url; //check this
         return user.save();
       });
   })
