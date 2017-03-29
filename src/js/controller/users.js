@@ -122,9 +122,19 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   vm.deleteReview = deleteReview;
 }
 
-UsersEditCtrl.$inject = ['User', '$stateParams', '$state', '$http'];
-function UsersEditCtrl(User, $stateParams, $state, $http) {
+UsersEditCtrl.$inject = ['User', 'Skill', '$stateParams', '$state', '$http'];
+function UsersEditCtrl(User, Skill, $stateParams, $state, $http) {
   const vm = this;
+
+  vm.levels = [
+    'Basic',
+    'Adequate',
+    'Intermediate',
+    'Advanced',
+    'Native'
+  ];
+
+  vm.skills = Skill.query();
 
   User.get($stateParams)
     .$promise
