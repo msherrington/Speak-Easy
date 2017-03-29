@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<div ng-controller="SkillsNewCtrl as skillsNew">
+  <h1 class="see">Yo</h1>
+  <form name="skillsNew.skillForm" ng-submit="skillsNew.create()">
+
+    <input class="a" type="text" name="lang" id="lang" ng-model="skillsNew.skill.lang" placeholder="language" required>
+
+    <button class="a">Create</button>
+  </form>
+</div>

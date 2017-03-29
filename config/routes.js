@@ -29,8 +29,15 @@ router.route('/users/:id/reviews/:reviewId')
 
 // skills
 router.route('/skills')
-// .all(secureRoute)
-.get(skillsController.index);
+  // .all(secureRoute)
+  .get(skillsController.index)
+  .post(skillsController.create);
+  //
+router.route('/skills/:id')
+  // .all(secureRoute)
+  .get(skillsController.show)
+  // .put(skillsController.update)
+  .delete(skillsController.delete);
 
 //New routes
 router.route('/register')

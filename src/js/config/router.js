@@ -22,12 +22,16 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/users/edit.html',
       controller: 'UsersEditCtrl as usersEdit'
     })
+    .state('skillsNew', {
+      url: '/skills/new',
+      templateUrl: 'js/views/skills/new.html',
+      controller: 'SkillsNewCtrl as skillsNew'
+    })
     .state('message', {
       url: '/users/:id/message',
       templateUrl: 'js/views/users/message.html',
       controller: 'MessageCtrl as message'
     })
-
     // update our routes for register and login
     .state('register', {
       url: '/register',
