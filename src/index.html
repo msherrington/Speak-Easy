@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav">
       <li><a class="navbar-brand" href="/">Speak<span>Easy</span></a></li>
       <li ng-if="main.isAuthenticated()"><a ui-sref="usersProfile({ id: main.currentUserId })">My Profile</a></li>
-      <li ng-if="!main.isAuthenticated()"><a ui-sref="skillsNew">Add new skill</a></li>
+      <li ng-if="main.isAuthenticated()"><a ui-sref="skillsNew">Add new skill</a></li>
       <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
       <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
       <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>

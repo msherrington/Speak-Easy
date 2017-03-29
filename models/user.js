@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 
 const reviewSchema = new mongoose.Schema({
+  rating: { type: Number },
   content: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
