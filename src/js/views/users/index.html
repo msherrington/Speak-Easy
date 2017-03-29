@@ -3,14 +3,16 @@
   <div class="row leftSideIndex">
     <div class="col-xs-8">
       <div class="row">
-        <div class="col-xs-4" ng-repeat="user in usersIndex.all | filter: main.q">
+        <div class="col-xs-4" ng-repeat="user in usersIndex.all | orderBy:'-created_at' | filter: main.q">
           <div class="card">
+            <!-- <div>{{user.created_at}}</div> -->
             <h3>{{ user.username }}</h3>
-            <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}">
+            <img class="img-small" src="{{ user.profilePic }}">
+            <!-- <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}"> -->
             <!-- <p>User ID: {{ user.id }}</p> -->
-            <!-- <p>Email: {{ user.email }}</p> -->
+            <p>Email: {{ user.email }}</p>
             <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
-            <p>{{ user.skills[0].language.lang }} ({{ user.skills[0].level }})</p>
+            <p>{{ user.skills[0].language.lang || 'No skills yet' }} ({{ user.skills[0].level || 'Beginner' }})</p>
             <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
             <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
             <p><a ui-sref="message({ id: user.id })">Send Message</a></p>
@@ -21,7 +23,7 @@
 
     <div class="col-xs-4 rightSideIndex">
       <input id="slider" type="range" min="1" max="10000" step="1" value="0">
-      <p>Display users within <span id="sliderAmount">0</span> meters</p>
+      <p>Display users within <span id="sliderAmount"> 0</span> meters</p>
 
       <google-map></google-map>
     </div>

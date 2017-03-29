@@ -55,6 +55,7 @@ function googleMap($window, $http){
 
     //map circle radius function
       slider.onchange = function(){
+        // function plotInBounds(){
         // console.log('Changed!');
         sliderDiv.innerHTML = this.value;
         circle.radius = sliderDiv.innerHTML;
@@ -132,6 +133,7 @@ function googleMap($window, $http){
           distance: findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng))
         });
 
+
         // Event listener for user markers
         marker.addListener('click', () => {
           console.log('marker clicked');
@@ -164,6 +166,9 @@ function googleMap($window, $http){
         marker.addListener('click', () => {
           markerClick(marker, user);
         });
+
+
+
       }
 
       function markerClick(marker, user) {

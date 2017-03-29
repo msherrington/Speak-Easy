@@ -2,6 +2,7 @@ const router = require('express').Router();
 const usersController = require('../controllers/users');
 const skillsController = require('../controllers/skills');
 const auth = require('../controllers/auth');
+const oauth = require('../controllers/oauth');
 const secureRoute = require('../lib/secureRoute');
 const imageUpload = require('../lib/imageUpload');
 
@@ -37,6 +38,17 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login);
+
+//UPVOTES//
+// router.route('/users/:id/upvote')
+//   .put(secureRoute, usersController.upvote);
+
+//oauth routes
+router.route('/oauth/github')
+  .post(oauth.github);
+
+router.route('/oauth/facebook')
+  .post(oauth.facebook);
 
 // router.all('*', (req, res, err) => res.status(500).json(err));
 router.all('*', (req, res) => res.notFound());

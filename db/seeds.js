@@ -154,8 +154,8 @@ Skill
         password: 'Mark',
         passwordConfirmation: 'Mark',
         location: '',
-        lat: 51.5195,
-        lng: 0.0612,
+        lat: 51.5507302,
+        lng: -0.3181276999999909,
         skills: [{
           language: skills[1],
           level: 'Basic'

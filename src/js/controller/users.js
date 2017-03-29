@@ -120,6 +120,7 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
   }
 
   vm.deleteReview = deleteReview;
+
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state', '$http'];
