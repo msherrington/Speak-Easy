@@ -16,7 +16,7 @@ reviewSchema.methods.ownedBy = function ownedBy(user) {
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  // locked: true,
+  locked: { type: Boolean, default: true },
   profilePic: { type: String, default: '../../images/placeholder.jpg' },
   // profilePic: { type: String },
   password: { type: String },
