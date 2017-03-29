@@ -127,7 +127,7 @@ function googleMap($window, $http){
         latLng = { lat: user.lat, lng: user.lng };
         const marker = new google.maps.Marker({
           position: latLng,
-          map,
+          map: null,
           icon: image,
           distance: findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng))
         });
