@@ -1,69 +1,123 @@
 <!DOCTYPE html>
-<div>
-  <form name="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
+<div class="container">
+   <div id="signup">
+      <div class="signup-screen">
+         <div class="space-bot text-center">
+            <h1>Edit</h1>
+           <div class="divider"></div>
+         </div>
 
-   <div>Username:
-     <input type="text" name="username" id="username" ng-model="usersEdit.user.username" placeholder="Username..." required minlength="2">
+  <form name="usersEdit.userForm"
+  class="usersEdit.userForm" ng-submit="usersEdit.update()" novalidate>
+
+
+   <div class="input-field col s6">
+     <md-input-container>
+       <label for="username">Username</label>
+     <input id="username" type="text" name="username"  ng-model="usersEdit.user.username">
    </div>
+
+
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched)">
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.username.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched)">
      <div ng-message="required"><em class="error">Username is required!</em></div>
      <div ng-message="minlength"><em class="error">Username not long enough</em></div>
-   </div>
+   </div> -->
 
-   <div>Email:
-     <input type="email" name="email" id="email" ng-model="usersEdit.user.email" placeholder="Email" ng-pattern="/@/" required>
-   </div>
+<div class="input-field col s6">
+  <md-input-container>
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email"  ng-model="usersEdit.user.email">
+  </md-input-container>
+</div>
+
+
+
+
+
+
+
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.email.$touched)">
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.email.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.email.$touched)">
      <div ng-message="required"><em class="error">Email is required!</em></div>
      <div ng-message="pattern"><em class="error">Email not valid</em></div>
+   </div> -->
+
+<<<<<<< HEAD
+
+   <div class="input-field col s6">
+     <md-input-container>
+     <label for="email">Profile Image</label>
+     <input id="profilePic" type="text" name="profilePic"  ng-model="usersEdit.user.profilePic" required>
+     </md-input-container>
    </div>
 
-   <div>Profile Image:
+
+   <!-- <div>Profile Image:
      <input base64 type="file" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link..">
    </div>
-   {{ usersEdit.user.profilePic }}
-   <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.profilePic.$touched)">
-     <div ng-message="required"><em class="error">Image link is required</em></div>
-   </div>
+   {{ usersEdit.user.profilePic }} -->
 
-   <div>Location:
+   <!-- Error message! -->
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.profilePic.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.profilePic.$touched)">
+     <div ng-message="required"><em class="error">Image link is required</em></div>
+   </div> -->
+
+
+   <div class="input-field col s6">
+     <md-input-container>
+     <label for="email">Location</label>
+     <input id="location" type="text" name="location" autocomplete ng-model="usersEdit.user.location" lat="usersEdit.user.lat" lng="usersEdit.user.lng" required>
+     </md-input-container>
+   </div>
 
      <!-- {{ usersEdit.user }} -->
      <!-- {{ usersEdit.user.lat }}
      {{ usersEdit.user.lng }} -->
-     <input type="text" name="location" id="location" autocomplete ng-model="usersEdit.user.location" lat="usersEdit.user.lat" lng="usersEdit.user.lng" placeholder="Location..." required>
+
      <!-- <input type="hidden" name="form-lat" ng-model="usersEdit.user.lat">
      <input type="hidden" name="form-lng" ng-model="usersEdit.user.lng"> -->
-   </div>
+
    <!-- <div>Location:
      <input type="text" name="location" id="location" ng-model="usersEdit.user.location" placeholder="Location..." required>
    </div> -->
+
+   <!-- //////////////////////////////////////////////////// -->
+
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.location.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.location.$touched)">
      <div ng-message="required"><em class="error">Location is required</em></div>
-   </div>
+   </div> -->
+
+<!-- //////////////////////////////////////////////////////////// -->
+
+<div class="input-field col s6">
+  <md-input-container>
+  <label for="email">Who are you?</label>
+  <textarea id="about" type="text" name="about" ng-model="usersEdit.user.about" required maxlength="255"></textarea>
+  </md-input-container>
+</div>
 
 
-   <div>Who are you?
-     <textarea type="text" name="about" id="about" ng-model="usersEdit.user.about" placeholder="Tell us something about yourself..." required maxlength="255"></textarea>
-   </div>
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.about.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.about.$touched)">
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.about.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.about.$touched)">
      <div ng-message="required"><em class="error">Tell us something!</em></div>
      <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
+   </div> -->
+
+
+   <div class="input-field col s6">
+     <md-input-container>
+     <label for="email">What languages are you learning?</label>
+     <textarea id="learning" type="text" name="learning" ng-model="usersEdit.user.learning" required maxlength="255"></textarea>
+     </md-input-container>
    </div>
 
-   <div>What languages are you learning?
-     <textarea type="text" name="learning" id="learning" ng-model="usersEdit.user.learning" placeholder="List your language interests..." required maxlength="255"></textarea>
-   </div>
    <!-- Error message! -->
-   <div class="errorDiv" ng-messages="usersEdit.userForm.learning.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.learning.$touched)">
+   <!-- <div class="errorDiv" ng-messages="usersEdit.userForm.learning.$error" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.learning.$touched)">
      <div ng-message="required"><em class="error">What do you want to learn?</em></div>
      <div ng-message="maxlength"><em class="error">Too many characters!</em></div>
-   </div>
+   </div> -->
 
 
 
@@ -131,4 +185,6 @@
      <button>Update</button>
    </div>
  </form>
+</div>
+</div>
 </div>
