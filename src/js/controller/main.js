@@ -24,6 +24,28 @@ function MainCtrl($rootScope, $state, $auth, User){
       // vm.currentUser = User.get({ id: vm.currentUserId });
       // Need to look at blacklisting password from this object
     }
+
+
+    const protectedStates = ['usersProfile', 'usersEdit', 'message'];
+
+    function secureState(e, toState) {
+      vm.message = null;
+      if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
+        e.preventDefault();
+        $state.go('login');
+        vm.message = 'You must be logged in to go there!';
+      }
+    }
+
+    $rootScope.$on('$stateChangeStart', secureState);
+
+
+
+
+
+
+
+
   });
 
   vm.logout = logout;
