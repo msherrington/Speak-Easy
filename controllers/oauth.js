@@ -86,7 +86,7 @@ function facebook(req, res, next) {
           user = new User({
             username: profile.name,
             email: profile.email,
-            image: profile.picture.data.url
+            profilePic: profile.picture.data.url
           });
         }
         user.facebookId = profile.id;

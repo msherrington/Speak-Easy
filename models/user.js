@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   // locked: true,
   profilePic: { type: String, default: '../../images/placeholder.jpg' },
+  // profilePic: { type: String },
   password: { type: String },
   location: { type: String },
   lat: { type: Number },
