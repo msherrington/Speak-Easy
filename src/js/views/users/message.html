@@ -1,5 +1,7 @@
-<h1>Message page</h1>
+<!DOCTYPE html>
 <div ng-controller="MessageCtrl as message">
+
+  <p><a ui-sref="usersProfile({ id: message.user.id })">View {{ message.user.username }}'s Profile</a></p>
 
   <h2>Send an email to {{ message.user.username }}...</h2>
   <img  class="img-small" src="{{ message.user.profilePic }}">
@@ -9,8 +11,7 @@
 
     <!-- Add interests here-->
 
-
-  <form name="contactForm" ng-submit="message.sendMail()"  novalidate>
+    <form id="contactForm" name="contactForm" ng-submit="message.sendMail()"  novalidate>
 
     <div>Your name:
       <input type="text" ng-model="message.contactName" required>
@@ -31,4 +32,5 @@
 
     <button type="submit">Send Message</button>
   </form>
+
 </div>
