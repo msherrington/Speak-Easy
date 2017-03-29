@@ -18,6 +18,13 @@
   <p>{{ details.language.lang}} ({{ details.level }})</p>
 </div>
 
+<p class="upvoteDisplay"><span class="bold">Upvotes <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span> {{ user.upvotes.length }}</p>
+
+  <form method="POST" ng-submit="usersProfile.addUpvote()">
+    <input type="hidden" name="_method" value="PUT">
+    <button class="upvotebutton btn upvotebtn">UPVOTE <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+  </form>
+
 
 
 <p>Review: {{ usersProfile.user.reviews }}</p>

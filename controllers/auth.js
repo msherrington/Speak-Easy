@@ -1,6 +1,11 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
+// const oauth = require('../config/oauth');
+
+// function login(req, res) {
+//   res.render('/login', { oauth });
+// }
 
 function register(req, res, next){
   User
@@ -10,6 +15,7 @@ function register(req, res, next){
 }
 
 function login(req, res, next){
+  // res.render('/login', { oauth });
   User
     .findOne({ email: req.body.email })
     .then((user) => {

@@ -48,5 +48,11 @@ function LoginCtrl($auth, $state){
       .then(() => $state.go('usersIndex'));
   }
 
+  function authenticate(provider) {
+    $auth.authenticate(provider)
+      .then(() => $state.go('usersIndex'));
+  }
+
+  vm.authenticate = authenticate;
   vm.submit = submit;
 }
