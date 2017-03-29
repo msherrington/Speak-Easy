@@ -2,7 +2,9 @@
 
 <p ng-if="main.isAuthenticated()"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit</a></p>
 
-<img class="img-small" src="{{ usersProfile.user.profilePic }}">
+<!-- <img class="img-small" src="{{ usersProfile.user.profilePic }}"> -->
+<img class="img-small" src="{{ usersProfile.user.profilePic || '../../images/placeholder.jpg'}}">
+<!-- <img class="img-small" ng-show="!source" ng-src="../../images/placeholder.png"> -->
 <p>Username: {{ usersProfile.user.username }}</p>
 <p>Currently learning: {{ usersProfile.user.learning }}</p>
 <p>About: {{ usersProfile.user.about }}</p>
