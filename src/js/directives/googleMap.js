@@ -50,7 +50,7 @@ function googleMap($window, $http){
         strokeOpacity: 0.4,
         map: map,
         center: $scope.center,
-        radius: 1000
+        radius: 0
       });
 
     //map circle radius function
@@ -159,7 +159,7 @@ function googleMap($window, $http){
       function markerClick(marker, user, latLng) {
         // Close any open infowindows
         if(infowindow) infowindow.close();
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP;
         // Event listener for user markers
         marker.addListener('click', () => {
           markerClick(marker, user);
