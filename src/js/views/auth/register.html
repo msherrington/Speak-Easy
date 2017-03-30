@@ -1,97 +1,56 @@
 <div class="container">
-   <div id="signup">
-      <div class="signup-screen">
-         <div class="space-bot text-center">
-            <h1>Sign up</h1>
-           <div class="divider"></div>
-         </div>
+  <div id="signup">
+    <div class="signup-screen">
+      <div class="space-bot text-center">
+        <h1>Sign up</h1>
+      <div class="divider"></div>
+      </div>
 
-  <form name="register.registerForm" class="register.registerForm" ng-submit="register.submit()" novalidate>
+      <form name="register.registerForm" class="register.registerForm" ng-submit="register.submit()" novalidate>
+        <div class="input-field col s6">
+          <md-input-container>
+            <label for="username">Username</label>
+            <input id="username" type="text" ng-model="register.user.username">
+          </md-input-container>
+        </div>
 
+        <div class="input-field col s6">
+          <md-input-container>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email"  ng-model="register.user.email" required>
+          </md-input-container>
+          <!-- Error message! -->
+          <p class="alert alert-danger" ng-show="register.registerForm.email.$error.email">Email address is invalid.</p>
+        </div>
 
-    <div class="input-field col s6">
-      <md-input-container>
-      <label for="username">Username</label>
-      <input id="username" type="text" ng-model="register.user.username">
-    </md-input-container>
-    </div>
-
-  <div class="input-field col s6">
-    <md-input-container>
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email"  ng-model="register.user.email" required>
-    </md-input-container>
-    <!-- Error message! -->
-    <p class="alert alert-danger" ng-show="register.registerForm.email.$error.email">Your email is invalid.</p>
-  </div>
-
-
-    <!-- <h1>Skills</h1> -->
-    <!-- <ul> -->
-    <!-- <li ng-repeat="skill in register.all"> -->
-      <!-- <select class="" name="">
-        <option ng-model="skill.lang"></option>
-      </select> -->
-      <!-- <select ng-options="skill as skill.lang for skill in register.all" ng-model="selected"></select>
-      <label>Skill: -->
-        <!-- <select class="" name="">
-          <option ng-model="skill.lang"></option>
-        </select> -->
-        <!-- <input ng-model="skill.lang">
-      </label>
-      <label>Level: <input ng-model="user.skills.level"></label>
-     <button ng-click="skills.splice($index, 1)" aria-label="Remove">X</button>
-     </li>
-    <li>
-      <button ng-click="skills.push({})">add</button>
-    </li>
-  </ul> -->
-
-    <!-- <div>
-      <input type="password" required name="password" id="password" ng-model="register.user.password" placeholder="Password">
-    </div> -->
-    <!-- Error message! -->
-    <!-- <div class="errorDiv" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
-      <div ng-message="required"><em class="error">Enter a password</em></div>
-    </div> -->
-
-<div class="input-field col s6">
-  <md-input-container>
-  <label for="password">Password</label>
-
-  <input id="password" type="password" name="password" ng-model="register.user.password" ng-minlength='4' class="validate" required>
-
-</md-input-container>
-</div>
-<!-- Error message! -->
-<p class="alert alert-danger" ng-show="register.registerForm.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+        <div class="input-field col s6">
+          <md-input-container>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" ng-model="register.user.password" ng-minlength="4" class="validate" required>
+          </md-input-container>
+        </div>
+        <!-- Error message! -->
+        <p class="alert alert-danger" ng-show="register.registerForm.password.$error.minlength || form.password.$invalid">Password must be at least 6 characters</p>
 
 
-<div class="input-field col s6">
-<md-input-container>
-  <label for="passwordConfirmation">Password Confirmation</label>
-  <input id="passwordConfirmation" type="password" name="passwordConfirmation"   ng-model="register.user.passwordConfirmation" ng-minlenght="6" class="validate" required>
-</md-input-container>
-</div>
+        <div class="input-field col s6">
+          <md-input-container>
+            <label for="passwordConfirmation">Confirm Password</label>
+            <input id="passwordConfirmation" type="password" name="passwordConfirmation"   ng-model="register.user.passwordConfirmation" ng-minlenght="6" class="validate" required>
+          </md-input-container>
+        </div>
+        <!-- Error message! -->
+        <p class="alert alert-danger" ng-show="(register.registerForm.password.$submitted || register.registerForm.passwordConfirmation.$touched) &&  (register.user.password !== register.user.passwordConfirmation)">Password does not match</p>
 
-<!-- Error message! -->
-<p class="alert alert-danger" ng-show="(register.registerForm.password.$submitted || register.registerForm.passwordConfirmation.$touched) &&  (register.user.password !== register.user.passwordConfirmation)">Your password is not a match.</p>
-
-
-
-    <div class="space-top text-center">
-      <md-button type="submit" ng-disabled="register.registerForm.$invalid" class="waves-effect waves-light btn done">
-        <i class="material-icons left"></i> Done
-      </md-button>
-      <md-button type="button" class="waves-effect waves-light btn cancel" ng-click="register.user = {}">
-        <i class="material-icons left"></i>Cancel
-      </md-button>
-
-            <!-- <div>
-              <button type="submit" class="md-button-inner">Register</button>
-            </div> -->
-
-          </form>
+        <div class="space-top text-center">
+          <md-button type="submit" ng-disabled="register.registerForm.$invalid" class="waves-effect waves-light btn done">
+            <i class="material-icons left"></i>Register
+          </md-button>
+          <md-button type="button" class="waves-effect waves-light btn cancel" ng-click="register.user = {}">
+            <i class="material-icons left"></i>Clear Form
+          </md-button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

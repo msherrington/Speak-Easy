@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<!-- Hide this div section when logged in -->
 <div class="signup-screen" ng-hide="main.isAuthenticated()">
 
   <div class="overlay"></div>
@@ -20,13 +20,11 @@
       </md-button>
 
     </div>
-
   </div>
 </div>
 
 
 <div class="section">
-  <!-- <div class="abc"> -->
   <div class="row">
     <div class="col-xs-8">
       <div class="searchBoxIndex">
@@ -35,17 +33,11 @@
       <div class="row leftSideIndex">
         <div class="col-xs-4" ng-repeat="user in usersIndex.filtered | orderBy:'-created_at'">
           <div class="card">
-            <!-- <div>{{user.created_at}}</div> -->
             <h3>{{ user.username }}</h3>
             <div>
               <a ui-sref="usersProfile({ id: user.id })"><img class="img-small" src="{{ user.profilePic }}"></a>
             </div>
-            <!-- <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}"> -->
-            <!-- <p>User ID: {{ user.id }}</p> -->
-            <!-- <p>Email: {{ user.email }}</p> -->
-            <!-- <h1>Skills Object: {{ user.skills }}</h1> -->
             <p>{{ user.skills[0].language.lang || 'No skills yet' }} ({{ user.skills[0].level || 'Beginner' }})</p>
-            <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
             <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
             <p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== user.id"><a ui-sref="message({ id: user.id })">Send Message</a></p>
             <p ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a><strike>Send Message</strike></a></p>
@@ -56,7 +48,7 @@
 
     <div class="col-xs-4 rightSideIndex">
       <input id="slider" type="range" min="1000" max="100000" step="1000" value="10000">
-      <p>Display users within <span class="see" id="sliderAmount">10</span> km</p>
+      <p>Display users within <span id="sliderAmount">10</span> km</p>
       <google-map users="usersIndex.filtered" ng-if="usersIndex.filtered" query="usersIndex.q"></google-map>
     </div>
   </div>

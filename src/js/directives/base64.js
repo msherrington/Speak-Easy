@@ -18,7 +18,7 @@ function base64(){
       };
 
       element.on('change', (e) => {
-        //datatranfer for firefox and e.target for chrome
+        // Datatransfer for firefox and e.target for chrome
         const file = (e.target.files || e.dataTransfer.files)[0];
         fileReader.readAsDataURL(file);
       });

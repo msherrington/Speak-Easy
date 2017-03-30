@@ -32,7 +32,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/users/message.html',
       controller: 'MessageCtrl as message'
     })
-    // update our routes for register and login
     .state('register', {
       url: '/register',
       templateUrl: 'js/views/auth/register.html',

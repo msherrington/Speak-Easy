@@ -180,7 +180,7 @@ Skill
       }, {
         username: 'Arrianne',
         email: 'arrianne@ga.com',
-        profilePic: '../images/users/ArrianneOshea.jpg',
+        profilePic: '../images/users/ArrianneOShea.jpg',
         password: 'arrianne',
         passwordConfirmation: 'arrianne',
         location: '',
@@ -300,7 +300,7 @@ Skill
       }, {
         username: 'Hannah',
         email: 'hannah@ga.com',
-        profilePic: '../images/users/hannahJones.jpg',
+        profilePic: '../images/users/HannahJones.jpg',
         password: 'hannah',
         passwordConfirmation: 'hannah',
         location: '',
@@ -435,7 +435,7 @@ Skill
       }, {
         username: 'Olivia',
         email: 'olivia@ga.com',
-        profilePic: '../images/users/oliviaVaughanFowler.jpg',
+        profilePic: '../images/users/OliviaVaughanFowler.jpg',
         password: 'olivia',
         passwordConfirmation: 'olivia',
         location: '',

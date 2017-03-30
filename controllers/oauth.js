@@ -4,6 +4,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
+// GITHUB OAUTH
 function github(req, res, next) {
   return rp({
     method: 'POST',
@@ -54,8 +55,7 @@ function github(req, res, next) {
   .catch(next);
 }
 
-//=============================FACEBOOK=========================
-
+// FACEBOOK OAUTH
 function facebook(req, res, next) {
   return rp({
     method: 'GET',

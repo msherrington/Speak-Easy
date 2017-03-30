@@ -1,6 +1,5 @@
 /* global google:ignore */
 
-
 angular
 .module('skillsApp')
 .directive('googleMap', googleMap);
@@ -17,12 +16,14 @@ function googleMap($window, mapStyles){
       query: '='
     },
     link($scope, element){
+      // Declare variables for positioning markers
       let userLat = 0;
       let userLng = 0;
       const latLng = { lat: userLat, lng: userLng };
       let markers = [];
       let pos = null;
 
+      // Creates map + sets details
       const map = new $window.google.maps.Map(element[0], {
         zoom: 11,
         scrollwheel: false,
@@ -35,6 +36,7 @@ function googleMap($window, mapStyles){
         if(infowindow) infowindow.close();
       });
 
+      // Sets location marker on map
       const marker = new $window.google.maps.Marker({
         position: $scope.center,
         icon: '../images/blueMarker.png',
@@ -48,6 +50,7 @@ function googleMap($window, mapStyles){
       const sliderDiv = document.getElementById('sliderAmount');
       let infowindow = null;
 
+      // Sets circle radius and style
       const circle = new google.maps.Circle({
         fillColor: '#3399FF',
         fillOpacity: 0.2,
@@ -58,18 +61,18 @@ function googleMap($window, mapStyles){
         radius: 10000
       });
 
-      //map circle radius function
+      // Map circle radius function
       slider.onchange = function(){
         sliderDiv.innerHTML = this.value/1000;
         circle.radius = this.value;
 
-        //Store val of slider
+        // Store val of slider
         circle.setRadius(parseFloat(circle.radius));
-        filterMarkersByRadius();
         //Loops through marker locations and only shows those within the radius
-
+        filterMarkersByRadius();
       };
 
+      // Filters map markers by radius
       function filterMarkersByRadius() {
         for(var i = 0; i < markers.length; i++){
           if(markers[i].distance <= circle.radius){
@@ -80,7 +83,7 @@ function googleMap($window, mapStyles){
         }
       }
 
-      //geolocation..
+      // HTML5 Geolocation..
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
           pos = {
@@ -95,14 +98,15 @@ function googleMap($window, mapStyles){
           handleLocationError(true,  googleMap.getCenter());
         });
       } else {
-      // Browser doesn't support Geolocation
+      // If browser doesn't support Geolocation
         handleLocationError(false, googleMap.getCenter());
       }
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         marker.setPosition(pos);
         marker.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
       }
-      //Places User markers on the map
+
+      // Function to plot user locations on the map
       function getUserLatLng(pos) {
         const users = $scope.users;
 
@@ -112,6 +116,7 @@ function googleMap($window, mapStyles){
 
         markers = [];
 
+        // Loops through users and passes user location to addmarker function
         for (i=0; i<users.length; i++) {
           const user = users[i];
           userLat = parseFloat(users[i].lat);
@@ -120,7 +125,7 @@ function googleMap($window, mapStyles){
         }
       }
 
-      //add marker to each users latlng
+      // Adds marker to each users latlng
       function addMarker(latLng, pos, user) {
         latLng = { lat: parseFloat(user.lat), lng: parseFloat(user.lng) };
         const marker = new google.maps.Marker({
@@ -136,14 +141,14 @@ function googleMap($window, mapStyles){
           markerClick(marker, user, latLng);
         });
 
-        //push markers into an array to use later
+        // Push markers into an array to use later
         markers.push(marker);
         filterMarkersByRadius();
       }
 
-      // find distance between points 1 and 2
+      // Find distance between points 1 and 2
       function findDistance(p1, p2){
-        //calculates distance between two points in km's
+        // Calculates distance between two points in metres
         return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2);
       }
 
@@ -155,7 +160,7 @@ function googleMap($window, mapStyles){
         const userName = user.username;
         const userImage = user.profilePic;
 
-        //info window settings
+        // Info window settings and display
         infowindow = new google.maps.InfoWindow({
           content: `
           <div class="infowindow">
@@ -174,6 +179,7 @@ function googleMap($window, mapStyles){
         infowindow.open(map, marker);
       }
 
+      // Updates markers within radius on map according to filter results
       $scope.$watch('users', () => {
         getUserLatLng(pos);
       });
@@ -183,6 +189,8 @@ function googleMap($window, mapStyles){
   return directive;
 }
 
+
+// Map Style (from here to end of file)
 angular
   .module('skillsApp')
   .constant('mapStyles', [{

@@ -5,74 +5,63 @@
         <h1>User Profile</h1>
         <div class="divider"></div>
       </div>
-<p ng-if="main.isAuthenticated() && main.currentUserId === usersProfile.user.id"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
 
-<h2>{{ usersProfile.user.username }}'s Profile</h2>
+      <p ng-if="main.isAuthenticated() && main.currentUserId === usersProfile.user.id"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
 
-<img class="img-small" src="{{ usersProfile.user.profilePic }}">
-<br>
-<br>
+      <h2>{{ usersProfile.user.username }}'s Profile</h2>
+      <img class="img-small" src="{{ usersProfile.user.profilePic }}">
+      <br>
+      <br>
+      <p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
+      <p ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a><strike>Message {{ usersProfile.user.username }}</strike></a></p>
 
+      <p><b>Currently learning: </b>{{ usersProfile.user.learning || 'No languages yet' }}</p>
+      <p><b>About: </b>{{ usersProfile.user.about || 'No user info yet' }}</p>
 
-<p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
-<p ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a><strike>Message {{ usersProfile.user.username }}</strike></a></p>
-<p><b>Currently learning: </b>{{ usersProfile.user.learning }}</p>
-<p><b>About: </b>{{ usersProfile.user.about }}</p>
-
-<h2>Languages offered:</h2>
-<div ng-repeat="details in usersProfile.user.skills track by $index">
-  <h4>{{ details.language.lang }} ({{ details.level }})</h4>
-</div>
-
+      <h2>Languages offered:</h2>
+      <div ng-repeat="details in usersProfile.user.skills track by $index">
+        <h4>{{ details.language.lang }} ({{ details.level }})</h4>
+      </div>
 
 
-<div class="reviews">
-  <h2>Reviews</h2>
-  <ul class="reviews__created">
-    <br>
-    <!-- review is an object, userProfile is a controller, user is the current user(Alice), and reviews is an array of object, we use track by $index because it doesn't like duplicate (remember the colors example) -->
-    <li ng-repeat="review in usersProfile.user.reviews track by $index">
-      <!-- review.content is the content of the review -->
-      <br><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
 
-      <div><span uib-rating ng-model="review.rating" max="5" read-only="true"></span></div>
+      <div class="reviews">
+        <h2>Reviews</h2>
+        <ul class="reviews__created">
+        <br>
+          <li ng-repeat="review in usersProfile.user.reviews track by $index">
+            <br><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
 
-<!-- delete comment button -->
-      <md-button class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
-      <i class="material-icons left"></i> Delete
-      </md-button>
-<!-- ///////////////////// -->
+            <div><span uib-rating ng-model="review.rating" max="5" read-only="true"></span></div>
 
+            <!-- delete comment button -->
+            <md-button class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
+              <i class="material-icons left"></i>Delete Review
+            </md-button>
+          </li>
+        </ul>
 
-    </li>
+        <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
+          <div class="space-top text-center">
+            <label for="rating"></label>
+            <span uib-rating ng-model="usersProfile.newReview.rating" max="5" read-only="false"></span>
+          </div>
 
-  </ul>
+          <div class="input-field col s6">
+            <md-input-container>
+              <label>Review This User</label>
+              <textarea id="review" type="text" name="about" ng-model="usersProfile.newReview.content" maxlength="255"></textarea>
+            </md-input-container>
+          </div>
 
-  <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
-    <div class="space-top text-center">
-      <label for="rating"></label>
-      <span uib-rating ng-model="usersProfile.newReview.rating" max="5" read-only="false"></span>
-    </div>
+          <div class="space-top text-center">
+            <md-button type="submit" class="waves-effect waves-light btn done">
+              <i class="material-icons left"></i>Post Review
+            </md-button>
+          </div>
 
-    <div class="input-field col s6">
-      <md-input-container>
-        <label>Review this user</label>
-        <textarea id="review" type="text" name="about" ng-model="usersProfile.newReview.content" maxlength="255"></textarea>
-      </md-input-container>
-
-    </div>
-
-    <div class="space-top text-center">
-      <md-button type="submit" class="waves-effect waves-light btn done">
-        <i class="material-icons left"></i> Post
-      </md-button>
-    </div>
-
-  </form>
-
-
-</div>
-
-</div>
+        </form>
+      </div>
     </div>
   </div>
+</div>

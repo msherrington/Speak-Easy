@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <div class="container">
   <div id="signup">
     <div class="signup-screen">
@@ -7,60 +6,47 @@
         <div class="divider"></div>
       </div>
 
-<div ng-controller="MessageCtrl as message">
+      <div ng-controller="MessageCtrl as message">
+        <p><a ui-sref="usersProfile({ id: message.user.id })">View {{ message.user.username }}'s Profile</a></p>
+        <h2>Send an email to {{ message.user.username }}...</h2>
+        <img  class="img-small" src="{{ message.user.profilePic }}">
+        <h3>{{ message.user.username }}'s skills...</h3>
+        <h4 ng-repeat="details in message.user.skills track by $index">{{ details.level}} in {{ details.language.lang }}</h4>
 
-  <p><a ui-sref="usersProfile({ id: message.user.id })">View {{ message.user.username }}'s Profile</a></p>
+        <form name="contactForm" class="contactForm" ng-submit="message.sendMail()"  novalidate>
+          <div class="input-field col s6">
+            <md-input-container>
+              <label for="email">Write message here...</label>
+              <textarea id="contactMsg" type="text" name="contactMsg" ng-model="message.contactMsg"  maxlength="255" required></textarea>
+            </md-input-container>
+          </div>
 
-  <h2>Send an email to {{ message.user.username }}...</h2>
-  <img  class="img-small" src="{{ message.user.profilePic }}">
+          <div class="input-field col s6">
+            <md-input-container>
+              <label for="contactName">Your Name</label>
+              <input id="contactName" type="text" ng-model="message.contactName" required>
+            </md-input-container>
+          </div>
 
-    <h3>{{ message.user.username }}'s skills...</h3>
-    <h4 ng-repeat="details in message.user.skills track by $index">{{ details.level}} in {{ details.language.lang }}</h4>
+          <!-- Hidden field for email to send message to -->
+          <div>
+            <input type="hidden" name="sendingTo" ng-model="message.user.email">
+          </div>
 
-    <!-- Add interests here-->
+          <div class="input-field col s6">
+            <md-input-container>
+              <label for="contactEmail">Your Email</label>
+              <input id="contactEmail" type="email" ng-model="message.contactEmail" required>
+            </md-input-container>
+          </div>
 
-  <form name="contactForm" class="contactForm" ng-submit="message.sendMail()"  novalidate>
-
-    <div class="input-field col s6">
-      <md-input-container>
-        <label for="email">Dear {{ message.user.username }}...</label>
-        <textarea id="contactMsg" type="text" name="contactMsg" ng-model="message.contactMsg"  maxlength="255" required></textarea>
-      </md-input-container>
-    </div>
-
-
-    <div class="input-field col s6">
-      <md-input-container>
-      <label for="contactName">Your Name</label>
-      <input id="contactName" type="text" ng-model="message.contactName" required>
-    </md-input-container>
-    </div>
-
-    <!-- Hidden field for email to send message to -->
-    <div>
-      <input type="hidden" name="sendingTo" ng-model="message.user.email">
-    </div>
-<!-- ////////////////////////////////////////////// -->
-
-    <div class="input-field col s6">
-      <md-input-container>
-      <label for="contactEmail">Your Email</label>
-      <input id="contactEmail" type="email" ng-model="message.contactEmail" required>
-    </md-input-container>
-    </div>
-
-    <!-- <div>Message:
-      <textarea ng-model="message.contactMsg" columns="1" required></textarea>
-    </div> -->
-
-    <div class="space-top text-center">
-      <md-button type="submit" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Send
-      </md-button>
-
-    </form>
+          <div class="space-top text-center">
+            <md-button type="submit" class="waves-effect waves-light btn done">
+              <i class="material-icons left"></i>Send
+            </md-button>
+          </div>
+        </form>
       </div>
-
     </div>
   </div>
 </div>
