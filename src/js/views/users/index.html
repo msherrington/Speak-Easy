@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div ng-hide="main.isAuthenticated()" class="overlay"></div>
 
-<div class="index-login">
+<div ng-hide="main.isAuthenticated()" class="index-login">
   <br>
   <div class="index-title">Speak<span class="font-anton">Easy</span></div>
   <br><br>
@@ -15,14 +15,11 @@
       </md-button>
     </a>
 
-
-    <md-button type="submit" ng-click="login.authenticate('github')" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Github
-    </md-button>
-
-    <md-button type="submit" ng-click="login.authenticate('facebook')" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Facebook
-    </md-button>
+    <a ui-sref="register">
+      <md-button type="submit" ng-click="" class="waves-effect waves-light btn done">
+        <i class="material-icons left"></i> Register
+      </md-button>
+    </a>
 
   </div>
 
