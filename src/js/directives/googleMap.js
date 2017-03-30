@@ -4,8 +4,7 @@ angular.module('skillsApp')
   .directive('googleMap', googleMap);
 
 googleMap.$inject = ['$window', '$http'];
-function googleMap($window, $http){
-  const vm = this;
+function googleMap($window){
 
   const directive = {
     restrict: 'E',
@@ -103,27 +102,20 @@ function googleMap($window, $http){
       }
       //Places User markers on the map
       function getUserLatLng(pos) {
+        const users = $scope.users;
 
-        // $http.get('http://localhost:7000/api/users')
-        //   .then((response) => {
-        //     vm.all = response.data;
-            const users = $scope.users;
+        for(var i = 0; i < markers.length; i++){
+          markers[i].setMap(null);
+        }
 
-            for(var i = 0; i < markers.length; i++){
-              markers[i].setMap(null);
-            }
-            markers = [];
+        markers = [];
 
-            // console.log('Users to add', users);
-            for (var i=0; i<users.length; i++) {
-              // console.log('Adding maker for', users[i]);
-              const user = users[i];
-              userLat = parseFloat(users[i].lat);
-              userLng = parseFloat(users[i].lng);
-              addMarker(latLng, pos, user);
-            }
-
-          // });
+        for (i=0; i<users.length; i++) {
+          const user = users[i];
+          userLat = parseFloat(users[i].lat);
+          userLng = parseFloat(users[i].lng);
+          addMarker(latLng, pos, user);
+        }
       }
 
       //add marker to each users latlng
@@ -152,7 +144,6 @@ function googleMap($window, $http){
         //calculates distance between two points in km's
         return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2);
       }
-
 
       function markerClick(marker, user){
         // Close any open infowindows
