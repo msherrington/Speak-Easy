@@ -2,9 +2,14 @@
 
 .leftSideIndex {
     overflow: scroll;
-    height: 90vh;
+    height: 85vh;
 }
 
+.profile-warning {
+  text-align: center;
+  color: red;
+  font-size: 20px;
+}
 
 // .indexCard{
 //   border: 1px solid black;
@@ -24,6 +29,19 @@
   color: red;
 }
 
+//Index page search box
+.searchBoxIndex{
+  .search{
+    height: 30px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  margin: 0 auto;
+  width: 40%;
+}
+
 span {
   color: white;
 }
@@ -35,11 +53,6 @@ span {
     height:100px;
     width: 70px;
   }
-}
-
-.indexProfilePic{
-  height: 200px;
-  width: 200px;
 }
 
 .rightSideIndex{
@@ -57,6 +70,7 @@ span {
     // width: 30%;
     // margin: 1%;
     text-align: center;
+    height: 250px;
 }
 
 .card:hover {
@@ -70,17 +84,9 @@ span {
 }
 
 .img-small {
-  height: 25%;
-  width: 25%
+  height: 35%;
+  width: 35%
 }
-
-// .google-map{
-//   float: right;
-//   height: 100vh;
-//   width: 100%;
-//   display: inline-block;
-//   border: 2px solid red;
-// }
 
 #slider{
   margin: 5px;
@@ -96,10 +102,10 @@ li{
 
 .google-map{
   // float: right;
-  height: 90vh;
+  height: 75vh;
   width: 100%;
   display: inline-block;
-  border: 2px solid red;
+  border: 2px solid #b5b2b2;
 }
 
 li{
@@ -276,6 +282,7 @@ input[type='file']{
   z-index: 100;
   box-shadow: 0 4px 8px 0 rgba(1,1,1,1.2);
   transition: 0.3s;
+  border-radius: 5px;
 }
 
 .index-title {
@@ -300,6 +307,10 @@ input[type='file']{
   font-family: 'Anton', sans-serif;
 }
 
-.ui-sref{
-  color: white;
-}
+// <<<<<<< HEAD
+// .ui-sref{
+// =======
+// .white-links {
+// >>>>>>> development
+//   color: white;
+// }

@@ -24,7 +24,7 @@ function googleMap($window){
       let pos = null;
 
       const map = new $window.google.maps.Map(element[0], {
-        zoom: 12,
+        zoom: 11,
         scrollwheel: false,
         center: $scope.center,
         styles: mapStyles
@@ -159,7 +159,7 @@ function googleMap($window){
         infowindow = new google.maps.InfoWindow({
           content: `
           <div class="infowindow">
-            <img src="${userImage}">
+          <a href="/users/${user.id}"><img src="${userImage}"></a>
             <a href="/users/${user.id}"><h3>${userName}</h3></a>
           </div>`,
           maxWidth: 200

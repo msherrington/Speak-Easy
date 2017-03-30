@@ -16,6 +16,7 @@
 
 
 <p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
+<p ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a><strike>Message {{ usersProfile.user.username }}</strike></a></p>
 <p><b>Currently learning: </b>{{ usersProfile.user.learning }}</p>
 <p><b>About: </b>{{ usersProfile.user.about }}</p>
 

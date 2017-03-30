@@ -67,7 +67,7 @@ Skill
       .create([{
         username: 'Guv',
         email: 'gurvinder.singh.sandhu@gmail.com',
-        profilePic: '../images/guv.jpg',
+        profilePic: '../images/users/guv.jpg',
         password: 'password',
         passwordConfirmation: 'password',
         location: '',
@@ -86,7 +86,7 @@ Skill
       }, {
         username: 'Valerio',
         email: 'valerio@ga.com',
-        profilePic: '../images/ValerioRisuleo.jpg',
+        profilePic: '../images/users/ValerioRisuleo.jpg',
         password: 'valerio',
         passwordConfirmation: 'valerio',
         location: '',
@@ -108,7 +108,7 @@ Skill
       }, {
         username: 'Mark',
         email: 'look@me.com',
-        profilePic: '../images/MarkSherrington.jpg',
+        profilePic: '../images/users/MarkSherrington.jpg',
         password: 'password',
         passwordConfirmation: 'password',
         location: '',
@@ -133,7 +133,7 @@ Skill
       }, {
         username: 'Conor',
         email: 'conor@ga.com',
-        profilePic: '../images/ConorHeena.jpg',
+        profilePic: '../images/users/ConorHeena.jpg',
         password: 'conor',
         passwordConfirmation: 'conor',
         location: '',
@@ -155,7 +155,7 @@ Skill
       }, {
         username: 'Adrian',
         email: 'adrian@ga.com',
-        profilePic: '../images/adrian.jpg',
+        profilePic: '../images/users/adrian.jpg',
         password: 'adrian',
         passwordConfirmation: 'adrian',
         location: '',
@@ -180,7 +180,7 @@ Skill
       }, {
         username: 'Arrianne',
         email: 'arrianne@ga.com',
-        profilePic: '../images/ArrianneOshea.jpg',
+        profilePic: '../images/users/ArrianneOshea.jpg',
         password: 'arrianne',
         passwordConfirmation: 'arrianne',
         location: '',
@@ -205,7 +205,7 @@ Skill
       }, {
         username: 'Ben',
         email: 'ben@ga.com',
-        profilePic: '../images/BenCurrie.jpg',
+        profilePic: '../images/users/BenCurrie.jpg',
         password: 'ben',
         passwordConfirmation: 'ben',
         location: '',
@@ -224,7 +224,7 @@ Skill
       }, {
         username: 'Buki',
         email: 'buki@ga.com',
-        profilePic: '../images/BukiThompson.jpg',
+        profilePic: '../images/users/BukiThompson.jpg',
         password: 'buki',
         passwordConfirmation: 'buki',
         location: '',
@@ -237,7 +237,7 @@ Skill
       }, {
         username: 'Fab',
         email: 'fabricio@ga.com',
-        profilePic: '../images/FabricioFerreria.jpg',
+        profilePic: '../images/users/FabricioFerreria.jpg',
         password: 'fabricio',
         passwordConfirmation: 'fabricio',
         location: '',
@@ -256,7 +256,7 @@ Skill
       }, {
         username: 'Giacomo',
         email: 'giacomo@ga.com',
-        profilePic: '../images/GiacomoBrunetti.jpg',
+        profilePic: '../images/users/GiacomoBrunetti.jpg',
         password: 'giacomo',
         passwordConfirmation: 'giacomo',
         location: '',
@@ -275,7 +275,7 @@ Skill
       }, {
         username: 'Gianmaria',
         email: 'gianmaria@ga.com',
-        profilePic: '../images/GianmariaCarrodano.jpg',
+        profilePic: '../images/users/GianmariaCarrodano.jpg',
         password: 'gianmaria',
         passwordConfirmation: 'gianmaria',
         location: '',
@@ -300,7 +300,7 @@ Skill
       }, {
         username: 'Hannah',
         email: 'hannah@ga.com',
-        profilePic: '../images/hannahJones.jpg',
+        profilePic: '../images/users/hannahJones.jpg',
         password: 'hannah',
         passwordConfirmation: 'hannah',
         location: '',
@@ -325,7 +325,7 @@ Skill
       }, {
         username: 'Huw',
         email: 'huw@ga.com',
-        profilePic: '../images/HuwFernie.jpg',
+        profilePic: '../images/users/HuwFernie.jpg',
         password: 'huw',
         passwordConfirmation: 'huw',
         location: '',
@@ -341,7 +341,7 @@ Skill
       }, {
         username: 'Jake',
         email: 'jake@ga.com',
-        profilePic: '../images/JakeAdams.jpg',
+        profilePic: '../images/users/JakeAdams.jpg',
         password: 'jake',
         passwordConfirmation: 'jake',
         location: '',
@@ -366,7 +366,7 @@ Skill
       }, {
         username: 'Kris',
         email: 'kris@ga.com',
-        profilePic: '../images/KrisztianGroz.jpg',
+        profilePic: '../images/users/KrisztianGroz.jpg',
         password: 'kris',
         passwordConfirmation: 'kris',
         location: '',
@@ -391,7 +391,7 @@ Skill
       }, {
         username: 'Other Mark',
         email: 'mark@ga.com',
-        profilePic: '../images/mark.jpg',
+        profilePic: '../images/users/mark.jpg',
         password: 'mark',
         passwordConfirmation: 'mark',
         location: '',
@@ -416,7 +416,7 @@ Skill
       }, {
         username: 'Muge',
         email: 'muge@ga.com',
-        profilePic: '../images/muge.jpg',
+        profilePic: '../images/users/muge.jpg',
         password: 'muge',
         passwordConfirmation: 'muge',
         location: '',
@@ -435,7 +435,7 @@ Skill
       }, {
         username: 'Olivia',
         email: 'olivia@ga.com',
-        profilePic: '../images/oliviaVaughanFowler.jpg',
+        profilePic: '../images/users/oliviaVaughanFowler.jpg',
         password: 'olivia',
         passwordConfirmation: 'olivia',
         location: '',
@@ -448,7 +448,7 @@ Skill
       }, {
         username: 'Omar',
         email: 'omar@ga.com',
-        profilePic: '../images/omar.jpg',
+        profilePic: '../images/users/omar.jpg',
         password: 'omar',
         passwordConfirmation: 'omar',
         location: '',
@@ -467,7 +467,7 @@ Skill
       }, {
         username: 'Raiden',
         email: 'raiden@ga.com',
-        profilePic: '../images/raiden.jpg',
+        profilePic: '../images/users/raiden.jpg',
         password: 'raiden',
         passwordConfirmation: 'raiden',
         location: '',
@@ -483,7 +483,7 @@ Skill
       }, {
         username: 'Sarah',
         email: 'sarah@ga.com',
-        profilePic: '../images/SarahMiller.jpg',
+        profilePic: '../images/users/SarahMiller.jpg',
         password: 'sarah',
         passwordConfirmation: 'sarah',
         location: '',
@@ -496,7 +496,7 @@ Skill
       }, {
         username: 'Tom',
         email: 'tom@ga.com',
-        profilePic: '../images/TomAllen.jpg',
+        profilePic: '../images/users/TomAllen.jpg',
         password: 'tom',
         passwordConfirmation: 'tom',
         location: '',
@@ -509,7 +509,7 @@ Skill
       }, {
         username: 'Roman',
         email: 'roman@ga.com',
-        profilePic: '../images/roman.jpg',
+        profilePic: '../images/users/roman.jpg',
         password: 'roman',
         passwordConfirmation: 'roman',
         location: '',
@@ -525,7 +525,7 @@ Skill
       }, {
         username: 'Sam',
         email: 'samD@ga.com',
-        profilePic: '../images/SamDomesjo.jpg',
+        profilePic: '../images/users/SamDomesjo.jpg',
         password: 'sam',
         passwordConfirmation: 'sam',
         location: '',
@@ -544,7 +544,7 @@ Skill
       }, {
         username: 'Sam',
         email: 'sam@ga.com',
-        profilePic: '../images/SamWakefield.jpg',
+        profilePic: '../images/users/SamWakefield.jpg',
         password: 'sam',
         passwordConfirmation: 'sam',
         location: '',
@@ -566,7 +566,7 @@ Skill
       }, {
         username: 'Alice',
         email: 'alice@ga.com',
-        profilePic: '../images/AliceMarshall.jpg',
+        profilePic: '../images/users/AliceMarshall.jpg',
         password: 'alice',
         passwordConfirmation: 'alice',
         location: '',
