@@ -12,29 +12,14 @@ function UsersIndexCtrl(User, filterFilter, orderByFilter, $http, $scope) {
 
   getskills();
   function getskills(){
-    // console.log('getskills!');
-    $http.get('http://localhost:7000/api/skills')
+    $http.get('/api/skills')
   .then((response) => {
-    // console.log(response);
     vm.all = response.data;
-    // console.log(vm.all[0].lang);
-    // console.log(vm.all[0].lng);
-
-    const skills = vm.all;
-    // console.log(users);
-    //
-    // for (var i=0; i<skills.length; i++) {
-    //   console.log(skills[i].lang);
-    //   // console.log(skills[i]);
-    // }
   });
   }
 
+  // Function for searching and filtering through users
   function filterUsers() {
-    // const params = {};
-      // if(vm.useStrength) params.strength = vm.strength;
-      // if(vm.useRoast) params.roast = vm.roast;
-
     vm.filtered = filterFilter(vm.all, vm.q);
     vm.filtered = orderByFilter(vm.filtered, vm.sort);
   }
@@ -43,17 +28,14 @@ function UsersIndexCtrl(User, filterFilter, orderByFilter, $http, $scope) {
     () => vm.sort
   ], filterUsers);
 
-  // get user data from our API to use in Google Markers
+  // Get user data from our API to use in Google Markers
   function getUser(){
-    $http.get('http://localhost:7000/api/users')
+    $http.get('/api/users')
     .then((response) => {
-      // console.log(response);
       vm.all = response.data;
-      vm.u = vm.all;
       filterUsers();
     });
   }
-
   getUser();
 
   vm.all = User.query();
@@ -68,14 +50,16 @@ function MessageCtrl(User, $stateParams, $http, $state) {
 
   function sendMail(){
 
+    // Gets user data from message form to include in email
     const data = ({
       contactName: vm.contactName,
       contactEmail: vm.contactEmail,
       contactMsg: vm.contactMsg,
       contactTo: vm.user.email
     });
-
+    // Sends email
     $http.post('/api/message', data);
+    // Redirects back to Profile page
     $state.go('usersProfile', $stateParams);
   }
   vm.sendMail = sendMail;
@@ -117,9 +101,7 @@ function UsersProfileCtrl(User, UserReview, $stateParams, $state) {
         vm.user.reviews.splice(index, 1);
       });
   }
-
   vm.deleteReview = deleteReview;
-
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state', '$http'];
@@ -148,7 +130,6 @@ function UsersEditCtrl(User, $stateParams, $state, $http) {
     .then((response) => {
       vm.skills = response.data;
     });
-
 
   function usersUpdate() {
     if (vm.userForm.$valid) {

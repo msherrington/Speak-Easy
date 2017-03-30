@@ -1,65 +1,44 @@
 <div class="container">
-   <div id="signup">
-      <div class="signup-screen">
-         <div class="space-bot text-center">
-            <h1>Login</h1>
-           <div class="divider"></div>
-         </div>
+  <div id="signup">
+    <div class="signup-screen">
+      <div class="space-bot text-center">
+        <h1>Login</h1>
+        <div class="divider"></div>
+      </div>
+      <form name="login.loginForm" class="login.loginForm" ng-submit="login.submit()" novalidate>
 
+        <div class="input-field col s6">
+          <md-input-container>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email"  ng-model="login.credentials.email" required>
+          </md-input-container>
+          <!-- Error message! -->
+          <p class="alert alert-danger" ng-show="(login.loginForm.email.$submitted || login.loginForm.email.$touched) &&  login.loginForm.email.$invalid">Email address not valid</p>
+        </div>
 
+        <div class="input-field col s6">
+          <md-input-container>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" ng-model="login.credentials.password" ng-minlength="4" class="validate" required>
+        </md-input-container>
+        </div>
+        <!-- Error message! -->
+        <p class="alert alert-danger" ng-show="login.loginForm.password.$error.minlength || form.password.$invalid">Password must be at least 4 characters</p>
 
-<form name="login.loginForm" class="login.loginForm" ng-submit="login.submit()" novalidate>
+        <div class="login-buttons">
+          <md-button type="submit" ng-click="login.loginForm.$invalid" class="waves-effect waves-light btn done">
+            <i class="material-icons left"></i>Login
+          </md-button>
 
+          <md-button type="submit" ng-click="login.authenticate('github')" class="waves-effect waves-light btn done">
+            <i class="material-icons left"></i>Github Login
+          </md-button>
 
-  <div class="input-field col s6">
-    <md-input-container>
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email"  ng-model="login.credentials.email" required>
-    </md-input-container>
-
-    <!-- Error message! -->
-    <p class="alert alert-danger" ng-show="(login.loginForm.email.$submitted || login.loginForm.email.$touched) &&  login.loginForm.email.$invalid">Your email is invalid.</p>
-  </div>
-  <!-- ////////////////////////////// -->
-
-
-  <div class="input-field col s6">
-    <md-input-container>
-    <label for="password">Password</label>
-
-    <input id="password" type="password" name="password" ng-model="login.credentials.password" ng-minlength="4" class="validate" required>
-
-
-  </md-input-container>
-  </div>
-
-  <!-- Error message! -->
-  <p class="alert alert-danger" ng-show="login.loginForm.password.$error.minlength || form.password.$invalid">Your password must be at least 4 characters.</p>
-
-  <!-- Error message! -->
-
-  <!-- <div class="errorDiv" ng-messages="login.loginForm.password.$error" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched)">
-    <div ng-message="required"><em class="error">Enter your password!</em></div>
-  </div> -->
-<div class="login-buttons">
-
-    <md-button type="submit" ng-click="login.loginForm.$invalid" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Done
-    </md-button>
-
-    <md-button type="submit" ng-click="login.authenticate('github')" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Github
-    </md-button>
-
-    <md-button type="submit" ng-click="login.authenticate('facebook')" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Facebook
-    </md-button>
-
-</div>
-
-</form>
-<!-- <button ng-click="login.authenticate('github')">Sign in with Github</button> -->
-<!-- <button ng-click="login.authenticate('facebook')">Sign in with Facebook</button> -->
+          <md-button type="submit" ng-click="login.authenticate('facebook')" class="waves-effect waves-light btn done">
+            <i class="material-icons left"></i>Facebook Login
+          </md-button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

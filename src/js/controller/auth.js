@@ -10,12 +10,9 @@ function RegisterCtrl($auth, $state, $http){
 
   getskills();
   function getskills(){
-    // console.log('getskills!');
-    $http.get('http://localhost:7000/api/skills')
+    $http.get('/api/skills')
   .then((response) => {
-    console.log(response);
     vm.all = response.data;
-    const skills = vm.all;
   });
   }
   function submit(){
@@ -23,7 +20,6 @@ function RegisterCtrl($auth, $state, $http){
     $auth.signup(vm.user)
       .then(() => $state.go('login'));
   }
-
   vm.submit = submit;
 }
 

@@ -68,6 +68,7 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
+// Checks for correct password OR github ID OR facebook ID
 userSchema.pre('validate', function checkPassword(next) {
   if(!this.password && !this.githubId && !this.facebookId){
     this.invalidate('password', 'required');

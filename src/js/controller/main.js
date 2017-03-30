@@ -28,35 +28,28 @@ function MainCtrl($rootScope, $state, $auth, User){
           e.preventDefault();
           $state.go('usersIndex');
           vm.message = 'Complete your profile in order to message other users';
-          // console.log(vm.message);
         }
-
       });
-      // Need to look at blacklisting password from this object
     }
 
     const protectedStates = ['usersProfile', 'usersEdit', 'message'];
 
     function secureState(e, toState) {
-      console.log('Changing states');
+      // console.log('Changing states');
       vm.message = null;
       if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
         e.preventDefault();
         $state.go('login');
         vm.message = 'You must be logged in to go there!';
-        // console.log(vm.message);
       }
     }
-
     $rootScope.$on('$stateChangeStart', secureState);
-
-
   });
 
   vm.logout = logout;
 
   function logout(){
-    $auth.logout() //remove the token..
+    $auth.logout() // Removes the token..
     .then(() => $state.go('login'));
   }
 }

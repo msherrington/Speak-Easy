@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html ng-app="skillsApp">
-<head>
-  <base href="/">
-  <meta charset="utf-8">
-  <title>Project 3</title>
-  <!-- inject:js -->
-  <!-- endinject -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Lobster|Roboto" rel="stylesheet">
-  <!-- inject:css -->
-  <!-- endinject -->
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyC_ex1iDhGsCrFyAI6pyw9HFqfWskTbXv0"></script>
-</head>
-<body ng-controller="MainCtrl as main">
-  <nav class="navbar navbar-inverse" role="navigation">
-  <div class="section-fluid">
-    <div class="navbar-header">
-      <ul class="nav navbar-nav">
-      <li><a class="navbar-brand" href="/">Speak<span>Easy</span></a></li>
-      <li ng-if="main.isAuthenticated()"><a ui-sref="usersProfile({ id: main.currentUserId })">My Profile</a></li>
-      <li ng-if="main.isAuthenticated()"><a ui-sref="skillsNew">Add Language</a></li>
-      <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
-      <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
-      <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Project 3</title>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Lobster|Roboto" rel="stylesheet">
+    <!-- inject:css -->
+    <!-- endinject -->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyC_ex1iDhGsCrFyAI6pyw9HFqfWskTbXv0"></script>
+  </head>
+  <body ng-controller="MainCtrl as main">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="section-fluid">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="/">Speak<span>Easy</span></a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="usersProfile({ id: main.currentUserId })">My Profile</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="skillsNew">Add Language</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
+            <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-
-
-
-    </ul>
+    <div class="profile-warning">
+      <p ng-if="main.isAuthenticated() && main.currentUser.locked === true">COMPLETE YOUR PROFILE TO MESSAGE OTHER USERS</p>
     </div>
-  </div>
-</nav>
-<div class="profile-warning">
-  <p ng-if="main.isAuthenticated() && main.currentUser.locked === true">COMPLETE YOUR PROFILE TO MESSAGE OTHER USERS</p>
-</div>
-  <main ui-view class="container">
-  </main>
-</body>
+    
+      <main ui-view class="container"></main>
+  </body>
 </html>
