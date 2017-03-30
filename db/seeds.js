@@ -13,77 +13,53 @@ User.collection.drop();
 
 Skill
   .create([{
-// 0
-    lang: 'English'
+    lang: 'English' // 0
   }, {
-// 1
-    lang: 'French'
+    lang: 'French' // 1
   }, {
-// 2
-    lang: 'Chinese'
+    lang: 'Chinese' // 2
   }, {
-// 3
-    lang: 'Spanish'
+    lang: 'Spanish' // 3
   }, {
-// 4
-    lang: 'Hindi'
+    lang: 'Kurdish' // 4
   }, {
-// 5
-    lang: 'Arabic'
+    lang: 'Hungarian' // 5
   }, {
-// 6
-    lang: 'Portuguese'
+    lang: 'Portuguese' // 6
   }, {
-// 7
-    lang: 'Bengali'
+    lang: 'Bengali' // 7
   }, {
-// 8
-    lang: 'Russian'
+    lang: 'Turkish' // 8
   }, {
-// 9
-    lang: 'Japanese'
+    lang: 'Japanese' // 9
   }, {
-// 10
-    lang: 'Punjabi'
+    lang: 'Punjabi' // 10
   }, {
-// 11
-    lang: 'German'
+    lang: 'German' // 11
   }, {
-// 12
-    lang: 'Swedish'
+    lang: 'Swedish' // 12
   }, {
-// 13
-    lang: 'Italian'
+    lang: 'Italian' // 13
   }, {
-// 14
-    lang: 'Polish'
+    lang: 'Polish' // 14
   }, {
-// 15
-    lang: 'Java'
+    lang: 'Java' // 15
   }, {
-// 16
-    lang: 'JavaScript'
+    lang: 'JavaScript' // 16
   }, {
-// 17
-    lang: 'PHP'
+    lang: 'PHP' // 17
   }, {
-// 18
-    lang: 'Ruby'
+    lang: 'Ruby' // 18
   }, {
-// 19
-    lang: 'HTML'
+    lang: 'HTML' // 19
   }, {
-// 20
-    lang: 'Python'
+    lang: 'Python' // 20
   }, {
-// 21
-    lang: 'CSS'
+    lang: 'CSS' // 21
   }, {
-// 22
-    lang: 'SQL'
+    lang: 'SQL' // 22
   }, {
-// 23
-    lang: 'C++'
+    lang: 'C++' // 23
   }])
   .then((skills) => {
     console.log(`${skills.length} skills created!`);
@@ -92,16 +68,19 @@ Skill
         username: 'Guv',
         email: 'gurvinder.singh.sandhu@gmail.com',
         profilePic: '../images/guv.jpg',
-        password: 'Guv',
-        passwordConfirmation: 'Guv',
+        password: 'password',
+        passwordConfirmation: 'password',
         location: '',
-        lat: 51.5074,
-        lng: 0.1278,
+        lat: 51.5224,
+        lng: 0.0086,
         skills: [{
+          language: skills[10],
+          level: 'Advanced'
+        },{
           language: skills[0],
           level: 'Native'
         },{
-          language: skills[1],
+          language: skills[16],
           level: 'Intermediate'
         }]
       }, {
@@ -111,65 +90,44 @@ Skill
         password: 'valerio',
         passwordConfirmation: 'valerio',
         location: '',
-        lat: 51.52382,
-        lng: -0.014773,
+        lat: 51.5094,
+        lng: -0.0267,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Advanced'
-        }, {
           language: skills[13],
           level: 'Native'
         }, {
           language: skills[0],
+          level: 'Adequate'
+        }, {
+          language: skills[21],
           level: 'Intermediate'
         }, {
           language: skills[16],
           level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
         }]
       }, {
         username: 'Mark',
-        email: 'markS@ga.com',
+        email: 'look@me.com',
         profilePic: '../images/MarkSherrington.jpg',
-        password: 'Mark',
-        passwordConfirmation: 'Mark',
+        password: 'password',
+        passwordConfirmation: 'password',
         location: '',
-        lat: 51.5507302,
-        lng: -0.3181276999999909,
+        lat: 51.4934,
+        lng: -0.0709,
         skills: [{
-          language: skills[1],
+          language: skills[0],
+          level: 'Native'
+        }, {
+          language: skills[3],
+          level: 'Adequate'
+        }, {
+          language: skills[13],
           level: 'Basic'
         }, {
           language: skills[16],
           level: 'Adequate'
         }, {
           language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
           level: 'Adequate'
         }]
       }, {
@@ -179,10 +137,10 @@ Skill
         password: 'conor',
         passwordConfirmation: 'conor',
         location: '',
-        lat: 51.5159,
-        lng: 0.0705,
+        lat: 51.5135,
+        lng: -0.0703,
         skills: [{
-          language: skills[1],
+          language: skills[0],
           level: 'Basic'
         }, {
           language: skills[16],
@@ -193,28 +151,25 @@ Skill
         }, {
           language: skills[19],
           level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
         }]
       }, {
-        username: 'adrian',
+        username: 'Adrian',
         email: 'adrian@ga.com',
         profilePic: '../images/adrian.jpg',
         password: 'adrian',
         passwordConfirmation: 'adrian',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5177,
+        lng: -0.0773,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[9],
+          level: 'Intermediate'
         }, {
-          language: skills[16],
-          level: 'Advanced'
+          language: skills[0],
+          level: 'Native'
         }, {
           language: skills[21],
-          level: 'Advanced'
+          level: 'Native'
         }, {
           language: skills[19],
           level: 'Adequate'
@@ -223,14 +178,14 @@ Skill
           level: 'Adequate'
         }]
       }, {
-        username: 'arrianne',
+        username: 'Arrianne',
         email: 'arrianne@ga.com',
         profilePic: '../images/ArrianneOshea.jpg',
         password: 'arrianne',
         passwordConfirmation: 'arrianne',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5257,
+        lng: -0.0875,
         skills: [{
           language: skills[1],
           level: 'Basic'
@@ -248,120 +203,90 @@ Skill
           level: 'Adequate'
         }]
       }, {
-        username: 'ben',
+        username: 'Ben',
         email: 'ben@ga.com',
         profilePic: '../images/BenCurrie.jpg',
         password: 'ben',
         passwordConfirmation: 'ben',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5390,
+        lng: 0.1426,
         skills: [{
-          language: skills[1],
+          language: skills[0],
           level: 'Basic'
         }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
           language: skills[21],
-          level: 'Advanced'
-        }, {
-          language: skills[19],
           level: 'Adequate'
         }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[23],
+          level: 'Native'
         }]
       }, {
-        username: 'buki',
+        username: 'Buki',
         email: 'buki@ga.com',
         profilePic: '../images/BukiThompson.jpg',
         password: 'buki',
         passwordConfirmation: 'buki',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5771,
+        lng: -0.1783,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[11],
+          level: 'Advanced'
         }]
       }, {
-        username: 'fabricio',
+        username: 'Fab',
         email: 'fabricio@ga.com',
         profilePic: '../images/FabricioFerreria.jpg',
         password: 'fabricio',
         passwordConfirmation: 'fabricio',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.4688,
+        lng: 0.1254,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[6],
+          level: 'Intermediate'
         }, {
-          language: skills[16],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Native'
         }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Advanced'
-        }, {
-          language: skills[18],
+          language: skills[17],
           level: 'Adequate'
         }]
       }, {
-        username: 'giacomo',
+        username: 'Giacomo',
         email: 'giacomo@ga.com',
         profilePic: '../images/GiacomoBrunetti.jpg',
         password: 'giacomo',
         passwordConfirmation: 'giacomo',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5176,
+        lng: -0.0655,
         skills: [{
-          language: skills[1],
+          language: skills[13],
           level: 'Basic'
         }, {
-          language: skills[16],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Basic'
         }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[14],
+          level: 'Native'
         }]
       }, {
-        username: 'gianmmaria',
-        email: 'gianmmaria@ga.com',
+        username: 'Gianmaria',
+        email: 'gianmaria@ga.com',
         profilePic: '../images/GianmariaCarrodano.jpg',
-        password: 'gianmmaria',
-        passwordConfirmation: 'gianmmaria',
+        password: 'gianmaria',
+        passwordConfirmation: 'gianmaria',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5485,
+        lng: -0.4796,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[13],
+          level: 'Native'
         }, {
-          language: skills[16],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Advanced'
         }, {
           language: skills[21],
           level: 'Adequate'
@@ -373,95 +298,86 @@ Skill
           level: 'Adequate'
         }]
       }, {
-        username: 'hannah',
+        username: 'Hannah',
         email: 'hannah@ga.com',
         profilePic: '../images/hannahJones.jpg',
         password: 'hannah',
         passwordConfirmation: 'hannah',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5188,
+        lng: -0.0814,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[0],
+          level: 'Advanced'
         }, {
           language: skills[16],
           level: 'Adequate'
         }, {
-          language: skills[21],
-          level: 'Adequate'
+          language: skills[9],
+          level: 'Intermediate'
         }, {
           language: skills[19],
           level: 'Adequate'
         }, {
-          language: skills[18],
+          language: skills[16],
           level: 'Adequate'
         }]
       }, {
-        username: 'huw',
+        username: 'Huw',
         email: 'huw@ga.com',
         profilePic: '../images/HuwFernie.jpg',
         password: 'huw',
         passwordConfirmation: 'huw',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.507437,
+        lng: 0.069935,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[0],
+          level: 'Native'
         }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
+          language: skills[8],
           level: 'Adequate'
         }]
       }, {
-        username: 'jake',
+        username: 'Jake',
         email: 'jake@ga.com',
         profilePic: '../images/JakeAdams.jpg',
         password: 'jake',
         passwordConfirmation: 'jake',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.478670,
+        lng: -0.144886,
         skills: [{
-          language: skills[1],
+          language: skills[0],
           level: 'Basic'
         }, {
           language: skills[16],
-          level: 'Adequate'
+          level: 'Basic'
         }, {
           language: skills[21],
-          level: 'Adequate'
+          level: 'Basic'
         }, {
           language: skills[19],
-          level: 'Adequate'
+          level: 'Basic'
         }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[2],
+          level: 'Advanced'
         }]
       }, {
-        username: 'kristian',
-        email: 'kristian@ga.com',
+        username: 'Kris',
+        email: 'kris@ga.com',
         profilePic: '../images/KrisztianGroz.jpg',
-        password: 'kristian',
-        passwordConfirmation: 'kristian',
+        password: 'kris',
+        passwordConfirmation: 'kris',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.512,
+        lng: 0.1316,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[5],
+          level: 'Native'
         }, {
-          language: skills[16],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Intermediate'
         }, {
           language: skills[21],
           level: 'Adequate'
@@ -469,24 +385,24 @@ Skill
           language: skills[19],
           level: 'Adequate'
         }, {
-          language: skills[18],
+          language: skills[16],
           level: 'Adequate'
         }]
       }, {
-        username: 'mark',
+        username: 'Other Mark',
         email: 'mark@ga.com',
         profilePic: '../images/mark.jpg',
         password: 'mark',
         passwordConfirmation: 'mark',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.8959,
+        lng: -0.8919,
         skills: [{
           language: skills[1],
           level: 'Basic'
         }, {
-          language: skills[16],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Native'
         }, {
           language: skills[21],
           level: 'Adequate'
@@ -494,233 +410,158 @@ Skill
           language: skills[19],
           level: 'Adequate'
         }, {
-          language: skills[18],
+          language: skills[16],
           level: 'Adequate'
         }]
       }, {
-        username: 'muge',
+        username: 'Muge',
         email: 'muge@ga.com',
         profilePic: '../images/muge.jpg',
         password: 'muge',
         passwordConfirmation: 'muge',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5195,
+        lng: -0.0612,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[8],
+          level: 'Native'
         }, {
-          language: skills[16],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Advanced'
         }, {
           language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          level: 'Native'
         }]
       }, {
-        username: 'olivia',
+        username: 'Olivia',
         email: 'olivia@ga.com',
         profilePic: '../images/oliviaVaughanFowler.jpg',
         password: 'olivia',
         passwordConfirmation: 'olivia',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 52.2053,
+        lng: 0.1218,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Advanced'
         }]
       }, {
-        username: 'omar',
+        username: 'Omar',
         email: 'omar@ga.com',
         profilePic: '../images/omar.jpg',
         password: 'omar',
         passwordConfirmation: 'omar',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5160,
+        lng: -0.0477,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[0],
+          level: 'Native'
         }, {
           language: skills[16],
-          level: 'Adequate'
+          level: 'Native'
         }, {
           language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          level: 'Basic'
         }]
       }, {
-        username: 'raiden',
+        username: 'Raiden',
         email: 'raiden@ga.com',
         profilePic: '../images/raiden.jpg',
         password: 'raiden',
         passwordConfirmation: 'raiden',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.4816,
+        lng: 3.1791,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[4],
+          level: 'Intermediate'
         }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
+          language: skills[0],
           level: 'Adequate'
         }]
       }, {
-        username: 'sarah',
+        username: 'Sarah',
         email: 'sarah@ga.com',
         profilePic: '../images/SarahMiller.jpg',
         password: 'sarah',
         passwordConfirmation: 'sarah',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.3474,
+        lng: 2.9773,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
+          language: skills[0],
           level: 'Adequate'
         }]
       }, {
-        username: 'tom',
+        username: 'Tom',
         email: 'tom@ga.com',
         profilePic: '../images/TomAllen.jpg',
         password: 'tom',
         passwordConfirmation: 'tom',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.7520,
+        lng: -1.2577,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
           language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          level: 'Native'
         }]
       }, {
-        username: 'roman',
+        username: 'Roman',
         email: 'roman@ga.com',
         profilePic: '../images/roman.jpg',
         password: 'roman',
         passwordConfirmation: 'roman',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 53.4808,
+        lng: 2.2426,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
-          language: skills[16],
-          level: 'Adequate'
-        }, {
           language: skills[21],
-          level: 'Adequate'
+          level: 'Advanced'
         }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Native'
         }]
       }, {
-        username: 'sam',
+        username: 'Sam',
         email: 'samD@ga.com',
         profilePic: '../images/SamDomesjo.jpg',
         password: 'sam',
         passwordConfirmation: 'sam',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5233,
+        lng: -0.0754,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[12],
+          level: 'Native'
+        }, {
+          language: skills[0],
+          level: 'Adequate'
         }, {
           language: skills[16],
-          level: 'Adequate'
-        }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          level: 'Basic'
         }]
       }, {
-        username: 'sam',
+        username: 'Sam',
         email: 'sam@ga.com',
         profilePic: '../images/SamWakefield.jpg',
         password: 'sam',
         passwordConfirmation: 'sam',
         location: '',
-        lat: 50.5074,
-        lng: 0.1277,
+        lat: 51.5105,
+        lng: 0.5950,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
+          language: skills[0],
+          level: 'Native'
         }, {
           language: skills[16],
           level: 'Adequate'
         }, {
           language: skills[21],
-          level: 'Adequate'
+          level: 'Advanced'
         }, {
           language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          level: 'Native'
         }]
       }, {
         username: 'Alice',
@@ -729,23 +570,14 @@ Skill
         password: 'alice',
         passwordConfirmation: 'alice',
         location: '',
-        lat: 49.5074,
-        lng: 0.1278,
+        lat: 51.5144,
+        lng: -0.1174,
         skills: [{
-          language: skills[1],
-          level: 'Basic'
-        }, {
           language: skills[16],
-          level: 'Adequate'
+          level: 'Native'
         }, {
-          language: skills[21],
-          level: 'Adequate'
-        }, {
-          language: skills[19],
-          level: 'Adequate'
-        }, {
-          language: skills[18],
-          level: 'Adequate'
+          language: skills[0],
+          level: 'Intermediate'
         }]
       }]);
   })
