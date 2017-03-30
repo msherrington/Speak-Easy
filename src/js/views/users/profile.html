@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <div class="container">
   <div id="signup">
     <div class="signup-screen">
@@ -36,7 +35,7 @@
       <!-- review.content is the content of the review -->
       <br><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
 
-      <div><span uib-rating ng-model="review.rating" max="5" read-only="true"</span></div>
+      <div><span uib-rating ng-model="review.rating" max="5" read-only="true"></span></div>
 
 <!-- delete comment button -->
       <md-button class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
@@ -52,18 +51,20 @@
   <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
     <div class="space-top text-center">
       <label for="rating"></label>
-      <span uib-rating ng-model="usersProfile.newReview.rating" max="5" read-only="false"</span>
+      <span uib-rating ng-model="usersProfile.newReview.rating" max="5" read-only="false"></span>
     </div>
 
     <div class="input-field col s6">
       <md-input-container>
-    <label>Review this user</label>
-    <textarea id="review" type="text" name="about" ng-model="usersProfile.newReview.content" maxlength="255"></textarea>
-    </md-input-container>
+        <label>Review this user</label>
+        <textarea id="review" type="text" name="about" ng-model="usersProfile.newReview.content" maxlength="255"></textarea>
+      </md-input-container>
+
+    </div>
 
     <div class="space-top text-center">
       <md-button type="submit" class="waves-effect waves-light btn done">
-      <i class="material-icons left"></i> Post
+        <i class="material-icons left"></i> Post
       </md-button>
     </div>
 
@@ -75,4 +76,3 @@
 </div>
     </div>
   </div>
-</div>
