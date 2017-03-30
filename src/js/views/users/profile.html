@@ -13,6 +13,8 @@
 <img class="img-small" src="{{ usersProfile.user.profilePic }}">
 <br>
 <br>
+
+
 <p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
 <p><b>Currently learning: </b>{{ usersProfile.user.learning }}</p>
 <p><b>About: </b>{{ usersProfile.user.about }}</p>
@@ -22,20 +24,36 @@
   <h4>{{ details.language.lang }} ({{ details.level }})</h4>
 </div>
 
+
+
 <div class="reviews">
   <h2>Reviews</h2>
   <ul class="reviews__created">
-    <li ng-repeat="review in usersProfile.user.reviews track by $index"><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
+    <br>
+    <!-- review is an object, userProfile is a controller, user is the current user(Alice), and reviews is an array of object, we use track by $index because it doesn't like duplicate (remember the colors example) -->
+    <li ng-repeat="review in usersProfile.user.reviews track by $index">
+      <!-- review.content is the content of the review -->
+      <br><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
+
+      <div><span uib-rating ng-model="review.rating" max="5" read-only="true"</span></div>
 
 <!-- delete comment button -->
       <md-button class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
       <i class="material-icons left"></i> Delete
       </md-button>
+<!-- ///////////////////// -->
+
+
     </li>
 
   </ul>
 
   <form ng-submit="usersProfile.addReview()" ng-if="main.isAuthenticated()">
+    <div class="space-top text-center">
+      <label for="rating"></label>
+      <span uib-rating ng-model="usersProfile.newReview.rating" max="5" read-only="false"</span>
+    </div>
+
     <div class="input-field col s6">
       <md-input-container>
     <label>Review this user</label>
@@ -46,10 +64,13 @@
       <md-button type="submit" class="waves-effect waves-light btn done">
       <i class="material-icons left"></i> Post
       </md-button>
-    </div>  
+    </div>
 
   </form>
-  <br>
+
+
+</div>
+
 </div>
     </div>
   </div>

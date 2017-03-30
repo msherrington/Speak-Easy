@@ -1,11 +1,34 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<div class="container">
+  <div id="addskill">
+    <div class="signup-screen">
+      <div class="space-bot text-center">
+        <h1>Add Language</h1>
+        <div class="divider"></div>
+      </div>
 
-<div ng-controller="SkillsNewCtrl as skillsNew">
-  <h1 class="see">Yo</h1>
-  <form name="skillsNew.skillForm" ng-submit="skillsNew.create()">
 
-    <input class="a" type="text" name="lang" id="lang" ng-model="skillsNew.skill.lang" placeholder="language" required>
+      <!-- <div ng-controller="SkillsNewCtrl as skillsNew"> -->
 
-    <button class="a">Create</button>
-  </form>
+        <form name="skillsNew.skillForm" ng-submit="skillsNew.create()" novalidate>
+
+    <div class="input-field col s6">
+      <md-input-container>
+        <label for="newskill">Add a new language or skill to the database...</label>
+        <input type="text" name="newskill" id="newskill" ng-model="skillsNew.skill.lang" required>
+        <!-- <input id="username" type="text" name="username"  ng-model="usersEdit.user.username"> -->
+      </md-input-container>
+    </div>
+
+    <!-- <button>Add</button> -->
+<!-- original end -->
+
+<div class="space-top text-center">
+  <md-button type="update" class="waves-effect waves-light btn done">
+  <i class="material-icons left"></i> Add
+  </md-button>
+</div>
+
+</form>
 </div>
