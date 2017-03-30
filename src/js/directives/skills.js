@@ -10,7 +10,7 @@ function skills($window, $http){
   getskills();
   function getskills(){
     console.log('getskills!');
-    $http.get('http://localhost:7000/api/skills')
+    $http.get('/api/skills')
   .then((response) => {
     console.log(response);
     vm.all = response.data;
