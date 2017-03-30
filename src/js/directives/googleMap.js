@@ -1,6 +1,5 @@
 /* global google:ignore mapStyles:ignore */
 
-
 angular.module('skillsApp')
   .directive('googleMap', googleMap);
 
@@ -19,8 +18,8 @@ function googleMap($window, $http){
 
       let userLat = 0;
       let userLng = 0;
-      let latLng = { lat: userLat, lng: userLng };
-      let markers = [];
+      const latLng = { lat: userLat, lng: userLng };
+      const markers = [];
 
       const map = new $window.google.maps.Map(element[0], {
         zoom: 12,
@@ -40,6 +39,7 @@ function googleMap($window, $http){
         map
       });
 
+      //Runs function to find latlng of all users
       getUserLatLng();
 
       const slider = document.getElementById('slider');
@@ -56,32 +56,22 @@ function googleMap($window, $http){
         radius: 0
       });
 
-    //map circle radius function
+      //map circle radius function
       slider.onchange = function(){
-        // function plotInBounds(){
-        // console.log('Changed!');
         sliderDiv.innerHTML = (this.value)/1000;
         circle.radius = sliderDiv.innerHTML;
+
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
 
+        //Loops through marker locations and only shows those within the radius
         for(var i = 0; i < markers.length; i++){
-          // console.log('werking');
-          // console.log(markers[i].distance + 'they here');
           if(markers[i].distance <= circle.radius){
-            console.log('its less');
             markers[i].setMap(map);
-            console.log(markers[i].map);
           } else{
-            console.log('its more');
             markers[i].setMap(null);
-            console.log(markers[i].map);
           }
         }
-        // loop through markers
-        // check if marker.distance is less than the radius
-        // if yes, set map to map
-        // if no, set map to null
       };
 
       //geolocation..
@@ -124,11 +114,9 @@ function googleMap($window, $http){
           });
       }
 
+      //add marker to each users latlng
       function addMarker(latLng, pos, user) {
-        // const latLng = latLng;
-        // var image =
-        // latLng = { lat: userLat, lng: userLng };
-        latLng = { lat: user.lat, lng: user.lng };
+        latLng = { lat: parseFloat(user.lat), lng: parseFloat(user.lng) };
         const marker = new google.maps.Marker({
           position: latLng,
           map: null,
@@ -136,47 +124,24 @@ function googleMap($window, $http){
           distance: findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng))
         });
 
-
         // Event listener for user markers
         marker.addListener('click', () => {
           console.log('marker clicked');
           markerClick(marker, user, latLng);
         });
 
+        //push markers into an array to use later
         markers.push(marker);
       }
 
-      //WORKING TO FIND DISTANCE FROM A POINT//
-      //Try to set p1 as geolocation and p2 as each users latlng
-      //run the function for each user
-      // let p1 = new google.maps.LatLng({lat: 0, lng: 0});
-      // let p2 = new google.maps.LatLng({lat: 0, lng: 0});
-
-      // findDistance(p1, p2);
+      // find distance between points 1 and 2
       function findDistance(p1, p2){
-
-        console.log(google.maps.geometry.spherical.computeDistanceBetween(p1, p2));
         //calculates distance between two points in km's
-        return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2);
+        return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2)/1000;
       }
 
 
-      function markerClick(marker, user, latLng) {
-        // Close any open infowindows
-        if(infowindow) infowindow.close();
-        animation: google.maps.Animation.DROP;
-        // Event listener for user markers
-        marker.addListener('click', () => {
-          markerClick(marker, user);
-        });
-
-
-
-      }
-
-      function markerClick(marker, user) {
-
-        console.log(user.username);
+      function markerClick(marker, user){
         // Close any open infowindows
         if(infowindow) infowindow.close();
 
@@ -184,16 +149,21 @@ function googleMap($window, $http){
         const userName = user.username;
         const userImage = user.profilePic;
 
-          // Update the infowindow with relevant drink data
+        //info window settings
         infowindow = new google.maps.InfoWindow({
           content: `
           <div class="infowindow">
             <img src="${userImage}">
             <a href="/users/${user.id}"><h3>${userName}</h3></a>
           </div>`,
-          // content: '<div id="infowindow_content" ng-include src="\'infowindow.html\'"></div>',
           maxWidth: 200
         });
+
+        // Event listener for user markers
+        marker.addListener('click', () => {
+          markerClick(marker, user);
+        });
+
         // Open the new InfoWindow
         infowindow.open(map, marker);
       }
