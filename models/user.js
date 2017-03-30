@@ -19,7 +19,6 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   locked: { type: Boolean, default: true },
   profilePic: { type: String, default: '../../images/placeholder.jpg' },
-  // profilePic: { type: String },
   password: { type: String },
   location: { type: String },
   lat: { type: Number },
@@ -36,7 +35,7 @@ const userSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now }
 });
 
-//Allows us tho get access to uploaded images for editing
+// Allows us to get access to uploaded images for editing
 userSchema
   .path('profilePic')
   .set(function getPreviousImage(profilePic){
@@ -50,7 +49,6 @@ userSchema.pre('save', function checkPreviousImage(next){
   }
   next();
 });
-//finished here..
 
 userSchema
  .virtual('imageSRC')

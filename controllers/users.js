@@ -27,18 +27,6 @@ function createRoute(req, res, next) {
     .catch(next);
 }
 
-// function profileRoute(req, res, next) {
-//   User
-//     .findById(req.user.id)
-//     .populate('reviews, createdBy')
-//     .exec()
-//     .then((user) => {
-//       if(!user) return res.notFound();
-//       res.json(user);
-//     })
-//     .catch(next);
-// }
-
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
@@ -97,8 +85,6 @@ function sendMailRoute(req, res, next) {
   });
 }
 
-
-
 function addReviewRoute(req, res, next){
   req.body.createdBy = req.user;
 
@@ -133,41 +119,13 @@ function deleteReviewRoute(req, res, next){
     .catch(next);
 }
 
-// UPVOTE ROUTE
-// function upvoteRoute(req, res, next) {
-//   User
-//     .findById(req.params.id)
-//     .exec()
-//     .then((user) => {
-//       // check if the upvotes array already has the current user's id in it
-//       if(user.upvotes.includes(req.user.id)){
-//         //If yes the remove//
-//         // console.log('Ello!');
-//         // restaurant.upvotes.shift();
-//         user.upvotes = user.upvotes.filter(function(e){
-//           return e !== req.user.id;
-//         });
-//         return user.save();
-//         // if not add user id to array
-//       } else {
-//         user.upvotes.push(req.user.id); // else push the users id into the array
-//         return user.save();
-//       }
-//     })
-//     .then(() => res.redirect(`/restaurants/${req.params.id}`))
-//     .catch(next);
-// }
-
-
 module.exports = {
   index: indexRoute,
   create: createRoute,
-  // profile: profileRoute,
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
   sendMail: sendMailRoute,
   addReview: addReviewRoute,
   deleteReview: deleteReviewRoute
-  // upVote: upvoteRoute
 };

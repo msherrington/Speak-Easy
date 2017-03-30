@@ -6,9 +6,6 @@ module.exports = {
     clientId: process.env.GITHUB_GUNIT_ID,
     clientSecret: process.env.GITHUB_GUNIT_SECRET,
     scope: 'user:email'
-    // getLoginURL() {
-    //   return `${this.loginURL}?client_id=${this.clientId}&scope=${this.scope}`;
-    // }
   },
   facebook: {
     loginURL: 'https://www.facebook.com/v2.8/dialog/oauth',
@@ -17,9 +14,5 @@ module.exports = {
     clientId: process.env.FB_GUNIT_ID,
     clientSecret: process.env.FB_GUNIT_SECRET,
     scope: 'user:email'
-    // getLoginURL() {
-    //   return `${this.loginURL}?client_id=${this.clientId}&redirect_uri=http://localhost:7000/api/oauth/login`;
-    // }
   }
-
 };
