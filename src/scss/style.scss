@@ -1,11 +1,10 @@
 // @import url('https://fonts.googleapis.com/css?family=Roboto');
-//Index page styling
 
-// .leftSideIndex{
-//   // background-color: red;
-//   width: 66%;
-//   display: inline-block;
-// }
+.leftSideIndex {
+    overflow: scroll;
+    height: 90vh;
+}
+
 
 // .indexCard{
 //   border: 1px solid black;
@@ -20,7 +19,6 @@
 * {
   font-family: 'Roboto';
 }
-
 
 .see{
   color: red;

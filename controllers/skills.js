@@ -39,12 +39,9 @@ function deleteSkillRoute(req, res, next) {
     .catch(next);
 }
 
-
-
 module.exports = {
   index: indexRoute,
   create: createSkillRoute,
   show: showSkillRoute,
-  // update: updateRoute,
   delete: deleteSkillRoute
 };
