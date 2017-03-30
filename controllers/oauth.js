@@ -40,7 +40,7 @@ function github(req, res, next) {
 
         user.githubId = profile.id;
         user.email = profile.email;
-        user.profilePic = profile.avatar_url; //check this
+        user.profilePic = profile.avatar_url;
         return user.save();
       });
   })
