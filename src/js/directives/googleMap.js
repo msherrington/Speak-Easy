@@ -37,7 +37,7 @@ function googleMap($window){
 
       const marker = new $window.google.maps.Marker({
         position: $scope.center,
-        icon: '../images/blueMarker.png',
+        icon: '../assets/images/blueMarker.png',
         map
       });
 
@@ -126,7 +126,7 @@ function googleMap($window){
         const marker = new google.maps.Marker({
           position: latLng,
           map: null,
-          icon: '../images/userMarker.png',
+          icon: '../assets/images/userMarker.png',
           distance: findDistance(new google.maps.LatLng(pos), new google.maps.LatLng(latLng))
         });
 
