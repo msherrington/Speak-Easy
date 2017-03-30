@@ -189,7 +189,7 @@ function googleMap($window, $http){
           content: `
           <div class="infowindow">
             <img src="${userImage}">
-            <h3>${userName}</h3>
+            <a href="/users/${user.id}"><h3>${userName}</h3></a>
           </div>`,
           // content: '<div id="infowindow_content" ng-include src="\'infowindow.html\'"></div>',
           maxWidth: 200
