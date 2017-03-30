@@ -12,11 +12,16 @@
 .leftSideIndex {
   overflow: scroll;
   height: 85vh;
+  h3 {
+    padding-top: 5px;
+    color: white;
+  }
 }
 
 //Index page search box
 .searchBoxIndex{
   .search{
+    color: black;
     height: 30px;
     display: inline-block;
     width: 100%;
@@ -24,7 +29,7 @@
     margin: 0 auto;
   }
   margin: 0 auto;
-  width: 40%;
+  width: 100%;
 }
 
 span {
@@ -42,6 +47,10 @@ span {
 
 .rightSideIndex{
   text-align: center;
+  p {
+    color: white;
+    font-size: 16px;
+  }
 }
 
 .card {
@@ -50,6 +59,7 @@ span {
   transition: 0.3s;
   text-align: center;
   height: 250px;
+  background-color: #2d3d45;
 }
 
 .card:hover {
@@ -139,6 +149,7 @@ h1 {
     background-color: #2c3940;
     box-shadow: 0 1px 6px rgba(0,0,0,.3);
     color: white;
+
 }
 
 .btn{

@@ -25,33 +25,33 @@
 
         <div class="input-field col s6">
           <md-input-container>
-            <label for="email">Location</label>
+            <label for="location">Location</label>
             <input id="location" type="text" name="location" autocomplete ng-model="usersEdit.user.location" lat="usersEdit.user.lat" lng="usersEdit.user.lng" required>
           </md-input-container>
         </div>
 
         <div class="input-field col s6">
-          <label for="profilePic" class="waves-effect waves-light btn done">Profile Image</label>
-          <input base64 type="file" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link.." style="display:none">
-        </div>
-
-        <div class="input-field col s6">
           <md-input-container>
-            <label for="email">Who are you?</label>
+            <label for="about">Who are you?</label>
             <textarea id="about" type="text" name="about" ng-model="usersEdit.user.about"  maxlength="255"></textarea>
           </md-input-container>
         </div>
 
         <div class="input-field col s6">
           <md-input-container>
-            <label for="email">Which languages are you learning?</label>
+            <label for="learning">Which languages are you learning?</label>
             <textarea id="learning" type="text" name="learning" ng-model="usersEdit.user.learning" maxlength="255"></textarea>
           </md-input-container>
         </div>
 
+        <div class="input-field col s6">
+          <label for="profilePic" class="waves-effect waves-light btn done">Choose Profile Image</label>
+          <input base64 type="file" name="profilePic" id="profilePic" ng-model="usersEdit.user.profilePic" placeholder="Profile image link.." style="display:none">
+        </div>
+
         <div class="md-padding" ng-cloak>
           <div>
-            <h1 class="md-title">Pick at least one language and level</h1>
+            <h1 class="md-title">Pick at least one language and level to exchange</h1>
             <div layout="row" ng-repeat="i in [0,1,2,3,4]">
               <md-input-container>
                 <label>Language</label>
