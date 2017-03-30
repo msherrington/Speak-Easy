@@ -4,7 +4,8 @@
   <div class="row">
     <div class="col-xs-8 leftSideIndex">
       <div class="row">
-        <div class="col-xs-4" ng-repeat="user in usersIndex.all | orderBy:'-created_at' | filter: main.q">
+        <input type="text" class="search" ng-model="usersIndex.q" placeholder="Search...">
+        <div class="col-xs-4" ng-repeat="user in usersIndex.filtered | orderBy:'-created_at'">
           <div class="card">
             <!-- <div>{{user.created_at}}</div> -->
             <h3>{{ user.username }}</h3>
@@ -23,10 +24,10 @@
     </div>
 
     <div class="col-xs-4 rightSideIndex">
-      <input id="slider" type="range" min="1000" max="100000000" step="1000" value="0">
-      <p>Display users within <span class="see" id="sliderAmount">0</span> km</p>
+      <input id="slider" type="range" min="1000" max="100000" step="1000" value="10000">
+      <p>Display users within <span class="see" id="sliderAmount">10</span> km</p>
 
-      <google-map></google-map>
+      <google-map users="usersIndex.filtered" ng-if="usersIndex.filtered" query="usersIndex.q"></google-map>
     </div>
   </div>
 </div>

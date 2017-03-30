@@ -12,14 +12,15 @@ function googleMap($window, $http){
     replace: true,
     template: '<div class="google-map"></div>',
     scope: {
-      center: '='
+      users: '=',
+      query: '='
     },
     link($scope, element){
-
       let userLat = 0;
       let userLng = 0;
       const latLng = { lat: userLat, lng: userLng };
-      const markers = [];
+      let markers = [];
+      let pos = null;
 
       const map = new $window.google.maps.Map(element[0], {
         zoom: 12,
@@ -53,18 +54,22 @@ function googleMap($window, $http){
         strokeOpacity: 0.4,
         map: map,
         center: $scope.center,
-        radius: 0
+        radius: 10000
       });
 
       //map circle radius function
       slider.onchange = function(){
-        sliderDiv.innerHTML = (this.value)/1000;
-        circle.radius = sliderDiv.innerHTML;
+        sliderDiv.innerHTML = this.value/1000;
+        circle.radius = this.value;
 
         //Store val of slider
         circle.setRadius(parseFloat(circle.radius));
-
+        filterMarkersByRadius();
         //Loops through marker locations and only shows those within the radius
+
+      };
+
+      function filterMarkersByRadius() {
         for(var i = 0; i < markers.length; i++){
           if(markers[i].distance <= circle.radius){
             markers[i].setMap(map);
@@ -72,12 +77,12 @@ function googleMap($window, $http){
             markers[i].setMap(null);
           }
         }
-      };
+      }
 
       //geolocation..
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
-          var pos = {
+          pos = {
             lat: parseFloat(position.coords.latitude),
             lng: parseFloat(position.coords.longitude)
           };
@@ -99,19 +104,26 @@ function googleMap($window, $http){
       //Places User markers on the map
       function getUserLatLng(pos) {
 
-        $http.get('http://localhost:7000/api/users')
-          .then((response) => {
-            vm.all = response.data;
-            const users = vm.all;
+        // $http.get('http://localhost:7000/api/users')
+        //   .then((response) => {
+        //     vm.all = response.data;
+            const users = $scope.users;
 
-            console.log(users);
+            for(var i = 0; i < markers.length; i++){
+              markers[i].setMap(null);
+            }
+            markers = [];
+
+            // console.log('Users to add', users);
             for (var i=0; i<users.length; i++) {
+              // console.log('Adding maker for', users[i]);
               const user = users[i];
               userLat = parseFloat(users[i].lat);
               userLng = parseFloat(users[i].lng);
               addMarker(latLng, pos, user);
             }
-          });
+
+          // });
       }
 
       //add marker to each users latlng
@@ -132,12 +144,13 @@ function googleMap($window, $http){
 
         //push markers into an array to use later
         markers.push(marker);
+        filterMarkersByRadius();
       }
 
       // find distance between points 1 and 2
       function findDistance(p1, p2){
         //calculates distance between two points in km's
-        return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2)/1000;
+        return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2)).toFixed(2);
       }
 
 
@@ -167,6 +180,11 @@ function googleMap($window, $http){
         // Open the new InfoWindow
         infowindow.open(map, marker);
       }
+
+      $scope.$watch('users', () => {
+        getUserLatLng(pos);
+      });
+
     }
   };
   return directive;
