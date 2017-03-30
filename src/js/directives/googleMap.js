@@ -159,7 +159,7 @@ function googleMap($window){
         infowindow = new google.maps.InfoWindow({
           content: `
           <div class="infowindow">
-            <img src="${userImage}">
+          <a href="/users/${user.id}"><img src="${userImage}"></a>
             <a href="/users/${user.id}"><h3>${userName}</h3></a>
           </div>`,
           maxWidth: 200
