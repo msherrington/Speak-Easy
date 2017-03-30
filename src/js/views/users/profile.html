@@ -33,7 +33,7 @@
         <br>
           <li  id="reviews" ng-repeat="review in usersProfile.user.reviews track by $index">
             <span uib-rating ng-model="review.rating" max="5" read-only="true"></span><br>
-            <strong>{{ review.createdBy.username }}</strong> - {{ review.content }}
+            <strong><a href="/users/{{review.createdBy.id}}">{{ review.createdBy.username }}</a></strong> - {{ review.content }}
 
             <!-- delete comment button -->
             <div>
