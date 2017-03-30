@@ -1,4 +1,30 @@
 <!DOCTYPE html>
+<div ng-hide="main.isAuthenticated()" class="overlay"></div>
+
+<div ng-hide="main.isAuthenticated()" class="index-login">
+  <br>
+  <div class="index-title">Speak<span class="font-anton">Easy</span></div>
+  <br><br>
+  <div class="index-strapline">Meet up, Speak up, Language exchange...</div>
+  <br>
+  <div class="login-buttons">
+
+    <a ui-sref="login">
+      <md-button type="submit" ng-click="" class="waves-effect waves-light btn done">
+        <i class="material-icons left"></i> Login
+      </md-button>
+    </a>
+
+    <a ui-sref="register">
+      <md-button type="submit" ng-click="" class="waves-effect waves-light btn done">
+        <i class="material-icons left"></i> Register
+      </md-button>
+    </a>
+
+  </div>
+
+</div>
+
 <div class="section">
   <!-- <div class="abc"> -->
   <div class="row">
@@ -27,7 +53,6 @@
     <div class="col-xs-4 rightSideIndex">
       <input id="slider" type="range" min="1000" max="100000" step="1000" value="10000">
       <p>Display users within <span class="see" id="sliderAmount">10</span> km</p>
-
       <google-map users="usersIndex.filtered" ng-if="usersIndex.filtered" query="usersIndex.q"></google-map>
     </div>
   </div>
