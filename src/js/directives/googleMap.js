@@ -1,12 +1,12 @@
-/* global google:ignore mapStyles:ignore */
+/* global google:ignore */
 
 
 angular
 .module('skillsApp')
 .directive('googleMap', googleMap);
 
-googleMap.$inject = ['$window', '$http'];
-function googleMap($window){
+googleMap.$inject = ['$window', 'mapStyles'];
+function googleMap($window, mapStyles){
 
   const directive = {
     restrict: 'E',
@@ -182,3 +182,61 @@ function googleMap($window){
   };
   return directive;
 }
+
+angular
+  .module('skillsApp')
+  .constant('mapStyles', [{
+    featureType: 'administrative',
+    elementType: 'labels.text.fill',
+    stylers: [{ color: '#444444' }]
+  }, {
+    featureType: 'landscape',
+    elementType: 'all',
+    stylers: [{ color: '##000000' }]
+  }, {
+    featureType: 'poi',
+    elementType: 'all',
+    stylers: [{ visibility: 'off' }]
+  }, {
+    featureType: 'road',
+    elementType: 'all',
+    stylers: [{
+      saturation: -100
+    }, {
+      lightness: 45
+    }]
+  }, {
+    featureType: 'road.highway',
+    elementType: 'all',
+    stylers: [{
+      saturation: '0'
+    }, {
+      visibility: 'on'
+    }]
+  }, {
+    featureType: 'road.highway',
+    elementType: 'geometry.fill',
+    stylers: [{
+      color: '#00bc66'
+    }, {
+      saturation: '-59'
+    }, {
+      lightness: '46'
+    }]
+  }, {
+    featureType: 'road.arterial',
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }]
+  }, {
+    featureType: 'transit',
+    elementType: 'all',
+    stylers: [{ visibility: 'off' }]
+  }, {
+    featureType: 'water',
+    elementType: 'all',
+    stylers: [{
+      color: '#46bcec'
+    }, {
+      visibility: 'on'
+    }]
+  }]);
