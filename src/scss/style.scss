@@ -2,9 +2,14 @@
 
 .leftSideIndex {
     overflow: scroll;
-    height: 90vh;
+    height: 85vh;
 }
 
+.profile-warning {
+  text-align: center;
+  color: red;
+  font-size: 20px;
+}
 
 // .indexCard{
 //   border: 1px solid black;
@@ -88,14 +93,6 @@ span {
   width: 25%
 }
 
-// .google-map{
-//   float: right;
-//   height: 100vh;
-//   width: 100%;
-//   display: inline-block;
-//   border: 2px solid red;
-// }
-
 #slider{
   margin: 5px;
 }
@@ -110,10 +107,10 @@ li{
 
 .google-map{
   // float: right;
-  height: 90vh;
+  height: 75vh;
   width: 100%;
   display: inline-block;
-  border: 2px solid red;
+  border: 2px solid #b5b2b2;
 }
 
 li{

@@ -5,7 +5,7 @@
   <br>
   <div class="index-title">Speak<span class="font-anton">Easy</span></div>
   <br><br>
-  <div class="index-strapline">Meet up, Speak up, Language exchange...</div>
+  <div class="index-strapline">Meet up. Speak up. Language exchange...</div>
   <br>
   <div class="login-buttons">
 
@@ -28,16 +28,16 @@
 <div class="section">
   <!-- <div class="abc"> -->
   <div class="row">
-    <div class="col-xs-8 leftSideIndex">
+    <div class="col-xs-8">
       <div class="searchBoxIndex">
         <input type="text" class="search" ng-model="usersIndex.q" placeholder="Search...">
       </div>
-      <div class="row">
+      <div class="row leftSideIndex">
         <div class="col-xs-4" ng-repeat="user in usersIndex.filtered | orderBy:'-created_at'">
           <div class="card">
             <!-- <div>{{user.created_at}}</div> -->
             <h3>{{ user.username }}</h3>
-            <img class="img-small" src="{{ user.profilePic }}">
+            <a ui-sref="usersProfile({ id: user.id })"><img class="img-small" src="{{ user.profilePic }}"></a>
             <!-- <img class="img-small" src="{{ user.profilePic || '../../images/placeholder.jpg' }}"> -->
             <!-- <p>User ID: {{ user.id }}</p> -->
             <!-- <p>Email: {{ user.email }}</p> -->
@@ -46,7 +46,7 @@
             <!-- <p>Language ID: {{ user.skills[0].id }}</p> -->
             <p><a ui-sref="usersProfile({ id: user.id })">View Profile</a></p>
             <p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== user.id"><a ui-sref="message({ id: user.id })">Send Message</a></p>
-            <p class="see" ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id">Send Message</p>
+            <p ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a><strike>Send Message</strike></a></p>
           </div>
         </div>
       </div>
