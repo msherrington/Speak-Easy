@@ -6,8 +6,8 @@ angular
   .controller('UsersEditCtrl', UsersEditCtrl);
 
 
-UsersIndexCtrl.$inject = ['User', 'filterFilter', '$http', '$scope'];
-function UsersIndexCtrl(User, filterFilter, $http, $scope) {
+UsersIndexCtrl.$inject = ['User', 'filterFilter', 'orderByFilter', '$http', '$scope'];
+function UsersIndexCtrl(User, filterFilter, orderByFilter, $http, $scope) {
   const vm = this;
 
   getskills();
@@ -31,17 +31,17 @@ function UsersIndexCtrl(User, filterFilter, $http, $scope) {
   }
 
   function filterUsers() {
-    const params = { name: vm.q };
+    // const params = {};
       // if(vm.useStrength) params.strength = vm.strength;
       // if(vm.useRoast) params.roast = vm.roast;
 
-    vm.filtered = filterFilter(vm.all, params);
-      // vm.filtered = orderByFilter(vm.filtered, vm.sort);
+    vm.filtered = filterFilter(vm.all, vm.q);
+    vm.filtered = orderByFilter(vm.filtered, vm.sort);
   }
   $scope.$watchGroup([
-    () => vm.q
+    () => vm.q,
+    () => vm.sort
   ], filterUsers);
-
 
   // get user data from our API to use in Google Markers
   function getUser(){
@@ -50,6 +50,7 @@ function UsersIndexCtrl(User, filterFilter, $http, $scope) {
       // console.log(response);
       vm.all = response.data;
       vm.u = vm.all;
+      filterUsers();
     });
   }
 
