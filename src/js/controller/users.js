@@ -13,7 +13,7 @@ function UsersIndexCtrl(User, filterFilter, orderByFilter, $http, $scope) {
   getskills();
   function getskills(){
     // console.log('getskills!');
-    $http.get('//api/skills')
+    $http.get('/api/skills')
   .then((response) => {
     // console.log(response);
     vm.all = response.data;
@@ -45,7 +45,7 @@ function UsersIndexCtrl(User, filterFilter, orderByFilter, $http, $scope) {
 
   // get user data from our API to use in Google Markers
   function getUser(){
-    $http.get('//api/users')
+    $http.get('/api/users')
     .then((response) => {
       // console.log(response);
       vm.all = response.data;
