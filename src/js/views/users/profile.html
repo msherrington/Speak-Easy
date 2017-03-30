@@ -5,36 +5,42 @@
         <div class="divider"></div>
       </div>
 
-      <p ng-if="main.isAuthenticated() && main.currentUserId === usersProfile.user.id"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
+      <div class="profile-left">
+        <h2 class="name">{{ usersProfile.user.username }}'s Profile</h2>
+        <img class="img-small" src="{{ usersProfile.user.profilePic }}">
+        <br>
+        <br>
+        <p class="message" ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
+        <p class="message" ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a>Message {{ usersProfile.user.username }}(Locked)</a></p>
 
-      <h2>{{ usersProfile.user.username }}'s Profile</h2>
-      <img class="img-small" src="{{ usersProfile.user.profilePic }}">
-      <br>
-      <br>
-      <p ng-if="main.isAuthenticated() && main.currentUser.locked === false && main.currentUser.id !== usersProfile.user.id"><a ui-sref="message({ id: usersProfile.user.id })">Message {{ usersProfile.user.username }}</a></p>
-      <p ng-if="main.isAuthenticated() && main.currentUser.locked === true && main.currentUser.id !== user.id"><a><strike>Message {{ usersProfile.user.username }}</strike></a></p>
-
-      <p><b>Currently learning: </b>{{ usersProfile.user.learning || 'No languages yet' }}</p>
-      <p><b>About: </b>{{ usersProfile.user.about || 'No user info yet' }}</p>
-
-      <h2>Languages offered:</h2>
-      <div ng-repeat="details in usersProfile.user.skills track by $index">
-        <h4>{{ details.language.lang }} ({{ details.level }})</h4>
+        <div class="profile-right">
+          <p ng-if="main.isAuthenticated() && main.currentUserId === usersProfile.user.id"><a ui-sref="usersEdit({ id: usersProfile.user.id })">Edit Your Profile</a></p>
+          <br>
+          <h2>Languages offered:</h2>
+          <div ng-repeat="details in usersProfile.user.skills track by $index">
+            <h4>{{ details.language.lang }} ({{ details.level }})</h4>
+          </div>
+          <hr>
+          <br>
+          <p><b>Currently learning: </b>{{ usersProfile.user.learning || 'No languages yet' }}</p>
+          <p><b>About: </b>{{ usersProfile.user.about || 'No user info yet' }}</p>
+        </div>
       </div>
 
       <div class="reviews">
         <h2>Reviews</h2>
         <ul class="reviews__created">
         <br>
-          <li ng-repeat="review in usersProfile.user.reviews track by $index">
-            <br><strong>{{ review.createdBy.username }}</strong> - {{ review.content }}<br>
-
-            <div><span uib-rating ng-model="review.rating" max="5" read-only="true"></span></div>
+          <li  id="reviews" ng-repeat="review in usersProfile.user.reviews track by $index">
+            <span uib-rating ng-model="review.rating" max="5" read-only="true"></span><br>
+            <strong>{{ review.createdBy.username }}</strong> - {{ review.content }}
 
             <!-- delete comment button -->
-            <md-button class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
-              <i class="material-icons left"></i>Delete Review
-            </md-button>
+            <div>
+              <md-button id="deleteBtn" class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
+                <i class="material-icons left"></i>Delete Review
+              </md-button>
+            </div>
           </li>
         </ul>
 

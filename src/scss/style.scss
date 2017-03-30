@@ -18,6 +18,55 @@
   }
 }
 
+.profile-left {
+  float: left;
+  display: inline;
+  width: 100%;
+  height: auto;
+  background-color: inherit;
+  .name, img {
+    margin-left: 70px;
+  }
+  .message {
+    font-size: 1.5em;
+    margin: 0px 0px 30px 70px;
+  }
+  .profile-right {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    float: right;
+    margin-top: 7%;
+    text-align: left;
+    width: 30%;
+    background-color: inherit;
+    a {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.reviews {
+  clear: both;
+  margin: 0 70px;
+  padding: 30px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.reviews__created {
+  list-style: none;
+  padding-left: 0;
+  #reviews {
+    margin: 25px 0px;
+    display: block;
+    width: 100%;
+    .md-button {
+      margin-left: 0;
+      z-index: 4;
+    }
+  }
+}
+
 //Index page search box
 .searchBoxIndex{
   .search{
@@ -60,10 +109,9 @@ span {
   text-align: center;
   height: 250px;
   background-color: #2d3d45;
-}
-
-.card:hover {
+  &:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 }
 
 .inside-section {
@@ -92,14 +140,6 @@ li{
   width: 100%;
   display: inline-block;
   border: 2px solid #b5b2b2;
-}
-
-li{
-  display: inline;
-}
-
-.navbar-form{
-  float: right;
 }
 
 // ANGULAR FORM
@@ -149,7 +189,6 @@ h1 {
     background-color: #2c3940;
     box-shadow: 0 1px 6px rgba(0,0,0,.3);
     color: white;
-
 }
 
 .btn{
@@ -158,26 +197,22 @@ h1 {
 
 .cancel{
   background-color: #df405a;
+  &:hover{
+    background-color: #f0435f;
+  }
+  &:focus{
+    background-color: #f0435f;
+  }
 }
 
 .done{
   background-color: #5CAB7D;
-}
-
-.done:hover{
-  background-color: #6dc793;
-}
-
-.done:focus{
-  background-color: #6dc793;
-}
-
-.cancel:hover{
-  background-color: #f0435f;
-}
-
-.cancel:focus{
-  background-color: #f0435f;
+  &:hover{
+    background-color: #6dc793;
+  }
+  &:focus{
+    background-color: #6dc793;
+  }
 }
 
 .input-group {
@@ -241,7 +276,7 @@ input[type='file']{
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.7);
   z-index: 99;
 }
 
@@ -252,13 +287,14 @@ input[type='file']{
   transform: translate(-50%, -50%);
   width: 50%;
   height: 50%;
-  background-color: #2c3940;
+  // background-color: #2c3940;
+  background-color: rgba(0,0,0,0.6);
   padding: 20px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 100;
-  box-shadow: 0 4px 8px 0 rgba(1,1,1,1.2);
+  // box-shadow: 0 4px 8px 0 rgba(1,1,1,1.2);
   transition: 0.3s;
   border-radius: 5px;
 }
@@ -269,12 +305,15 @@ input[type='file']{
   font-size: 100px;
   text-align: center;
   text-shadow: 3px 3px #000000;
+  margin-top: 25px;
 }
 
 .index-strapline {
   text-align: center;
   color: yellow;
   font-size: 20px;
+  margin-top: -20px;
+  margin-bottom: 30px;
 }
 
 .font-fjala {
