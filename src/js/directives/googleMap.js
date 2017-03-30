@@ -1,8 +1,9 @@
 /* global google:ignore mapStyles:ignore */
 
 
-angular.module('skillsApp')
-  .directive('googleMap', googleMap);
+angular
+.module('skillsApp')
+.directive('googleMap', googleMap);
 
 googleMap.$inject = ['$window', '$http'];
 function googleMap($window, $http){
