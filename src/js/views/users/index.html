@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<div ng-hide="main.isAuthenticated()" class="overlay"></div>
+<div class="signup-screen" ng-hide="main.isAuthenticated()">
 
-<div ng-hide="main.isAuthenticated()" class="index-login">
-  <br>
-  <div class="index-title">Speak<span class="font-anton">Easy</span></div>
-  <br><br>
-  <div class="index-strapline">Meet up, Speak up, Language exchange...</div>
-  <br>
-  <div class="login-buttons">
+  <div class="overlay"></div>
 
-    <a ui-sref="login">
-      <md-button type="submit" ng-click="" class="waves-effect waves-light btn done">
+  <div ng-hide="main.isAuthenticated()" class="index-login">
+    <br>
+    <div class="index-title">Speak<span class="font-anton">Easy</span></div>
+    <br><br>
+    <div class="index-strapline">Meet up, Speak up, Language exchange...</div>
+    <br>
+    <div class="login-buttons">
+
+      <md-button type="submit" class="waves-effect waves-light btn done" ui-sref="login">
         <i class="material-icons left"></i> Login
       </md-button>
-    </a>
 
-    <a ui-sref="register">
-      <md-button type="submit" ng-click="" class="waves-effect waves-light btn done">
+      <md-button type="submit" class="waves-effect waves-light btn done" ui-sref="register">
         <i class="material-icons left"></i> Register
       </md-button>
-    </a>
+
+    </div>
 
   </div>
-
 </div>
+
 
 <div class="section">
   <!-- <div class="abc"> -->

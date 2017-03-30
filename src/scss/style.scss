@@ -120,8 +120,8 @@ li{
 //FORM ANGULAR
 
 body {
-    min-height:100%;
-    // background-color: #263238;
+    height: auto;
+    background-color: #263238;
 }
 
 .text-center{
@@ -150,15 +150,14 @@ h1 {
 /* Sign Up */
 
 .container {
-    max-height: 100px;
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .alert-danger{
 	text-align: center;
 }
 
-.signup-screen {
+.signup-screen{
 	  padding: 20px;
     padding-bottom: 40px;
     border-radius: 5px;
@@ -299,4 +298,8 @@ input[type='file']{
 
 .font-anton {
   font-family: 'Anton', sans-serif;
+}
+
+.ui-sref{
+  color: white;
 }
