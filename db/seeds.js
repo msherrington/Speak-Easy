@@ -132,7 +132,7 @@ Skill
         }]
       }, {
         username: 'Conor',
-        email: 'conor@ga.com',
+        email: 'conor.heena2@mail.dcu.ie',
         profilePic: '../images/users/ConorHeena.jpg',
         password: 'conor',
         passwordConfirmation: 'conor',
