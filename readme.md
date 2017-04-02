@@ -29,11 +29,12 @@ The user can login via Facebook or GitHub and you are only able to contact anoth
 * For the project we used a full express RESTful app that includes token authentication.
 * Used Node, Express, Ajax, JSON, JS, MongoDB, HTML 5, SASS and Angular were used to create the app.
 * Used Google Map API to show users on the map, show the raduis and Geolocation when registering.
+
 * Used Balsamiq for wireframing - please screen shot below:
+
+![Trello](https://github.com/1Guv/WDI-25-Project-3/blob/master/src/images/SpeakEasy-Balsamiq-Wireframe?raw=true "Trello")
+
 * Used Trello for my project board - please see the screen shot below:
 
-![Trello](https://github.com/1Guv/WDI-25-Project-2/blob/master/src/assets/images/Trello-Project-2.png?raw=true "Trello")
+![Balsamiq](https://github.com/1Guv/WDI-25-Project-3/blob/master/src/images/SpeakEasy-TrelloBoard?)
 
-* Used Balsamiq for my wireframing:
-
-![Balsamiq](https://github.com/1Guv/WDI-25-Project-2/blob/master/src/assets/images/Balsamiq-Project-2.png?raw=true "Trello")
