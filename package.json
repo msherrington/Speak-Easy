@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "postinstall": "bower install",
     "start": "node server.js"
   },
   "author": "Mike Hayden <mickyginger@gmail.com> (https://github.com/mickyginger)",
