@@ -87,7 +87,7 @@ function sendMailRoute(req, res, next) {
 
 function addReviewRoute(req, res, next){
   req.body.createdBy = req.user;
-  console.log(req.body);
+  // console.log(req.body);
   User
     .findById(req.params.id)
     .exec()

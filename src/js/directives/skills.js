@@ -7,10 +7,8 @@ function skills($window, $http){
 
   getskills();
   function getskills(){
-    console.log('getskills!');
     $http.get('/api/skills')
   .then((response) => {
-    console.log(response);
     vm.all = response.data;
   });
   }

@@ -137,7 +137,6 @@ function googleMap($window, mapStyles){
 
         // Event listener for user markers
         marker.addListener('click', () => {
-          console.log('marker clicked');
           markerClick(marker, user, latLng);
         });
 

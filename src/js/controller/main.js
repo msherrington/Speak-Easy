@@ -35,7 +35,6 @@ function MainCtrl($rootScope, $state, $auth, User){
     const protectedStates = ['usersProfile', 'usersEdit', 'message'];
 
     function secureState(e, toState) {
-      // console.log('Changing states');
       vm.message = null;
       if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
         e.preventDefault();

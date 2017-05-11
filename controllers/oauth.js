@@ -17,7 +17,6 @@ function github(req, res, next) {
     json: true
   })
   .then((token) => {
-    // console.log(token);
     return rp({
       method: 'GET',
       url: oauth.github.profileURL,
