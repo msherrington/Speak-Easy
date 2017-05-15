@@ -5,7 +5,10 @@ module.exports = {
     profileURL: 'https://api.github.com/user',
     clientId: process.env.GITHUB_SPEAKEASY_ID,
     clientSecret: process.env.GITHUB_SPEAKEASY_SECRET,
-    scope: 'user:email'
+    scope: 'user:email',
+    getLoginURL() {
+      return `${this.loginURL}?client_id=${this.clientId}&scope=${this.scope}`;
+    }
   },
   facebook: {
     loginURL: 'https://www.facebook.com/v2.9/dialog/oauth',
