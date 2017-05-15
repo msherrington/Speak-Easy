@@ -8,7 +8,7 @@ function Auth($authProvider){
   $authProvider.loginUrl = '/api/login';
 
   $authProvider.github({
-    clientId: '5bddc35a4ea75262e03a',
+    clientId: '8bb526bfe8e01cb01663',
     url: '/api/oauth/github'
   });
 
