@@ -8,8 +8,8 @@ module.exports = {
     scope: 'user:email'
   },
   facebook: {
-    loginURL: 'https://www.facebook.com/v2.8/dialog/oauth',
-    accessTokenURL: 'https://graph.facebook.com/v2.8/oauth/access_token',
+    loginURL: 'https://www.facebook.com/v2.9/dialog/oauth',
+    accessTokenURL: 'https://graph.facebook.com/v2.9/oauth/access_token',
     profileURL: '#',
     clientId: process.env.FB_SPEAKEASY_ID,
     clientSecret: process.env.FB_SPEAKEASY_SECRET,
