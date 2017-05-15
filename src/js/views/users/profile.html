@@ -37,7 +37,7 @@
 
             <!-- delete comment button -->
             <div>
-              <md-button id="deleteBtn" class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && username.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
+              <md-button id="deleteBtn" class="waves-effect waves-light btn cancel" ng-if="main.isAuthenticated() && main.currentUserId === review.createdBy.Id" ng-click="usersProfile.deleteReview(review)">
                 <i class="material-icons left"></i>Delete Review
               </md-button>
             </div>
