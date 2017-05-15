@@ -84,27 +84,16 @@ function googleMap($window, mapStyles){
       }
 
       // HTML5 Geolocation..
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-          pos = {
-            lat: parseFloat(position.coords.latitude),
-            lng: parseFloat(position.coords.longitude)
-          };
-          marker.setPosition(pos);
-          map.setCenter(pos);
-          circle.setCenter(pos);
-          getUserLatLng(pos);
-        }, function () {
-          handleLocationError(true,  googleMap.getCenter());
-        });
-      } else {
-      // If browser doesn't support Geolocation
-        handleLocationError(false, googleMap.getCenter());
-      }
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        pos = {
+          lat: parseFloat(position.coords.latitude),
+          lng: parseFloat(position.coords.longitude)
+        };
         marker.setPosition(pos);
-        marker.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
-      }
+        map.setCenter(pos);
+        circle.setCenter(pos);
+        getUserLatLng(pos);
+      });
 
       // Function to plot user locations on the map
       function getUserLatLng(pos) {

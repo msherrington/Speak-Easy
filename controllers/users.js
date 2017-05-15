@@ -78,16 +78,14 @@ function sendMailRoute(req, res, next) {
     subject: data.contactName + ' messaged you through SpeakEasy.',
     replyTo: data.contactEmail,
     text: data.contactMsg + '\n\nHit reply to respond directly to ' + data.contactName + ' (' + data.contactEmail + ').'
-  },(err, info) => {
+  },(err) => {
     if(err) return next(err);
-    console.log(info);
     res.json(data);
   });
 }
 
 function addReviewRoute(req, res, next){
   req.body.createdBy = req.user;
-  // console.log(req.body);
   User
     .findById(req.params.id)
     .exec()
