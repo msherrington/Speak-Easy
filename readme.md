@@ -39,29 +39,16 @@ We stuck closely to the original wire frame planning.
 * Messaging other users is locked by default after registration. There is an attribute in the profile called locked: true. This is set to false when a user fully updates their own profile with image and language info, unlocking messaging.
 
 
-
 ####The build:
 
-
-* For the project we used a full express RESTful app that includes token authentication.
-* Used Node, Express, Ajax, JSON, JS, MongoDB, HTML 5, SASS and Angular were used to create the app.
-* Used Google Map API to show users on the map, show the raduis and Geolocation when registering.
-* Used NodeMailer to send emails to users.
-* Used Amazon Web Services for storing images securely.
-* Created directives for:
-	* Google Autocomplete when users register their address
-	* base64 encoding and decoding for images
-	* Google Maps
-		* showing the appropriate Markers using the Lat & Lng for each user registered.
-		* showing the Google Map Info windows with the correct data.
-		* showing the Google Map Circle Radius.
-		* finding the distance between two points
-* Used Satellizer to create token-based authentication for Facebook & GitHub.
-* Used Angular Material for designing the forms.
-* Used Angular features like:
-* 	ngFilter for searching and displaying the correct information.
-* 	ngMessages for the form validation and providing the user with responsive error messages.
-*  ngIf for user authentication on the front end to show & hide the messaging options.
+* HTML 5, CSS, SCSS and Angular were used to create views.
+* MongoDB, Express and Node were used to create the database.
+* NodeMailer to email users.
+* AWS S3 for image upload.
+* Angular directive for base64 image encoding and decoding.
+* Angular directive for Google Maps API, Google Location Autocomplete, Google Circle.
+* JWT for Facebook authenticated login.
+* Angular Material for form design.
 
 
 ##Problems & Challenges:
