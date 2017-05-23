@@ -55,8 +55,8 @@ Skill
         location: '',
         lat: 51.5224,
         lng: 0.0086,
-        learning: 'German',
-        about: 'Cunning linguist',
+        // learning: 'German',
+        // about: 'Cunning linguist',
         skills: [{
           language: skills[10],
           level: 'Advanced'
@@ -73,8 +73,8 @@ Skill
         location: '',
         lat: 51.5094,
         lng: -0.0267,
-        learning: 'English',
-        about: 'Ciao Bellissima!',
+        // learning: 'English',
+        // about: 'Ciao Bellissima!',
         skills: [{
           language: skills[13],
           level: 'Native'
@@ -95,8 +95,8 @@ Skill
         lat: 51.4934,
         lng: -0.0709,
         locked: false,
-        learning: 'Spanish',
-        about: 'Family man who enjoys learning languages',
+        // learning: 'Spanish',
+        // about: 'Family man who enjoys learning languages',
         skills: [{
           language: skills[0],
           level: 'Native'
@@ -116,8 +116,8 @@ Skill
         location: '',
         lat: 51.5135,
         lng: -0.0703,
-        learning: 'Turkish',
-        about: 'I love the craic like any decent Irish lad',
+        // learning: 'Turkish',
+        // about: 'I love the craic like any decent Irish lad',
         skills: [{
           language: skills[14],
           level: 'Basic'
@@ -131,8 +131,8 @@ Skill
         location: '',
         lat: 51.5177,
         lng: -0.0773,
-        learning: 'Thai',
-        about: 'Use my drone to explore other countries',
+        // learning: 'Thai',
+        // about: 'Use my drone to explore other countries',
         skills: [{
           language: skills[9],
           level: 'Intermediate'
@@ -147,8 +147,8 @@ Skill
         password: 'arrianne',
         passwordConfirmation: 'arrianne',
         location: '',
-        learning: 'Anything',
-        about: 'Who wants to help me?',
+        // learning: 'Anything',
+        // about: 'Who wants to help me?',
         lat: 51.5257,
         lng: -0.0875,
         skills: [{
@@ -162,8 +162,8 @@ Skill
         password: 'fabricio',
         passwordConfirmation: 'fabricio',
         location: '',
-        learning: 'Italian',
-        about: 'Borderline Genius/Madman',
+        // learning: 'Italian',
+        // about: 'Borderline Genius/Madman',
         lat: 51.4688,
         lng: 0.1254,
         skills: [{
@@ -180,8 +180,8 @@ Skill
         password: 'giacomo',
         passwordConfirmation: 'giacomo',
         location: '',
-        learning: 'British English',
-        about: 'Polyglot practicing regional accents',
+        // learning: 'British English',
+        // about: 'Polyglot practicing regional accents',
         lat: 51.5176,
         lng: -0.0655,
         skills: [{
@@ -201,8 +201,8 @@ Skill
         password: 'gianmaria',
         passwordConfirmation: 'gianmaria',
         location: '',
-        learning: 'English',
-        about: 'I need to make it better my English please',
+        // learning: 'English',
+        // about: 'I need to make it better my English please',
         lat: 51.5485,
         lng: -0.4796,
         skills: [{
@@ -221,8 +221,8 @@ Skill
         location: '',
         lat: 51.5233,
         lng: -0.0754,
-        learning: 'Spanish',
-        about: 'Y\'all know me.',
+        // learning: 'Spanish',
+        // about: 'Y\'all know me.',
         skills: [{
           language: skills[12],
           level: 'Native'
@@ -239,8 +239,8 @@ Skill
         location: '',
         lat: 51.5234,
         lng: -0.0757,
-        learning: 'French',
-        about: 'Sacre bleu!',
+        // learning: 'French',
+        // about: 'Sacre bleu!',
         skills: [{
           language: skills[11],
           level: 'Basic'
@@ -257,8 +257,8 @@ Skill
         location: '',
         lat: 51.5333,
         lng: -0.0754,
-        learning: 'German',
-        about: 'I like shiny things.',
+        // learning: 'German',
+        // about: 'I like shiny things.',
         skills: [{
           language: skills[0],
           level: 'Native'
@@ -275,8 +275,8 @@ Skill
         location: '',
         lat: 51.5239,
         lng: -0.0764,
-        learning: 'French',
-        about: 'Je ne sais quoi, you plonker',
+        // learning: 'French',
+        // about: 'Je ne sais quoi, you plonker',
         skills: [{
           language: skills[0],
           level: 'Adequate'
@@ -293,8 +293,8 @@ Skill
         location: '',
         lat: 51.5233,
         lng: -0.0754,
-        learning: 'Punjabi',
-        about: 'Licensed to... learn lots of languages.',
+        // learning: 'Punjabi',
+        // about: 'Licensed to... learn lots of languages.',
         skills: [{
           language: skills[0],
           level: 'Native'
