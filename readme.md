@@ -1,16 +1,16 @@
-##GA WDI 25 London - Project 3
+## GA WDI 25 London - Project 3
 
-#SpeakEasy
+# SpeakEasy
 
 The third project of the Web Development Immersive course was a group assignment with three other students. Our goal was to design and create a MEAN stack web application through successful team collaboration.
 
 We were all inspired by the idea of a platform for users to meet each other and exchange skills. However, as all four of us are from different cultures, we later switched our focus to language exchange.
 
-####The result is... SpeakEasy ([click to use app](https://speak-easy-app.herokuapp.com/))
+#### The result is... SpeakEasy ([click to use app](https://speak-easy-app.herokuapp.com/))
 
 ![](src/images/welcome.png)
 
-###User Interaction
+### User Interaction
 
 SpeakEasy provides a platform for users to find language exchange partners. A user must be willing to teach other users the language they speak in exchange for learning another. For example, a user speaks English and wants to practice speaking French. They can use SpeakEasy to look for a language exchange partner who speaks French and wants to improve their English.
 
@@ -20,7 +20,7 @@ Once logged in, users can search through other users by language, or filter user
 
 ***
 
-###Wire Framing
+### Wire Framing
 
 We stuck closely to the original wire frame planning.
 
@@ -28,7 +28,7 @@ We stuck closely to the original wire frame planning.
 
 ***
 
-###How it works:
+### How it works:
 
 * Users can register in the usual way or using GitHub or Facebook OAuth.
 * Logged-in users can view other users, either in an indexed list or plotted on an embedded Google Map.
@@ -39,7 +39,7 @@ We stuck closely to the original wire frame planning.
 * Messaging other users is locked by default after registration. There is an attribute in the profile called locked: true. This is set to false when a user fully updates their own profile with image and language info, unlocking messaging.
 
 
-####The build:
+#### The build:
 
 * HTML 5, CSS, SCSS and Angular were used to create views.
 * MongoDB, Express and Node were used to create the database.
@@ -51,7 +51,7 @@ We stuck closely to the original wire frame planning.
 * Angular Material for form design.
 
 
-##Problems & Challenges:
+## Problems & Challenges:
 
 The first problem we encountered as a group was deciding who should build the API. Once we had decided on a project and developed a wire-framed scope, we sat together and worked through building the API together as a group on a big screen. This allowed us to work quickly on building the backend foundations. After that we divided all tasks into small chunks and listed everything on Trello, working through each task individually or in pairs.
 
@@ -62,7 +62,7 @@ There was one day we early in the project when we had multiple confusing merge c
 Our main blocker was time. With so many tasks needing attention, we had to work effectively as a group to decide which tasks would be implemented and which tasks would be left on the backlog for future implementation. Keeping pace of our progress through daily stand-ups and constant communication was key to our group delivering a finished product in time.
 
 
-###Future Improvements
+### Future Improvements
 
 I would like to make the following improvements to this app...
 
